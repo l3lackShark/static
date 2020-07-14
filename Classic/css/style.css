@@ -15,7 +15,7 @@ body,html{
     -moz-filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.4));
     -ms-filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.4));
     -o-filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.4));
-    margin: 10px;
+    margin: 20px;
 }
 #target{
     position: relative;
