@@ -1,14 +1,14 @@
 let socket = new ReconnectingWebSocket("ws://127.0.0.1:24050/ws");
 let mapid = document.getElementById('mapid');
 
-
 let bg = document.getElementById("bg");
 let title = document.getElementById("title");
-let bmlink = document.getElementById("bmlink");
-let progressChart = document.getElementById("progress")
-let currentPP = document.getElementById("ppCurent");
-let ifFC = document.getElementById("ppIfFc");
 let pp = document.getElementById("pp");
+let hun = document.getElementById("100");
+let fifty = document.getElementById("50");
+let miss = document.getElementById("miss");
+let progressChart = document.getElementById("progress")
+
 
 socket.onopen = () => {
     console.log("Successfully Connected");
@@ -22,34 +22,45 @@ socket.onclose = event => {
 socket.onerror = error => {
     console.log("Socket Error: ", error);
 };
+
 let tempImg;
 let tempTitle;
-let tempLink;
 let tempStrainBase;
 let smoothOffset = 2;
 let seek;
 let fullTime;
 let onepart;
-let tepSatate;
-
-function getRandomInt(max) {
-    return Math.floor(Math.random() * Math.floor(max));
-  }
 
 socket.onmessage = event => {
     let data = JSON.parse(event.data);
     if(tempImg !== data.menu.bm.path.full){
         tempImg = data.menu.bm.path.full
-        data.menu.bm.path.full = data.menu.bm.path.full.replace(/#/g,'%23').replace(/%/g,'%25')
-        bg.setAttribute('src',`http://127.0.0.1:24050/Songs/${data.menu.bm.path.full}?a=${Math.random(10000)}`)
+        let img = data.menu.bm.path.full.replace(/#/g,'%23').replace(/%/g,'%25')
+        bg.setAttribute('src',`http://127.0.0.1:24050/Songs/${img}?a=${Math.random(10000)}`)
     }
-    if(tempTitle !== `♪ ${data.menu.bm.metadata.artist} - ${data.menu.bm.metadata.title} [${data.menu.bm.metadata.difficulty}] ☆ ${data.menu.bm.stats['fullSR']} Mapset by ${data.menu.bm.metadata.mapper}` ){
-        tempTitle = `♪ ${data.menu.bm.metadata.artist} - ${data.menu.bm.metadata.title} [${data.menu.bm.metadata.difficulty}] ☆ ${data.menu.bm.stats['fullSR']} Mapset by ${data.menu.bm.metadata.mapper}`;
-        title.innerHTML = tempTitle;
-    } 
-    if(tempLink !== data.menu.bm.id){
-        tempLink = data.menu.bm.id;
-        bmlink.innerHTML = 'https://osu.ppy.sh/b/' + tempLink;
+    if(tempTitle !== data.menu.bm.metadata.artist + ' - ' + data.menu.bm.metadata.title){
+        tempTitle = data.menu.bm.metadata.artist + ' - ' + data.menu.bm.metadata.title;
+        title.innerHTML = tempTitle
+    }
+    if(data.gameplay.pp.current != ''){
+        pp.innerHTML = Math.round(data.gameplay.pp.current)
+    }else{
+        pp.innerHTML = 0
+    }
+    if(data.gameplay.hits[100] > 0){
+        hun.innerHTML = data.gameplay.hits[100]
+    }else{
+        hun.innerHTML = 0
+    }
+    if(data.gameplay.hits[50] > 0){
+        fifty.innerHTML = data.gameplay.hits[50]
+    }else{
+        fifty.innerHTML = 0
+    }
+    if(data.gameplay.hits[0] > 0){
+        miss.innerHTML = data.gameplay.hits[0]
+    }else{
+        miss.innerHTML = 0
     }
     if(tempStrainBase != JSON.stringify(data.menu.pp.strains)){
         tempLink = JSON.stringify(data.menu.pp.strains);
@@ -63,39 +74,13 @@ socket.onmessage = event => {
     }
     if(fullTime !== data.menu.bm.time.full){
         fullTime = data.menu.bm.time.full
-        onepart = 1920/fullTime
+        onepart = 500/fullTime
     }
     if(seek !== data.menu.bm.time.current && fullTime !== undefined && fullTime != 0){
         seek = data.menu.bm.time.current;
         progressChart.style.width = onepart*seek+'px'
     }
-    if(data.gameplay.pp.current != ''){
-        let ppData = data.gameplay.pp.current
-        currentPP.innerHTML = Math.round(ppData)
-    }else{
-        currentPP.innerHTML = 0
-    }
-    if(data.gameplay.pp.fc != ''){
-        let ppData = data.gameplay.pp.fc
-        ifFC.innerHTML = Math.round(ppData)
-    }else if (tempState == 1){
-        ifFC.innerHTML = data.menu.pp[100]
-    }else {
-        ifFC.innerHTML = 0
-    }
-    if(tempState !== data.menu.state){
-        tempState = data.menu.state;
-        if(tempState == 2 || tempState == 7 || tempState == 1){
-            pp.style.bottom = 210+'px'
-            pp.style.color = 'rgba(199, 199, 199, 0.8);'
-        }
-        else{
-            pp.style.bottom = 100+'px'
-            pp.style.color = 'rgba(199, 199, 199, 0);'
-        }
-    }
 }
-
 
 window.onload = function () {
     var ctx = document.getElementById('canvas').getContext('2d');
