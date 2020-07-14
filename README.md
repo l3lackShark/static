@@ -6,6 +6,12 @@
 > Size: 550x300\
 <img  src="https://cdn.discordapp.com/attachments/641255341245333514/731838930340544573/unknown.png"  width="500">\
 By: [Dartandr][1]<br>
+
+### OldClassic
+
+> Size: 550x300\
+<img  src="https://cdn.discordapp.com/attachments/530940222771560452/732545954468593664/unknown.png"  width="500">\
+By: [Dartandr][1]<br>
   
 
 ### DarkAndWhite
