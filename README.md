@@ -44,7 +44,6 @@ By: [cyperdark][2]<br>
 
 > Size: 640x130\
 <img  src="https://i.imgur.com/FkYX8E7.jpg"  width="500">\
-
 By: [cyperdark][2]<br>
   
 
