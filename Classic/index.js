@@ -33,12 +33,6 @@ const modsImgs = {
     'v2': './static/v2.png',
 }
 
-let aaaaa ={
-    'aaaa': {
-        'dasda': 'dasda'
-    }
-}
-
 socket.onopen = () => {
     console.log("Successfully Connected");
 };
