@@ -30,7 +30,7 @@ let smoothOffset = 2;
 let seek;
 let fullTime;
 let onepart;
-let tepSatate;
+let tempState;
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
