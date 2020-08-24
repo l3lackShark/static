@@ -52,7 +52,6 @@ By: [cyperdark][2]<br>
 
 > Size: 640x130\
 <img  src="https://cdn.discordapp.com/attachments/641255341245333514/731840161612300358/unknown.png"  width="500">\
-
 By: [cyperdark][2]<br>
   
 
