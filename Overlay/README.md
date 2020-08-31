@@ -8,6 +8,6 @@ All elements in index.css file have property font-size amount of pixels can be m
 To change Score bar image you need to add scorebar-bg and scorebar-colour to resource folder and set them in index.html,
 also you need to specified width property of your scorebar-colour in index.css in sbColor element.
 
-## Position
+### Position
 all elements positioned absolutely in 1920 x 1080 area in index.css you can find properties: top left right and bottom 
 For example left: 0 and bottom: 0 will position element to the left bottom corner 
