@@ -62,8 +62,24 @@ By: [cyperdark][2]<br>
 By: [cyperdark][2]<br>
   
 
+### Victim Crasher Compact
+
+> Size: 550x132\
+<img  src="https://i.imgur.com/TAoncks.png" width="500">\
+By: [VictimCrasher][4]<br>
+  
+
+### Victim Crasher Overlay
+
+> Size: 1920x4080\
+<img  src="https://i.imgur.com/AP8Hxd6.png"  width="500">\
+By: [VictimCrasher][4]<br>
+  
+
 [1]: https://github.com/Dartandr
 
 [2]: https://github.com/cyperdark
 
 [3]: https://github.com/inix1257
+
+[4]: https://github.com/VictimCrasher
