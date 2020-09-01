@@ -1,4 +1,5 @@
 
+
 # Counters
 
 ### Classic
@@ -65,14 +66,18 @@ By: [cyperdark][2]<br>
 ### Victim Crasher Compact
 
 > Size: 550x132\
-<img  src="https://i.imgur.com/TAoncks.png" width="500">\
+> *Song Selection*
+<img  src="https://i.imgur.com/1F1GK3Z.png" width="500">
+>
+> *Gameplay*
+<img  src="https://i.imgur.com/epx6dij.png" width="500">\
 By: [VictimCrasher][4]<br>
   
 
 ### Victim Crasher Overlay
 
-> Size: 1920x4080\
-<img  src="https://i.imgur.com/AP8Hxd6.png"  width="500">\
+> Size: 1920x1080\
+<img  src="https://i.imgur.com/Wo6wI1B.png"  width="500">\
 By: [VictimCrasher][4]<br>
   
 
