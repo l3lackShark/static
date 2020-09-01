@@ -39,7 +39,23 @@ Open-Source Implementation of [Luscent's][3] overlay. No elements were stolen. T
 Remake by: [Dartandr][1]
 
 
+### VictimCrasherCompact
+
+> Size: 550x132\
+> *Song Selection*\
+<img  src="https://i.imgur.com/1F1GK3Z.png" width="500">\
+>
+> *Gameplay*\
+<img  src="https://i.imgur.com/epx6dij.png" width="500">\
+By: [VictimCrasher][4]<br>
   
+
+### VictimCrasherOverlay
+
+> Size: 1920x1080\
+<img  src="https://i.imgur.com/Wo6wI1B.png"  width="500">\
+By: [VictimCrasher][4]<br>
+
 
 ### MaximalLime
 
@@ -48,7 +64,6 @@ Remake by: [Dartandr][1]
 By: [cyperdark][2]<br>
 
   
-
 ### MinimalLime
 
 > Size: 640x130\
@@ -62,23 +77,6 @@ By: [cyperdark][2]<br>
 <img  src="https://cdn.discordapp.com/attachments/641255341245333514/731842011514011698/unknown.png">\
 By: [cyperdark][2]<br>
   
-
-### Victim Crasher Compact
-
-> Size: 550x132\
-> *Song Selection*\
-<img  src="https://i.imgur.com/1F1GK3Z.png" width="500">\
->
-> *Gameplay*\
-<img  src="https://i.imgur.com/epx6dij.png" width="500">\
-By: [VictimCrasher][4]<br>
-  
-
-### Victim Crasher Overlay
-
-> Size: 1920x1080\
-<img  src="https://i.imgur.com/Wo6wI1B.png"  width="500">\
-By: [VictimCrasher][4]<br>
   
 
 [1]: https://github.com/Dartandr
