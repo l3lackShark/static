@@ -66,10 +66,10 @@ By: [cyperdark][2]<br>
 ### Victim Crasher Compact
 
 > Size: 550x132\
-> *Song Selection*
+> *Song Selection*\
 <img  src="https://i.imgur.com/1F1GK3Z.png" width="500">\
 >
-> *Gameplay*
+> *Gameplay*\
 <img  src="https://i.imgur.com/epx6dij.png" width="500">\
 By: [VictimCrasher][4]<br>
   
