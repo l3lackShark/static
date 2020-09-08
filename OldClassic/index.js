@@ -72,8 +72,8 @@ socket.onmessage = event => {
         window.myLine.update();
         window.myLineSecond.update();
     }
-    if(fullTime !== data.menu.bm.time.full){
-        fullTime = data.menu.bm.time.full
+    if(fullTime !== data.menu.bm.time.mp3){
+        fullTime = data.menu.bm.time.mp3
         onepart = 500/fullTime
     }
     if(seek !== data.menu.bm.time.current && fullTime !== undefined && fullTime != 0){
