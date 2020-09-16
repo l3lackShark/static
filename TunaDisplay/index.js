@@ -33,13 +33,25 @@ let tempMapper;
 let ppData;
 let gameState;
 
+let rank = document.getElementById('rank');
+let params = {
+    totalHits: 0,
+    acc: 0.0,
+    ratio300: 0,
+    ratio50: 0,
+    rank: ''
+};
+
+$(".rank").fadeToggle();
+
+function toggleFunction(){
+    $(".rank").fadeToggle();
+    $(".arttitle").fadeToggle();
+}
+let toggleStatus;
 
 socket.onmessage = event => {
-    let data = JSON.parse(event.data);
-
-    let h100 = data.gameplay.hits[100];
-    let h50 = data.gameplay.hits[50];
-    let hMiss = data.gameplay.hits[0];
+    let data = JSON.parse(event.data), hits = data.gameplay.hits; 
 
     if(tempImg !== data.menu.bm.path.full){
         tempImg = data.menu.bm.path.full
@@ -50,8 +62,12 @@ socket.onmessage = event => {
         gameState = data.menu.state
         if(gameState === 2 || gameState === 14){
             hit.style.transform = "translateY(-15px)"
+            toggleStatus = setInterval(toggleFunction, 10000)
         }else{
-            hit.style.transform = "translateY(-100%)"
+            hit.style.transform = "translateY(-100%)";
+            clearInterval(toggleStatus);
+            $(".rank").fadeOut();
+            $(".arttitle").fadeIn();
         }
     }
     if(tempDiff !== data.menu.bm.metadata.difficulty){
@@ -77,18 +93,66 @@ socket.onmessage = event => {
 		pp.innerHTML = 0
     }
 
-    if(h100 > 0){
-        hun.innerHTML = h100
+    let hdfl = false;
+    if(data.menu.mods.str.includes("HD") || data.menu.mods.str.includes("FL")){
+        hdfl = true;
+    }
+
+    //cyperdark's rank calculator logic 
+    params.totalHits = +hits[50] + +hits[100] + +hits[300] + +hits[0];
+    params.acc = params.totalHits > 0 ? (+hits[50] * 50 + +hits[100] * 100 + +hits[300] * 300) / (params.totalHits * 300) : 1;
+    params.ratio300 = +hits[300] / params.totalHits, params.ratio50 = +hits[50] / params.totalHits;
+
+    if (params.ratio300 == 1 || params.acc == 1) {
+        params.rank = 'SS';
+        if(hdfl == true){
+            rank.style.color = '#537fd6';
+            rank.style.textShadow = '0 0 10px #537fd6'
+        } else{
+            rank.style.color = '#d6c253';
+            rank.style.textShadow = '0 0 10px #d6c253'
+        }
+    }
+    else if (params.ratio300 > 0.9 && params.ratio50 <= 0.01 && hits[0] == 0) {
+        params.rank = 'S';
+        rank.style.color = '#d6c253';
+        rank.style.textShadow = '0 0 10px #d6c253'
+    }
+    else if ((params.ratio300 > 0.8 && hits[0] == 0) || params.ratio300 > 0.9) {
+        params.rank = 'A';
+        rank.style.color = '#7ed653';
+        rank.style.textShadow = '0 0 10px #7ed653'
+    }
+    else if ((params.ratio300 > 0.7 && hits[0] == 0) || params.ratio300 > 0.8) {
+        params.rank = 'B';
+        rank.style.color = '#53d4d6';
+        rank.style.textShadow = '0 0 10px #53d4d6'
+    }
+    else if (params.ratio300 > 0.6) {
+        params.rank = 'C';
+        rank.style.color = '#d6538e';
+        rank.style.textShadow = '0 0 10px #d6538e'
+    }
+    else {
+        params.rank = 'D';
+        rank.style.color = '#d65353';
+        rank.style.textShadow = '0 0 10px #d65353'
+    };
+
+    rank.innerHTML = params.rank;
+
+    if(hits[100] > 0){
+        hun.innerHTML = hits[100];
     }else{
         hun.innerHTML = 0
     }
-    if(h50 > 0){
-        fifty.innerHTML = h50
+    if(hits[50] > 0){
+        fifty.innerHTML = hits[50]
     }else{
         fifty.innerHTML = 0
     }
-    if(hMiss > 0){
-        miss.innerHTML = hMiss
+    if(hits[0] > 0){
+        miss.innerHTML = hits[0]
     }else{
         miss.innerHTML = 0
     }
