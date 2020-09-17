@@ -58,6 +58,20 @@ socket.onmessage = event => {
         let img = data.menu.bm.path.full.replace(/#/g,'%23').replace(/%/g,'%25')
         bg.setAttribute('src',`http://127.0.0.1:24050/Songs/${img}?a=${Math.random(10000)}`)
     }
+    if(data.menu.bm.rankedStatus === 7){
+        $("#rankedColor").attr("class", "LOVED");
+        $("#rankedStatus").removeClass("fa-angle-double-up fa-question fa-check").addClass("fa-heart");
+    } else if(data.menu.bm.rankedStatus === 4){
+        $("#rankedColor").attr("class", "RANKED");
+        $("#rankedStatus").removeClass("fa-heart fa-question fa-check").addClass("fa-angle-double-up");  
+    } else if(data.menu.bm.rankedStatus === 5){
+        $("#rankedColor").attr("class", "APPROVED");
+        $("#rankedStatus").removeClass("fa-heart fa-question fa-angle-double-up").addClass("fa-check");  
+    }else {
+        $("#rankedColor").attr("class", "GRAVEYARD");
+        $("#rankedStatus").removeClass("fa-heart fa-angle-double-up fa-check").addClass("fa-question");  
+    }
+
     if(gameState !== data.menu.state){
         gameState = data.menu.state
         if(gameState === 2 || gameState === 14){

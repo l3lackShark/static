@@ -103,23 +103,33 @@
   .textstyle{
     color: white;
   }
-  .positioning{
+  .stlying{
     color: white;
     font-size: 12px; 
     margin-right: 5px; 
     position: relative; 
     top: 3px;
   }
-  .dong:before{
-    content: '....';
-    position: relative;
-    margin-right: 5px;
-    top: 2.8px;
-    background: rgb(42, 134, 255);
-    width: 7px;
-    height: 7px;
-    border: 3px solid white;
-    border-radius: 10px;
+  .positioning{
+    margin-right: 5px; 
+    position: relative; 
+    top: 0px;
+  }
+  .RANKED{
+    color: #80e6ff;
+    font-size: 16px;
+  }
+  .LOVED{
+    color: #ff81c5;
+    font-size: 16px;
+  }
+  .GRAVEYARD{
+    color: #ffffff;
+    font-size: 16px;
+  }
+  .QUALIFIED{
+    color: rgb(86, 216, 86);
+    font-size: 16px;
   }
 
   #hits{
