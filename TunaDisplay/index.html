@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/odometr.css">
-  <title>YEP</title>
+  <title>TunaDisplay</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"/>
 </head>
@@ -23,7 +23,7 @@
             <div class="textcontainer"><div class="fa fa-user stlying"></div><span id="mapper" class="textstyle">Mapper</span></div>
         </div>
         <div class="container diff">
-          <div class="textcontainer"><div id="rankedColor" class="RANKED"><span id="rankedStatus" class="fas fa-angle-double-up positioning"></span></div><span id="diff" class="textstyle">Difficulty</span></div>
+          <div class="textcontainer"><div id="rankedColor" class="GRAVEYARD"><span id="rankedStatus" class="fas fa-question positioning"></span></div><span id="diff" class="textstyle">Difficulty</span></div>
         </div>
       </div>
     </div>
@@ -49,16 +49,16 @@
   <script src="index.js"></script> 
   <script src="deps/odometr.js"></script>
   <script defer>
-      {
-    let el = document.getElementsByClassName('odometer');
-    for (i = 0; i < el.length; i++) {
-      od = new Odometer({
-        el: el[i],
-        format: 'd',
-        duration: 500
-      });
-    }
+    {
+      let el = document.getElementsByClassName('odometer');
+      for (i = 0; i < el.length; i++) {
+        od = new Odometer({
+          el: el[i],
+          format: 'd',
+          duration: 300
+        });
       }
+    }
   </script>
 </body>
 </html>

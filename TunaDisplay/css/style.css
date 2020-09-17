@@ -111,7 +111,8 @@
     top: 3px;
   }
   .positioning{
-    margin-right: 5px; 
+    overflow: visible;
+    margin-right: 5px;
     position: relative; 
     top: 0px;
   }
@@ -124,7 +125,7 @@
     font-size: 16px;
   }
   .GRAVEYARD{
-    color: #ffffff;
+    color: #929292;
     font-size: 16px;
   }
   .QUALIFIED{
@@ -166,8 +167,6 @@
     transform: translate(-50%, -50%);
     text-align: center;
     position: absolute;
-    width: 10%;
-    flex: 1;
     font-family: arialRoundedBold;
     font-size: 60px;
   }
