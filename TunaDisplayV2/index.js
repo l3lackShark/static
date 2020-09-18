@@ -77,7 +77,7 @@ socket.onmessage = event => {
         gameState = data.menu.state
         if(gameState === 2 || gameState === 14){
             hit.style.transform = "translateY(0)";
-            infoContainer.style.transform = "translateY(-20px)";
+            infoContainer.style.transform = "translateY(-1.225rem)";
             toggleStatus = setInterval(toggleFunction, 10000)
         }else{
             hit.style.transform = "translateY(100%)";
@@ -125,36 +125,36 @@ socket.onmessage = event => {
         params.rank = 'SS';
         if(hdfl == true){
             rank.style.color = '#537fd6';
-            rank.style.textShadow = '0 0 10px #537fd6'
+            rank.style.textShadow = '0 0 0.75em #537fd6'
         } else{
             rank.style.color = '#d6c253';
-            rank.style.textShadow = '0 0 10px #d6c253'
+            rank.style.textShadow = '0 0 0.75em #d6c253'
         }
     }
     else if (params.ratio300 > 0.9 && params.ratio50 <= 0.01 && hits[0] == 0) {
         params.rank = 'S';
         rank.style.color = '#d6c253';
-        rank.style.textShadow = '0 0 10px #d6c253'
+        rank.style.textShadow = '0 0 0.75em #d6c253'
     }
     else if ((params.ratio300 > 0.8 && hits[0] == 0) || params.ratio300 > 0.9) {
         params.rank = 'A';
         rank.style.color = '#7ed653';
-        rank.style.textShadow = '0 0 10px #7ed653'
+        rank.style.textShadow = '0 0 0.75em #7ed653'
     }
     else if ((params.ratio300 > 0.7 && hits[0] == 0) || params.ratio300 > 0.8) {
         params.rank = 'B';
         rank.style.color = '#53d4d6';
-        rank.style.textShadow = '0 0 10px #53d4d6'
+        rank.style.textShadow = '0 0 0.75em #53d4d6'
     }
     else if (params.ratio300 > 0.6) {
         params.rank = 'C';
         rank.style.color = '#d6538e';
-        rank.style.textShadow = '0 0 10px #d6538e'
+        rank.style.textShadow = '0 0 0.75em #d6538e'
     }
     else {
         params.rank = 'D';
         rank.style.color = '#d65353';
-        rank.style.textShadow = '0 0 10px #d65353'
+        rank.style.textShadow = '0 0 0.75em #d65353'
     };
 
     rank.innerHTML = params.rank;
