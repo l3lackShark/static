@@ -5,12 +5,12 @@
 
 > Size: 576x144\
 > *Song Selectoin*\
-<img src="https://i.imgur.com/T8p0R29.png" width="500">
+<img src="https://i.imgur.com/T8p0R29.png" width="500">\
 >
->*Gameplay 1*
-<img src="https://i.imgur.com/TAmHvFM.png" width="500">
->*Gameplay 2*
-<img src="https://i.imgur.com/FpHkdLg.png" width="500">
+>*Gameplay 1
+<img src="https://i.imgur.com/TAmHvFM.png" width="500">\
+>*Gameplay 2*\
+<img src="https://i.imgur.com/FpHkdLg.png" width="500">\
 By: Xynogen<br>
 
 ### Classic
