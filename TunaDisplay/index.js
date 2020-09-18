@@ -65,7 +65,7 @@ socket.onmessage = event => {
         $("#rankedColor").attr("class", "RANKED");
         $("#rankedStatus").removeClass("fa-heart fa-question fa-check").addClass("fa-angle-double-up");  
     } else if(data.menu.bm.rankedStatus === 5){
-        $("#rankedColor").attr("class", "APPROVED");
+        $("#rankedColor").attr("class", "QUALIFIED");
         $("#rankedStatus").removeClass("fa-heart fa-question fa-angle-double-up").addClass("fa-check");  
     }else {
         $("#rankedColor").attr("class", "GRAVEYARD");
