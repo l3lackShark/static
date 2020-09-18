@@ -13,6 +13,7 @@ let miss = document.getElementById("0");
 let pp = document.getElementById("pp");
 let infoContainer = document.getElementById("infoContainer");
 
+
 socket.onopen = () => {
     console.log("Successfully Connected");
 };
@@ -80,7 +81,7 @@ socket.onmessage = event => {
             infoContainer.style.transform = "translateY(-1.225rem)";
             toggleStatus = setInterval(toggleFunction, 10000)
         }else{
-            hit.style.transform = "translateY(100%)";
+            hit.style.transform = "translateY(calc(100% - 0.25rem))";
             infoContainer.style.transform = "translate(0)";
             clearInterval(toggleStatus);
             $(".rank").fadeOut();
@@ -124,37 +125,37 @@ socket.onmessage = event => {
     if (params.ratio300 == 1 || params.acc == 1) {
         params.rank = 'SS';
         if(hdfl == true){
-            rank.style.color = '#537fd6';
-            rank.style.textShadow = '0 0 0.75em #537fd6'
+            rank.style.color = '#D3D3D3';
+            rank.style.textShadow = '0 0 0.5em #D3D3D3'
         } else{
             rank.style.color = '#d6c253';
-            rank.style.textShadow = '0 0 0.75em #d6c253'
+            rank.style.textShadow = '0 0 0.5em #d6c253'
         }
     }
     else if (params.ratio300 > 0.9 && params.ratio50 <= 0.01 && hits[0] == 0) {
         params.rank = 'S';
         if(hdfl == true){
-            rank.style.color = '#537fd6';
-            rank.style.textShadow = '0 0 0.75em #537fd6'
+            rank.style.color = '#D3D3D3';
+            rank.style.textShadow = '0 0 0.5em #D3D3D3'
         } else{
             rank.style.color = '#d6c253';
-            rank.style.textShadow = '0 0 0.75em #d6c253'
+            rank.style.textShadow = '0 0 0.5em #d6c253'
         }
     }
     else if ((params.ratio300 > 0.8 && hits[0] == 0) || params.ratio300 > 0.9) {
         params.rank = 'A';
         rank.style.color = '#7ed653';
-        rank.style.textShadow = '0 0 0.75em #7ed653'
+        rank.style.textShadow = '0 0 0.5em #7ed653'
     }
     else if ((params.ratio300 > 0.7 && hits[0] == 0) || params.ratio300 > 0.8) {
         params.rank = 'B';
         rank.style.color = '#53d4d6';
-        rank.style.textShadow = '0 0 0.75em #53d4d6'
+        rank.style.textShadow = '0 0 0.5em #53d4d6'
     }
     else if (params.ratio300 > 0.6) {
         params.rank = 'C';
         rank.style.color = '#d6538e';
-        rank.style.textShadow = '0 0 0.75em #d6538e'
+        rank.style.textShadow = '0 0 0.5em #d6538e'
     }
     else {
         params.rank = 'D';

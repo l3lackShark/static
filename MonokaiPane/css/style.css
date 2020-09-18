@@ -1,14 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 @font-face {
     font-family: arialRoundedBold;
     src: url(arlrdbd.ttf);
 }
+body{
+  background: rgb(49, 49, 49);
+}
 :root{
+  font-family: 'Ubuntu', sans-serif;
   font-size: 16px;
   --con-width: 36rem;
   --con-height: 9rem;
-  --color-bg: #1c1c1c;
-  --color-border: #2b2b2b;
-  --color-bg2: #242424;
+  --color-bg: #222222;
+  --color-bg2: #ab9df2;
 }
 *{
   padding: 0;
@@ -17,7 +21,6 @@
 #everything{
   position: relative;
   margin: 2rem;
-  /* Width and Height are calculated by adding the border and box-shadow */
   width: calc(var(--con-width) + 0.5rem);
   height: calc(var(--con-height) + 0.75rem);
   overflow: hidden;
@@ -25,11 +28,8 @@
 #bodycontainer{
   width: var(--con-width);
   height: var(--con-height);
-  border-radius: 1.25rem;
   overflow: hidden;
   position: relative;
-  border:  0.25rem solid var(--color-border);
-  box-shadow: 0  0.25rem var(--color-bg2);
 }
 #bg{
   position: absolute;
@@ -53,18 +53,15 @@
   display: flex;
   flex-direction: column;
   transition: 300ms;
-  /* -webkit-mask-image: linear-gradient(to right, transparent 10%, black 20%,black 80%, transparent 100%);
-  mask-image: linear-gradient(to right, transparent 10%, black 20%,black 80%, transparent 90%); */
 }
 .title{
   text-align: center;
-  margin-bottom:  0.25rem;
   white-space: nowrap;
   position: relative;
   color:white;
+  font-weight: 500;
   font-size: 1.5rem;
   text-shadow: 0 0.125rem 0.125rem black;
-  font-family: arialRoundedBold;
   width: 100%;
   -webkit-mask-image: linear-gradient(to right, transparent 10%, black 20%,black 80%, transparent 90%);
   mask-image: linear-gradient(to right, transparent 10%, black 20%,black 80%, transparent 90%);
@@ -74,9 +71,9 @@
   white-space: nowrap;
   position: relative;
   color:white;
+  font-weight: 400;
   font-size: 1rem;
   text-shadow: 0 0.125rem 0.125rem black;
-  font-family: arialRoundedBold;
   width: 100%;
   -webkit-mask-image: linear-gradient(to right, transparent 10%, black 20%,black 80%, transparent 90%);
   mask-image: linear-gradient(to right, transparent 10%, black 20%,black 80%, transparent 90%);
@@ -90,7 +87,6 @@
   margin-right: 0.75rem;
 }
 .container {
-  font-family: arialRoundedBold;
   position: absolute;
   top: 50%; transform: translateY(-50%);
   width: max-content;
@@ -99,10 +95,9 @@
   overflow: hidden;
   background: var(--color-bg);
   padding: 0.3rem 0.5rem 0.3rem 0;
-  border-radius: 0.75rem;
-  border: 0.25rem solid var(--color-border);
+  border-left: 0.25rem solid var(--color-bg2);
   display: inline-block;
-  box-shadow: 0 0  0.25rem var(--color-bg2);
+  box-shadow: 0 0  0.25rem #242424;
 }
 .textcontainer{
   display: flex;
@@ -112,18 +107,20 @@
   mask-image: linear-gradient(to right, black 5em, transparent 6.25em);
 }
 .textstyle{
+  font-weight: 300;
   color: white;
 }
-.stlying{
-  color: white;
+.styling{
   font-size: 0.75rem; 
-  margin-right:  0.3rem; 
+  margin-right: 0.4rem; 
   margin-left: 0.5rem;
   position: relative; 
   top: 0.1875rem;
 }
 .positioning{
   overflow: visible;
+  /* -webkit-text-stroke-width: 0.05rem;
+  -webkit-text-stroke-color: black; */
   margin-right:  0.4rem;
   margin-left: 0.5rem;
   position: relative; 
@@ -147,6 +144,7 @@
 }
 
 #hits{
+  border-top: 0.25rem solid var(--color-bg2); 
   bottom: 0;
   transition: 300ms;
   text-align: center;
@@ -155,12 +153,11 @@
   display:flex;
   width: 100%;
   background: var(--color-bg);
-  transform: translateY(100%); 
+  transform: translateY(calc(100% - 0.25rem)); 
   z-index: 10;
-  padding-top: 0.2rem;
-  padding-bottom:  0.25rem;
+  padding-top: 0.1rem;
+  padding-bottom:  0.35rem;
   justify-content: center;
-  /* border-top:  0.25em solid var(--color-border); */
 }
 .hitdoublecontainer{
   width: 85%;
@@ -172,7 +169,6 @@
     width: 25%;
     flex: 1;
     top:  0.25rem;
-    font-family: arialRoundedBold;
 }
 .rank{
   flex: 0;
@@ -181,7 +177,6 @@
   transform: translate(-50%, -50%);
   text-align: center;
   position: absolute;
-  font-family: arialRoundedBold;
   font-size: 4rem;
   color: white;
 }
@@ -191,27 +186,26 @@
   font-size: 1.5rem;
 }
 .pptext{
-  margin-left: 0.25rem;
+  font-weight: 400;
+  margin-left: 0.1rem;
   color: #537fd6;
-  text-shadow: 0 0  0.25rem #537fd6;
 }
-
+.hStyle{
+  font-weight: 400;
+}
 .x{
-  color:rgb(146, 146, 146);
-  text-shadow: 0 0 0.125rem rgb(146, 146, 146);
+  font-weight: 400;
+  color: #ffffffbb;
 }
 .h100{
-  color: #7aff75;
-  text-shadow: 0 0  0.25rem #7aff75;
+  color: #a9dc76;
 }
 .h50{
-  color: #feee76;
-  text-shadow: 0 0  0.25rem #feee76;
+  color: #ffd866;
 }
 .h0{
-  color: #ea2359;
-  text-shadow: 0 0  0.25rem #ea2359;
+  color: #ff6188;
 }
 .hitcontainer>.odometer{
-    top: -0.25rem;
+  top: -0.25rem;
 }
