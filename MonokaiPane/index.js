@@ -1,5 +1,4 @@
 let socket = new ReconnectingWebSocket("ws://127.0.0.1:24050/ws");
-let mapid = document.getElementById('mapid');
 
 let bg = document.getElementById("bg");
 let title = document.getElementById("title");
