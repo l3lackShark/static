@@ -75,19 +75,20 @@ socket.onmessage = event => {
 
     if(gameState !== data.menu.state){
         gameState = data.menu.state
-        if(gameState === 2 || gameState === 14){
+        if(gameState === 2){
             hit.style.transform = "translateY(0)";
             infoContainer.style.transform = "translateY(-1.225rem)";
             toggleStatus = setInterval(toggleFunction, 10000)
         }else{
             hit.style.transform = "translateY(calc(100% - 0.25rem))";
-            infoContainer.style.transform = "translate(0)";
+            infoContainer.style.transform = "translate(0)"; 
             clearInterval(toggleStatus);
             $(".rank").fadeOut();
             $(".title").fadeIn();
             $(".artist").fadeIn();
         }
     }
+
     if(tempDiff !== data.menu.bm.metadata.difficulty){
         tempDiff = data.menu.bm.metadata.difficulty;
         diff.innerHTML = tempDiff
