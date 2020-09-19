@@ -2,8 +2,8 @@
 :root{
   font-family: 'Ubuntu', sans-serif;
   font-size: 16px;
-  --con-width: 36rem;
-  --con-height: 9rem;
+  --width: 32rem;
+  --height: 9rem;
   --color-bg: #222222;
   --color-bg2: #ab9df2;
 }
@@ -14,36 +14,36 @@
 #everything{
   position: relative;
   margin: 2rem;
-  width: var(--con-width);
-  height: calc(var(--con-height) + 0.25rem);
+  width: var(--width);
+  height: calc(var(--height) + 0.25rem);
   overflow: hidden;
 }
 #bodycontainer{
   border-top: 0.25rem solid var(--color-bg2);
-  width: var(--con-width);
-  height: var(--con-height);
+  width: var(--width);
+  height: var(--height);
   overflow: visible;
   position: relative;
 }
 #bg{
   position: absolute;
   top: 0; left: 0;
-  width: var(--con-width);
-  height: var(--con-height);
+  width: var(--width);
+  height: var(--height);
   z-index: -1;
   object-fit: cover;
 }
 .darkbg{
-  width: var(--con-width);
-  height: var(--con-height);
+  width: var(--width);
+  height: var(--height);
   /* box-shadow: inset 0 0 5rem 2rem black; */
   background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.3) 40%, rgba(0, 0, 0, 0.3) 60% , rgba(0, 0, 0, 0.8) 100%);
   /* background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.2) 70%); */
 }
 #infoContainer{
   position: absolute;
-  width: var(--con-width);
-  height: var(--con-height);
+  width: var(--width);
+  height: var(--height);
   align-items: center;
   justify-content: center;
   display: flex;
