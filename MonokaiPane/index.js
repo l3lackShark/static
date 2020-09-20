@@ -11,6 +11,7 @@ let fifty = document.getElementById("50");
 let miss = document.getElementById("0");
 let pp = document.getElementById("pp");
 let infoContainer = document.getElementById("infoContainer");
+let root = document.documentElement;
 
 
 socket.onopen = () => {
@@ -32,6 +33,9 @@ let tempDiff;
 let tempMapper;
 let ppData;
 let gameState;
+let fullTime;
+let onepart;
+let seek;
 
 let rank = document.getElementById('rank');
 let params = {
@@ -59,6 +63,7 @@ socket.onmessage = event => {
         let img = data.menu.bm.path.full.replace(/#/g,'%23').replace(/%/g,'%25')
         bg.setAttribute('src',`http://127.0.0.1:24050/Songs/${img}?a=${Math.random(10000)}`)
     }
+
     if(data.menu.bm.rankedStatus === 7){
         $("#rankedColor").attr("class", "LOVED");
         $("#rankedStatus").removeClass("fa-angle-double-up fa-question fa-check").addClass("fa-heart");
@@ -72,13 +77,12 @@ socket.onmessage = event => {
         $("#rankedColor").attr("class", "GRAVEYARD");
         $("#rankedStatus").removeClass("fa-heart fa-angle-double-up fa-check").addClass("fa-question");  
     }
-
     if(gameState !== data.menu.state){
         gameState = data.menu.state
         if(gameState === 2){
             hit.style.transform = "translateY(0)";
             infoContainer.style.transform = "translateY(-1.225rem)";
-            toggleStatus = setInterval(toggleFunction, 10000)
+            toggleStatus = setInterval(toggleFunction, 10000);
         }else{
             hit.style.transform = "translateY(calc(100% - 0.25rem))";
             infoContainer.style.transform = "translate(0)"; 
@@ -86,9 +90,17 @@ socket.onmessage = event => {
             $(".rank").fadeOut();
             $(".title").fadeIn();
             $(".artist").fadeIn();
+            root.style.setProperty('--progress', 0);
         }
     }
-
+    if(fullTime !== data.menu.bm.time.mp3){
+        fullTime = data.menu.bm.time.mp3;
+        onepart = 100/fullTime;
+    }
+    if(gameState === 2 && seek !== data.menu.bm.time.current && fullTime !== undefined && fullTime != 0){
+        seek = data.menu.bm.time.current;
+        root.style.setProperty('--progress', onepart*seek+'%');
+    }
     if(tempDiff !== data.menu.bm.metadata.difficulty){
         tempDiff = data.menu.bm.metadata.difficulty;
         diff.innerHTML = tempDiff
@@ -116,7 +128,6 @@ socket.onmessage = event => {
     if(data.menu.mods.str.includes("HD") || data.menu.mods.str.includes("FL")){
         hdfl = true;
     }
-
     //cyperdark's rank calculator logic 
     params.totalHits = +hits[50] + +hits[100] + +hits[300] + +hits[0];
     params.acc = params.totalHits > 0 ? (+hits[50] * 50 + +hits[100] * 100 + +hits[300] * 300) / (params.totalHits * 300) : 1;
@@ -162,7 +173,6 @@ socket.onmessage = event => {
         rank.style.color = '#d65353';
         rank.style.textShadow = '0 0 0.75em #d65353'
     };
-
     rank.innerHTML = params.rank;
 
     if(hits[100] > 0){
