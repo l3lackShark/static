@@ -111,6 +111,18 @@ socket.onmessage = (event) => {
     tempDiff = data.menu.bm.metadata.difficulty;
     diff.innerHTML = tempDiff;
   }
+  if (tempMapper !== data.menu.bm.metadata.mapper) {
+    tempMapper = data.menu.bm.metadata.mapper;
+    mapper.innerHTML = tempMapper;
+  }
+  if (tempTitle !== data.menu.bm.metadata.title) {
+    tempTitle = data.menu.bm.metadata.title;
+    title.innerHTML = tempTitle;
+  }
+  if (tempArtist !== data.menu.bm.metadata.artist) {
+    tempArtist = data.menu.bm.metadata.artist;
+    artist.innerHTML = tempArtist;
+  }
   var widthLimit = document.getElementById("everything").getBoundingClientRect().width * 0.6;
   var titleWidth = title.getBoundingClientRect().width;
   var artistWidth = artist.getBoundingClientRect().width;
@@ -123,18 +135,6 @@ socket.onmessage = (event) => {
     artist.className = 'textMarquee'
   } else {
     artist.className = ''
-  }
-  if (tempMapper !== data.menu.bm.metadata.mapper) {
-    tempMapper = data.menu.bm.metadata.mapper;
-    mapper.innerHTML = tempMapper;
-  }
-  if (tempTitle !== data.menu.bm.metadata.title) {
-    tempTitle = data.menu.bm.metadata.title;
-    title.innerHTML = tempTitle;
-  }
-  if (tempArtist !== data.menu.bm.metadata.artist) {
-    tempArtist = data.menu.bm.metadata.artist;
-    artist.innerHTML = tempArtist;
   }
   if (data.gameplay.pp.current != "") {
     let ppData = data.gameplay.pp.current;
