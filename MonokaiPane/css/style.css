@@ -37,7 +37,6 @@
 }
 #everything{
   position: relative;
-  margin: 2rem;
   width: var(--width);
   height: calc(var(--height) + 0.25rem);
   overflow: hidden;
@@ -83,7 +82,7 @@
   text-shadow: 0 0.125rem 0.125rem black;
   width: 100%;
   -webkit-mask-image: linear-gradient(to right, transparent 10%, black 20%,black 80%, transparent 90%);
-  mask-image: linear-gradient(to right, transparent 10%, black 20%,black 80%, transparent 90%);
+  mask-image: linear-gradient(to right, transparent 20%, black 30%,black 70%, transparent 80%);
 }
 .artist{
   margin-top: -0.2rem;
@@ -98,6 +97,18 @@
   width: 100%;
   -webkit-mask-image: linear-gradient(to right, transparent 10%, black 20%,black 80%, transparent 90%);
   mask-image: linear-gradient(to right, transparent 10%, black 20%,black 80%, transparent 90%);
+}
+.textMarquee{
+  display: inline-block;
+  animation: scroll 6s linear 0s infinite;
+}
+@keyframes scroll{
+  0% {
+    transform: translateX(100%);
+  }
+  100%{
+    transform: translateX(-100%);
+  }
 }
 .mapper{
   left: 0;

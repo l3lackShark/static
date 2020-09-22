@@ -12,6 +12,8 @@ let miss = document.getElementById("0");
 let pp = document.getElementById("pp");
 let infoContainer = document.getElementById("infoContainer");
 let root = document.documentElement;
+let rank = document.getElementById('rank');
+let mapRank = document.getElementById("rankedStatus");
 
 socket.onopen = () => {
   console.log("Successfully Connected");
@@ -37,7 +39,6 @@ let onepart;
 let seek;
 let hdfl;
 
-let rank = document.getElementById("rank");
 let params = {
   totalHits: 0,
   acc: 0.0,
@@ -51,6 +52,7 @@ function toggleFunction() {
     $(".rank, .title, .artist").fadeToggle();
 }
 let toggleStatus;
+let mapRanking;
 
 socket.onmessage = (event) => {
   let data = JSON.parse(event.data), hits = data.gameplay.hits;
@@ -63,26 +65,20 @@ socket.onmessage = (event) => {
     );
   }
   if (data.menu.bm.rankedStatus === 7) {
-    $("#rankedColor").attr("class", "LOVED");
-    $("#rankedStatus")
-      .removeClass("fa-angle-double-up fa-question fa-check")
-      .addClass("fa-heart");
+      mapRanking = "";
+      $("#rankedColor").attr("class", "LOVED");
   } else if (data.menu.bm.rankedStatus === 4) {
-    $("#rankedColor").attr("class", "RANKED");
-    $("#rankedStatus")
-      .removeClass("fa-heart fa-question fa-check")
-      .addClass("fa-angle-double-up");
+      mapRanking = "";
+      $("#rankedColor").attr("class", "RANKED");
   } else if (data.menu.bm.rankedStatus === 5) {
-    $("#rankedColor").attr("class", "QUALIFIED");
-    $("#rankedStatus")
-      .removeClass("fa-heart fa-question fa-angle-double-up")
-      .addClass("fa-check");
+      mapRanking = "";
+      $("#rankedColor").attr("class", "QUALIFIED");
   } else {
-    $("#rankedColor").attr("class", "GRAVEYARD");
-    $("#rankedStatus")
-      .removeClass("fa-heart fa-angle-double-up fa-check")
-      .addClass("fa-question");
+      mapRanking = ""
+      $("#rankedColor").attr("class", "GRAVEYARD");
   }
+  mapRank.innerHTML = mapRanking;
+
   if (gameState !== data.menu.state) {
     gameState = data.menu.state;
     if (gameState === 2) {
@@ -114,6 +110,19 @@ socket.onmessage = (event) => {
   if (tempDiff !== data.menu.bm.metadata.difficulty) {
     tempDiff = data.menu.bm.metadata.difficulty;
     diff.innerHTML = tempDiff;
+  }
+  var widthLimit = document.getElementById("everything").getBoundingClientRect().width * 0.6;
+  var titleWidth = title.getBoundingClientRect().width;
+  var artistWidth = artist.getBoundingClientRect().width;
+  if (titleWidth>widthLimit) {
+    title.className = 'textMarquee'
+  } else {
+    title.className = ''
+  }
+  if (artistWidth>widthLimit) {
+    artist.className = 'textMarquee'
+  } else {
+    artist.className = ''
   }
   if (tempMapper !== data.menu.bm.metadata.mapper) {
     tempMapper = data.menu.bm.metadata.mapper;
@@ -151,36 +160,36 @@ socket.onmessage = (event) => {
     params.rank = "SS";
     if (hdfl == true) {
       rank.style.color = "#D3D3D3";
-      rank.style.textShadow = "0 0 0.5em #D3D3D3";
+      rank.style.textShadow = "0 0 0.4rem #D3D3D3";
     } else {
       rank.style.color = "#d6c253";
-      rank.style.textShadow = "0 0 0.5em #d6c253";
+      rank.style.textShadow = "0 0 0.4rem #d6c253";
     }
   } else if (params.ratio300 > 0.9 && params.ratio50 <= 0.01 && hits[0] == 0) {
     params.rank = "S";
     if (hdfl == true) {
       rank.style.color = "#D3D3D3";
-      rank.style.textShadow = "0 0 0.5em #D3D3D3";
+      rank.style.textShadow = "0 0 0.4rem #D3D3D3";
     } else {
       rank.style.color = "#d6c253";
-      rank.style.textShadow = "0 0 0.5em #d6c253";
+      rank.style.textShadow = "0 0 0.4rem #d6c253";
     }
   } else if ((params.ratio300 > 0.8 && hits[0] == 0) || params.ratio300 > 0.9) {
     params.rank = "A";
     rank.style.color = "#7ed653";
-    rank.style.textShadow = "0 0 0.5em #7ed653";
+    rank.style.textShadow = "0 0 0.4rem #7ed653";
   } else if ((params.ratio300 > 0.7 && hits[0] == 0) || params.ratio300 > 0.8) {
     params.rank = "B";
     rank.style.color = "#53d4d6";
-    rank.style.textShadow = "0 0 0.5em #53d4d6";
+    rank.style.textShadow = "0 0 0.4rem #53d4d6";
   } else if (params.ratio300 > 0.6) {
     params.rank = "C";
     rank.style.color = "#d6538e";
-    rank.style.textShadow = "0 0 0.5em #d6538e";
+    rank.style.textShadow = "0 0 0.4rem #d6538e";
   } else {
     params.rank = "D";
     rank.style.color = "#d65353";
-    rank.style.textShadow = "0 0 0.75em #d65353";
+    rank.style.textShadow = "0 0 0.4rem #d65353";
   }
   rank.innerHTML = params.rank;
 
