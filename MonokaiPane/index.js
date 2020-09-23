@@ -124,14 +124,19 @@ socket.onmessage = (event) => {
     artist.innerHTML = tempArtist;
   }
   var widthLimit = document.getElementById("everything").getBoundingClientRect().width * 0.6;
-  var titleWidth = title.getBoundingClientRect().width;
-  var artistWidth = artist.getBoundingClientRect().width;
+  var titleWidth = title.offsetWidth;
+  var artistWidth = artist.offsetWidth;
+
   if (titleWidth>widthLimit) {
-    title.className = 'textMarquee'
+    var timeTaken = titleWidth / 24;
+    title.style.animationDuration = timeTaken + "s";
+    title.className = 'textMarquee';
   } else {
     title.className = ''
   }
   if (artistWidth>widthLimit) {
+    var timeTaken = artistWidth / 24;
+    artist.style.animationDuration = timeTaken + "s";
     artist.className = 'textMarquee'
   } else {
     artist.className = ''
@@ -142,7 +147,6 @@ socket.onmessage = (event) => {
   } else {
     pp.innerHTML = 0;
   }
-
   if (data.menu.mods.str.includes("HD") || data.menu.mods.str.includes("FL")) {
     hdfl = true;
   } else hdfl = false;

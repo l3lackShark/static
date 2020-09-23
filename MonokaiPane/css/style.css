@@ -92,7 +92,7 @@
   position: relative;
   color:white;
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 1.2rem;
   text-shadow: 0 0.075rem 0.125rem black;
   width: 100%;
   -webkit-mask-image: linear-gradient(to right, transparent 10%, black 20%,black 80%, transparent 90%);
