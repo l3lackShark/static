@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/odometr.css">
     <script src="deps/odometr.js"></script>
+    <script src="deps/countUp.js"></script>
     <script src="deps/reconnecting-websocket.min.js"></script>
     <script src="deps/Chart.min.js"></script>
     <script src="deps/smooth.js"></script>
@@ -17,17 +18,17 @@
 		<div id="top">
 			<span id="player">player:</span>
 			<span id="playername"></span>
-			<span id="score" class="odometer"></span>
-			<span id="accuracy" class="odometer"></span>
+			<span id="score"></span>
+			<span id="accuracy"></span>
 			<span id="percent">%</span>
             <div id="mods"></div>
 		</div>
 		<div id="bottom">
 			<span id="combo" class="odometer"></span>
-			<span id="h100" class="odometer"></span>
-			<span id="h50" class="odometer"></span>
-			<span id="h0" class="odometer"></span>
-			<span id="ur" class="odometer"></span>
+			<span id="h100"></span>
+			<span id="h50"></span>
+			<span id="h0"></span>
+			<span id="ur"></span>
 			<div class="pp">
 				<div id="ppCont">
 					<span id="pp" class="odometer"></span>
@@ -46,12 +47,12 @@
     <script src="index.js"></script>
     <script defer>
         {
-            let el = document.getElementsByClassName('odometer');
+			let el = document.getElementsByClassName('odometer');
 			for (i = 0; i < el.length; i++) {
 				od = new Odometer({
 					el: el[i],
 					format: '( ddd).dd',
-					duration: 5000
+					duration: 200
 				});
 			}
         }
