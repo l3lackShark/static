@@ -40,6 +40,12 @@ socket.onopen = () => {
     console.log("Successfully Connected");
 };
 
+let animation = {
+    acc:  new CountUp('accuracy', 0, 0, 2, .2, {useEasing: true, useGrouping: true,   separator: " ", decimal: "." }),
+    ur:  new CountUp('ur', 0, 0, 2, .2, {useEasing: true, useGrouping: true,   separator: " ", decimal: "." }),
+    score:  new CountUp('score', 0, 0, 0, .2, {useEasing: true, useGrouping: true,   separator: " ", decimal: "." }),
+}
+
 socket.onclose = event => {
     console.log("Socket Closed Connection: ", event);
     socket.send("Client Closed!");
@@ -107,14 +113,14 @@ socket.onmessage = event => {
 		hpbar.style.width = 1300;
 	}
 	if (data.gameplay.score > 0) {
-		score.innerHTML = data.gameplay.score;
+		animation.score.update(data.gameplay.score);
 	} else {
-		score.innerHTML = "";
+		animation.score.update(data.gameplay.score);
 	}
 	if (data.gameplay.accuracy > 0) {
-		accuracy.innerHTML = data.gameplay.accuracy;
+		animation.acc.update(data.gameplay.accuracy);
 	} else {
-		accuracy.innerHTML = "";
+		animation.acc.update(0)
 	}
 	if (data.gameplay.combo.current != '') {
 		let comboData = data.gameplay.combo.current;
@@ -138,9 +144,9 @@ socket.onmessage = event => {
 		miss.innerHTML = 0;
 	}
 	if (data.gameplay.hits.unstableRate > 0) {
-		ur.innerHTML = data.gameplay.hits.unstableRate;
+		animation.ur.update(data.gameplay.hits.unstableRate);
 	} else {
-		ur.innerHTML = 0;
+		animation.ur.update(0);
 	}
     if(tempMods != data.menu.mods.str){
         tempMods = data.menu.mods.str;
