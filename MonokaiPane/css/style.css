@@ -209,6 +209,7 @@
     top:  0.25rem;
 }
 .rank{
+  font-weight: 500;
   flex: 0;
   white-space: nowrap;
   top: 50%; left: 50%;
@@ -243,4 +244,12 @@
 .hitcontainer>.odometer{
   font-size: 1.5rem;
   top: -0.25rem;
+}
+.show {
+  opacity: 1;
+  transition: opacity 400ms linear;
+}
+.hide {
+  opacity: 0;
+  transition: opacity 400ms linear;
 }
