@@ -3,7 +3,7 @@
 # Counters
 ### MonokaiPane
 
-> Size: 576x144\
+> Size: 512x150\
 > *Song Selection*\
 <img src="https://i.imgur.com/T8p0R29.png" width="500">\
 >*Gameplay 1*\
