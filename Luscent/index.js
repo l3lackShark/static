@@ -52,7 +52,7 @@ socket.onmessage = event => {
         bmlink.innerHTML = 'https://osu.ppy.sh/b/' + tempLink;
     }
     if(tempStrainBase != JSON.stringify(data.menu.pp.strains)){
-        tempLink = JSON.stringify(data.menu.pp.strains);
+        tempStrainBase = JSON.stringify(data.menu.pp.strains);
         smoothed = smooth(data.menu.pp.strains, smoothOffset);
         config.data.datasets[0].data = smoothed;
         config.data.labels =smoothed;
