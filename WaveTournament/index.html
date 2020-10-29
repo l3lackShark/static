@@ -4,61 +4,45 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/odometr.css">
-    <script src="deps/odometr.js"></script>
     <script src="deps/countUp.js"></script>
     <script src="deps/reconnecting-websocket.min.js"></script>
-    <script src="deps/Chart.min.js"></script>
-    <script src="deps/smooth.js"></script>
+    <script src="index.js"></script>
 </head>
 
 <body>
     <div id="main">
 		<div id="top">
 			<div id="scoreBlue">
-				<div id="scoreNowBlue">6</div>
-				<div id="scoreMaxBlue">&nbsp/ 5</div>
+				<div id="scoreNowBlue"></div>
+				<div id="scoreMaxBlue"></div>
 			</div>
 			<div id="teamBlue">
 				<div id="teamBlueText">Team Blue</div>
-				<div id="teamBlueName">Team Blue</div>
+				<div id="teamBlueName"></div>
 			</div>
 			<div id="teamRed">
 				<div id="teamRedText">Team Red</div>
-				<div id="teamRedName">Team Red</div>
+				<div id="teamRedName"></div>
 			</div>
 			<div id="scoreRed">
-				<div id="scoreNowRed">5</div>
-				<div id="scoreMaxRed">&nbsp/ 5</div>
+				<div id="scoreNowRed"></div>
+				<div id="scoreMaxRed"></div>
 			</div>
 		</div>
 		<div id="bottom">
 			<div id="commentator">Commentator</div>
-			<div id="playScoreBlue">123456</div>
-			<div id="playScoreRed">456789</div>
+			<div id="playScoreBlue"></div>
+			<div id="playScoreRed"></div>
 			<div id="nowPlayingContainer">
 				<div id="nowPlayingText">Now Playing</div>
 				<div id="mapContainer">
 					<div id="overlay"></div>
-					<div id="mapTitle">Map Title</div>
-					<div id="mapDifficulty">Difficulty</div>
+					<div id="mapTitle"></div>
+					<div id="mapDifficulty"></div>
 				</div>
 			</div>
 		</div>
     </div>
-    <script src="index.js"></script>
-    <script defer>
-        {
-			let el = document.getElementsByClassName('odometer');
-			for (i = 0; i < el.length; i++) {
-				od = new Odometer({
-					el: el[i],
-					format: '( ddd).dd',
-					duration: 200
-				});
-			}
-        }
-    </script>
 </body>
 
 </html>
