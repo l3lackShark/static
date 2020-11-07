@@ -45,8 +45,6 @@ socket.onerror = error => {
     console.log("Socket Error: ", error);
 };
 
-let teamSizeTemp;
-
 let bestOfTemp;
 let scoreVisibleTemp;
 let starsVisibleTemp;
@@ -63,9 +61,6 @@ let gameState;
 
 socket.onmessage = event => {
     let data = JSON.parse(event.data);
-	if(teamSizeTemp !== data.tourney.ipcClients.length) {
-		teamSizeTemp = data.tourney.ipcClients.length;
-	}
 	if(scoreVisibleTemp !== data.tourney.manager.bools.scoreVisible) {
 		scoreVisibleTemp = data.tourney.manager.bools.scoreVisible;
 		if(scoreVisibleTemp) {
