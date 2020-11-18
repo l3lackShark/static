@@ -6,6 +6,10 @@
     font-family: "Nexa Light";
     src: url("../fonts/Nexa-Light.otf");
 }
+@font-face {
+    font-family: "Gothic-b";
+    src: url("../fonts/GOTHICB.TTF");
+}
 body,html{
     padding: 0;
     margin: 0;
@@ -162,6 +166,8 @@ body,html{
 	font-size: 40px;
 	line-height: 60px;
 	display: block;
+	
+    transition: ease-in-out 500ms;
 }
 #playScoreRed {
 	position: absolute;
@@ -181,6 +187,8 @@ body,html{
 	font-size: 40px;
 	line-height: 60px;
 	display: block;
+	
+    transition: ease-in-out 500ms;
 }
 #mapContainer {
 	position: relative;
@@ -210,6 +218,78 @@ body,html{
 	overflow: hidden;
 	text-overflow: ellipsis;
 	z-index: 0;
+}
+#chats {
+	background: #0A0329;
+	position: absolute;
+	bottom: 0px;
+	left: 479px;
+	width: 913px;
+	height: 142px;
+	border-radius: 25px;
+	bottom: 2px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	padding: 5px 15px;
+	font-size: 18px;
+    font-family: Gothic-b, monospace;
+    transition: ease-in-out 500ms;
+}
+
+.chat {
+	display: flex;
+	text-align: left;
+}
+
+.chatTime {
+	width: 5%;
+	color: silver;
+	padding-right: 10px;
+}
+.wholeChat {
+	width: 95%;
+	display: flex;
+}
+.chatName {
+	color: white;
+	white-space: nowrap;
+	width: max-content;
+}
+.chatText {
+	white-space: normal;
+	word-wrap: break-word;
+	overflow: hidden;
+}
+.unknown {
+	color: yellow;
+}
+.bot {
+	color: #FF66AA;
+}
+.left {
+	color: #1fd0ed;
+}
+.right {
+	color: #ed1855;
+}
+
+
+/*Scrollbar*/
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    margin-top: 25px;
+    margin-bottom: 25px;
+	visibility: 0;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: grey;
+	border-radius: 10px;
 }
 .text{
     display: flex;

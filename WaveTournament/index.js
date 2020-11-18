@@ -27,6 +27,9 @@ let playScoreRed = document.getElementById("playScoreRed");
 // Graphic components
 let bottom = document.getElementById("bottom");
 
+// Chats
+let chats = document.getElementById("chats");
+
 socket.onopen = () => {
     console.log("Successfully Connected");
 };
@@ -59,20 +62,23 @@ let teamNameBlueTemp;
 let teamNameRedTemp;
 let gameState;
 
+let chatLen = 0;
+let tempClass = 'unknown';
+
 socket.onmessage = event => {
     let data = JSON.parse(event.data);
 	if(scoreVisibleTemp !== data.tourney.manager.bools.scoreVisible) {
 		scoreVisibleTemp = data.tourney.manager.bools.scoreVisible;
 		if(scoreVisibleTemp) {
 			// Score visible -> Set bg bottom to full
-			bottom.style.backgroundImage = "url('static/bottomplay.png')";
-			playScoreBlue.style.display = "block";
-			playScoreRed.style.display = "block";
+			chats.style.opacity = 0;
+			playScoreBlue.style.opacity = 1;
+			playScoreRed.style.opacity = 1;
 		} else {
 			// Score invisible -> Set bg to show chats
-			bottom.style.backgroundImage = "url('static/bottomchat.png')";
-			playScoreBlue.style.display = "none";
-			playScoreRed.style.display = "none";
+			chats.style.opacity = 1;
+			playScoreBlue.style.opacity = 0;
+			playScoreRed.style.opacity = 0;
 		}
 	}
 	if(starsVisibleTemp !== data.tourney.manager.bools.starsVisible) {
@@ -152,6 +158,28 @@ socket.onmessage = event => {
 			playScoreRed.style.backgroundColor = '#8E0029';
 			playScoreRed.style.color = 'white';
 			
+		}
+	}
+	if(!scoreVisibleTemp) {
+		if(chatLen != data.tourney.manager.chat.length) {
+			// There's new chats that haven't been updated
+			
+			if(chatLen == 0 || (chatLen > 0 && chatLen > data.tourney.manager.chat.length)) {
+				// Starts from bottom
+				chats.innerHTML = "";
+			}
+			
+			// Add the chats
+			for(var i=chatLen; i < data.tourney.manager.chat.length; i++) {
+				tempClass = data.tourney.manager.chat[i].team
+				chats.innerHTML += "<div class='chat'><div class='wholeChat'><div class='chatTime'>"+ data.tourney.manager.chat[i].time +"</div><div class='chatName "+tempClass+"'>"+ data.tourney.manager.chat[i].name +":\xa0</div><div class='chatText'>"+ data.tourney.manager.chat[i].messageBody +"</div></div></div>";
+			}
+			
+			// Update the Length of chat
+			chatLen = data.tourney.manager.chat.length;
+			
+			// Update the scroll so it's sticks at the bottom by default
+			chats.scrollTop = chats.scrollHeight;
 		}
 	}
 }
