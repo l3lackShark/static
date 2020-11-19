@@ -167,12 +167,36 @@ socket.onmessage = event => {
 			if(chatLen == 0 || (chatLen > 0 && chatLen > data.tourney.manager.chat.length)) {
 				// Starts from bottom
 				chats.innerHTML = "";
+				chatLen = 0;
 			}
 			
 			// Add the chats
 			for(var i=chatLen; i < data.tourney.manager.chat.length; i++) {
-				tempClass = data.tourney.manager.chat[i].team
-				chats.innerHTML += "<div class='chat'><div class='wholeChat'><div class='chatTime'>"+ data.tourney.manager.chat[i].time +"</div><div class='chatName "+tempClass+"'>"+ data.tourney.manager.chat[i].name +":\xa0</div><div class='chatText'>"+ data.tourney.manager.chat[i].messageBody +"</div></div></div>";
+				tempClass = data.tourney.manager.chat[i].team;
+				
+				// Chat variables
+				let chatParent = document.createElement('div');
+				chatParent.setAttribute('class', 'chat');
+
+				let chatTime = document.createElement('div');
+				chatTime.setAttribute('class', 'chatTime');
+
+				let chatName = document.createElement('div');
+				chatName.setAttribute('class', 'chatName');
+
+				let chatText = document.createElement('div');
+				chatText.setAttribute('class', 'chatText');
+				
+				chatTime.innerText = data.tourney.manager.chat[i].time;
+				chatName.innerText = data.tourney.manager.chat[i].name + ":\xa0";
+				chatText.innerText = data.tourney.manager.chat[i].messageBody;
+				
+				chatName.classList.add(tempClass);
+				
+				chatParent.append(chatTime);
+				chatParent.append(chatName);
+				chatParent.append(chatText);
+				chats.append(chatParent);
 			}
 			
 			// Update the Length of chat
