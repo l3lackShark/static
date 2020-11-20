@@ -44,6 +44,7 @@ body,html{
 	background-repeat: no-repeat;
     transition: ease-in-out 500ms;
 	z-index: 0;
+	background-size: cover;
 }
 #bottom {
 	position: absolute;
@@ -54,6 +55,7 @@ body,html{
 	background-repeat: no-repeat;	
     transition: ease-in-out 200ms;
 	z-index: 0;
+	background-size: cover;
 }
 #scoreBlue {
 	position: absolute;
