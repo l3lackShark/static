@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/odometr.css">
+	<link href="https://fonts.googleapis.com/css?family=Sen" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+	<script src="deps/countUp.js"></script>
+
+    <script src="deps/odometr.js"></script>
+    <script src="deps/reconnecting-websocket.min.js"></script>
+    <script src="deps/Chart.min.js"></script>
+    <script src="deps/smooth.js"></script>
+</head>
+
+<body>
+	<div id="Gameplay">
+		<div id="main">
+			<div id="hpbar"></div>
+
+			<div id="top">
+				<span id="Score"></span>
+				<div id="accuracyCont">
+					<span id="Acc" ></span> <span class="ppclass2">%</span>
+				</div>
+			</div>
+
+			<div id="StarRightThing" class="Transition">
+				<div id="StarRatingxUR">
+					<div id="CurrentSRCont">
+						<span id="CurrentSR"  class="odometer"></span><span class="ppclass2">★</span>
+					</div>
+				</div>
+				<div id="TotalRatingxSB">
+					<div id="TotalSRCont">
+						<span id="TotalSR"  class="odometer"></span><span class="ppOver">★</span>
+					</div>
+
+				</div>	
+			</div>
+
+			<div id="bottom">
+				<div id="comboxpp">
+					<div id=comboCont>
+						<span id="combo" class="odometer"></span><span id="combtxt3" class="ppclass2">x</span>
+					</div>
+					<div id=maxcomboCont>
+						<div id="maxcombo"  class="status"></div><!--<span id="pptxt">x</span>-->
+					</div>
+				</div>
+			</div>
+						
+			
+		
+			<div id="strainGraph" style="z-index: -100;">
+				<div id="basegraph">
+					<canvas id="canvas" width="1350" height="90"></canvas>
+				</div>
+				<div id="progress">
+					<canvas id="canvasSecond" width="1350" height="90"></canvas>
+				</div>
+			</div>
+
+			<div id="Scoreboard">
+				<div id="Player1">
+					<div id="NamePlayer1div">
+						<span id="RankPlayer1" class="RankPlayerClass"></span>
+						<span id="NamePlayer1" class="NamePlayerClass"></span>
+					</div>
+					<div id="PlayerInfo1">
+						<span id="ScorePlayer1" ></span> 
+						<span id="combxtxt1" class="combztxt">x</span><span id="ComboPlayer1" class="combotxt"></span>
+					</div>
+				</div>
+
+				<div id="Player2">
+					<div id="NamePlayer2div">
+						<span id="RankPlayer2" class="RankPlayerClass"></span>
+						<span id="NamePlayer2" class="NamePlayerClass"></span>
+					</div>
+					<div id="PlayerInfo2">
+						<span id="ScorePlayer2"></span> 
+						<span id="combxtxt2" class="combztxt">x</span><span id="ComboPlayer2" class="combotxt"></span>
+					</div>
+				</div>
+
+				<div id="Player3">
+					<div id="NamePlayer3div">
+						<span id="RankPlayer3" class="RankPlayerClass"></span>
+						<span id="NamePlayer3" class="NamePlayerClass"></span>
+					</div>
+					<div id="PlayerInfo3">
+						<span id="ScorePlayer3"></span> 
+						<span id="combxtxt3" class="combztxt">x</span><span id="ComboPlayer3" class="combotxt"></span>
+					</div>
+				</div>
+
+				<div id="Player4">
+					<div id="NamePlayer4div">
+						<span id="RankPlayer4" class="RankPlayerClass"></span>
+						<span id="NamePlayer4" class="NamePlayerClass"></span>
+					</div>
+					<div id="PlayerInfo4">
+						<span id="ScorePlayer4"></span> 
+						<span id="combxtxt4" class="combztxt">x</span><span id="ComboPlayer4" class="combotxt"></span>
+					</div>
+				</div>
+
+				<div id="Player5">
+					<div id="NamePlayer5div">
+						<span id="RankPlayer5" class="RankPlayerClass"></span>
+						
+						<span id="NamePlayer5" class="NamePlayerClass"></span>
+					</div>
+					<div id="PlayerInfo5">
+						<span id="ScorePlayer5"></span> 
+						<span id="combxtxt5" class="combztxt">x</span><span id="ComboPlayer5" class="combotxt"></span>
+					</div>
+				</div>
+				
+
+			</div>
+		</div>
+		<div id="bgpic"></div>
+	</div>
+
+	<div id="Ranking">
+
+		<div id="BackgroundIMG">
+			<div id="Square" class="Transition">
+				<div id="MapTxt">
+					<div id="MapTxt2">
+						<span id="Artist"></span>
+						<span id="Title"></span>
+						<span id="Diff"></span>
+					</div>
+				</div>
+				<div id="Rank"></div>
+
+				<div id="SquareBG"></div>
+			</div>
+				<div id="BGBruh" class="Transition"></div>
+
+			<div id="BGDIV">
+				<img src="" id="bg" class="Transition" style="filter: blur(10px); " >
+			</div>
+		</div>
+		<div id="ScoreBruh" >
+			<div id="ModsDIV">
+				<span id="mods" class="Transition"></span>
+			</div>
+			<div id="RankSRDIV" class="Transition">
+				<span id="RankSR"></span><span id="ranktxt1" class="combztxtee">★</span>
+			</div>
+			<div id="RankPPDIV" class="Transition">
+				<span id="RankPP"></span><span id="ranktxt1" class="combztxt">PP</span>
+			</div>
+			<div id="RankScoreDIV" class="Transition">
+				<span id="RankScore"></span>
+			</div>
+			<div id="RankAccDIV" class="Transition">
+				<span id="RankAcc"></span><span id="ranktxt1" class="combztxt">%</span>
+			</div>
+			<div id="MaxRankComboDIV" class="Transition">
+				<span id="MaxRankCombo"></span><span id="ranktxt1" class="combztxt">x</span>
+			</div>
+			<div id="RankURDIV" class="Transition">
+				<span id="RankUR"></span><span id="ranktxt1" class="combztxt"> UR</span>
+			</div>
+			
+			<div id="RankthreehunDIV" class="Transition">
+				<span id="ranktxt1" class="htxt"> x300</span><span id="Rankthreehun">
+			</div>
+
+			<div id="RankgekiDIV" class="Transition">
+				<span id="ranktxt1" class="gekitxt"> x300k</span><span id="Rankgeki"></span>
+			</div>
+
+			<div id="RankhunDIV" class="Transition">
+				<span id="Rankhun"></span><span id="ranktxt1" class="huntxt"> x100</span>
+			</div>
+
+			<div id="RankfifDIV" class="Transition">
+				<span id="ranktxt1" class="Rankfiftxt">  x50</span><span id="Rankfif"></span>
+			</div>
+			
+			<div id="RankSBDIV" class="Transition">
+				<span id="ranktxt1" class="sbtxt">  xSB</span><span id="RanksliderBreaks"></span>
+			</div>
+
+			<div id="RankMissDIV" class="Transition">
+				<span id="ranktxt1" class="misstxt">  xMiss</span><span id="RankMiss"></span>
+			</div>
+
+		</div>
+		<div id="ScoreInfo">
+			<img src="" id="bg">
+			<div id="RankingStatus" class="Transition">
+				<ul id= "RankingStatustxt" class="h100">
+					<li id="h100txt">x100</li>
+					<li id="h100">0</li>
+				  </ul>
+				  <!--<hr class="LeftHR">-->
+				  <ul id= "RankingStatustxt" class="h50">
+					<li id="h50txt">x50</li>
+					<li id="h50">0</li>
+				  </ul>
+				  <!--<hr class="LeftHR">-->
+				  <ul id= "RankingStatustxt" class="h0">
+					<li id="h0txt">xMiss</li>
+					<li id="h0">0</li>
+				  </ul>
+				  <!--<hr class="LeftHR">-->
+				  <ul id= "RankingStatustxt" class="RankingCombo">
+					<li id="RankingCombotxt">Combo</li>
+					<li id="RankingCombo">0</li>
+				  </ul>
+				  <!--<hr class="LeftHR">-->
+				  <ul id= "RankingStatustxt" class="RankingPP">
+					<li id="RankingPPtxt">PP</li>
+					<li id="RankingPP">0</li>
+				  </ul>
+			</div>
+			
+			<div id="RankingPPValues" class="Transition">
+				<div id="RankingPPBox">
+					<ul id= "RankingPPtxt" class="SSPP">
+						<li id="SSPPtxt">SS</li>
+						<li id="SSPP">0</li>
+					</ul>
+					<ul id= "RankingPPtxt" class="ninePP">
+						<li id="ninePPtxt">99%</li>
+						<li id="ninePP">0</li>
+					</ul>
+					<ul id= "RankingPPtxt" class="eightPP">
+						<li id="eightPPtxt">98%</li>
+						<li id="eightPP">0</li>
+					</ul>
+					<ul id= "RankingPPtxt" class="sevenPP">
+						<li id="sevenPPtxt">97%</li>
+						<li id="sevenPP">0</li>
+					</ul>
+					<ul id= "RankingPPtxt" class="fivePP">
+						<li id="fivePPtxt">95%</li>
+						<li id="fivePP">0</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+    <script src="index.js"></script>
+    <script defer>
+        {
+            let el = document.getElementsByClassName('odometer');
+			for (i = 0; i < el.length; i++) {
+				od = new Odometer({
+					el: el[i],
+					format: '( ddd).dd',
+					duration: 5000
+				});
+			}
+        }
+    </script>
+</body>
+
+</html>

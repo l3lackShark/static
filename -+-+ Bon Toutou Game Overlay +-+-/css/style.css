@@ -1,0 +1,766 @@
+/*@font-face {
+    font-family: "VAG Rundschrift D";
+    src: url("../fonts/VAG-Rundschrift-D.ttf");
+}*/
+
+body,html{
+    padding: 0;
+    margin: 0;
+    width: 1920px;
+    height: 1080px;
+    overflow-y: hidden; /* Hide vertical scrollbar */
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+#main{
+    font-family: 'Varela Round', sans-serif;
+    font-weight: normal;
+    color: white;
+    background-color: rgba(255, 255, 255, 0);
+    width: 1920px;
+    height: 1080px;
+    position: relative;
+}
+#Score{
+    font-weight: normal;
+    color:white;
+    font-family: 'Varela Round', sans-serif;
+	position: absolute;
+    top: 5px;
+	right: 20px;
+	font-size: 60px !important;
+	text-align: right !important;
+}
+#accuracyCont{
+    font-family: 'Varela Round', sans-serif;
+    position: absolute;
+    top: 75px;
+	right: 20px;
+	font-size: 40px !important;
+	text-align: end !important;
+}
+
+#percent{
+	position: absolute;
+    top: 75px;
+	right: 20px;
+	font-size: 40px !important;
+	text-align: right !important;
+}
+.odometer.odometer-auto-theme{
+    /*font-size: 24px !important;*/
+    font-family: "VAG Rundschrift D", Helvetica, sans-serif !important;
+    font-weight: normal !important;	
+}
+.odometer.odometer-auto-theme .odometer-digit .odometer-digit-inner, .odometer.odometer-theme-default .odometer-digit .odometer-digit-inner {
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+    margin-left: -5px !important;
+    margin-right: -5px !important;  
+}
+#top {
+    font-family: 'arlrdbd';
+	position: absolute;
+    width: 1920px;
+    height: 200px;
+	background-repeat: no-repeat;
+    transition: ease-in-out 500ms;
+	z-index: 0;
+}
+#bottom {
+	position: absolute;
+	bottom: 0px;
+    width: 1920px;
+    height: 400px;
+	background-repeat: no-repeat;	
+    transition: ease-in-out 500ms;
+}
+#hpbar {
+    position: absolute;
+    left: 25px;
+    top:25px;
+    width: 1920px;
+    height: 100px;
+    background-image: url('../static/hpbar.png');
+    background-repeat: no-repeat;
+    transition: ease-in 100ms;
+}
+#strainGraph{
+    position: relative;
+	left: 150px;
+    bottom: 92px;
+	height: 90px;
+    transition: ease-in-out 500ms;	
+    z-index: 3;
+}
+#progress{
+    bottom: 0px;
+    position: relative;
+    width: 1920px;
+	height: 90px;
+    overflow: hidden;
+    transition: ease 600ms;
+
+}
+#canvas,#canvasSecond{
+    position: absolute;
+	height: 90px;
+    bottom: 0px;
+
+}
+#player{
+	position: absolute;
+    top: 15px;
+	left: 20px;
+	font-size: 30px !important;
+}
+#playername{
+	position: absolute;
+    top: 45px;
+	left: 20px;
+	font-size: 50px !important;
+}
+
+#StarRightThing{
+    width: 1920px;
+    height: 1080px;
+    z-index: 10;
+}
+#CurrentSRCont, #TotalSRCont{
+    border-radius: 15px 15px  0px  0px;
+    font-size: 25px;
+    position: absolute;
+    width: 120px;
+    text-align: center !important;
+    margin:auto !important;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 5px;
+    padding-left: 5px;
+    background-color: #222222;
+    box-shadow: 0px 0px 10px 0px #000000, inset 0px 0px 10px 0px #000000;
+    border: 3px solid #333333;
+    border-radius: 15px;
+    z-index: 10px;
+}
+#CurrentSRCont{
+    top: 370px;
+	left: 40px;
+}
+
+#TotalSRCont{
+    bottom: 249px;
+	left: 40px;
+}
+
+#SBCont, #maxcomboCont{
+    /*width: 100px;*/
+    padding:15px;
+    bottom: 48px;
+	position: absolute;
+    max-height: 200px;
+	font-size: 20px !important;
+    text-align: center !important;
+    border-radius: 7px;
+    background-image: repeating-linear-gradient(37deg, #7c8187, #515457 104%);
+    box-shadow: 0px 0px 10px 0px #4d4d4d;
+}
+#ifppCont2{
+    right: 285px;
+    padding:15px;
+    bottom: 65px;
+	position: absolute;
+    max-height: 200px;
+	font-size: 20px !important;
+    text-align: center !important;
+    border-radius: 7px;
+    background-image: repeating-linear-gradient(37deg, #7c8187, #515457 104%);
+    box-shadow: 0px 0px 10px 0px #4d4d4d;
+    z-index:12
+}
+#SBCont{
+    right: 32px;
+    z-index:12;
+    bottom: 65px;
+}
+#maxcomboCont{
+    left: 45px;
+    bottom: 63px;
+}
+
+#mapStatus, #SBCont, #maxcomboCont, #ifppCont2{
+    text-shadow: 0px 2px 0px #000000, 0px 0px 5px #000000;    
+
+}
+
+.ppOver{
+    color: #cf9191; 
+    text-shadow: #996363 1px 0 10px;
+}
+#comboCont{
+    left: 10px;
+}
+
+#pp{
+    text-shadow: 0px 2px 0px #000000, 0px 0px 5px #000000;    
+
+}
+#CurrentSRCont{
+    font-size: 25px;
+}
+.ppclass2, .SRclass2, #URtxt{
+    font-family: "Sen";
+    font-weight: normal;
+    color: #63b8d9;
+    text-shadow: 0px 1px 5px #365a9c;
+}
+
+#ComboCont{
+    left: 0px;
+}
+
+#comboCont{
+    border-radius: 15px 15px  0px  0px;
+    bottom: 10px;
+    font-size: 30px;
+    position: absolute;
+    width: 120px;
+    text-align: center !important;
+    margin:auto !important;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 5px;
+    padding-left: 10px;
+    background-color: #222222;
+    box-shadow: 0px 0px 10px 0px #000000, inset 0px 0px 10px 0px #000000;
+    border: 3px solid #333333;
+    border-radius: 15px;
+}
+
+#URtxt{
+    padding-bottom: 50px;
+    z-index: 10;
+}
+#PPCounter{
+    z-index: 100;
+}
+#man{
+    
+    position: absolute;
+    font-size: 30px;
+
+    width: 370px;
+    max-height: 20px;
+    padding: 20px;
+    padding-top: 20px;
+    bottom: 15px;
+    right: 15px;
+
+    
+    box-shadow: 0px 0px 10px 0px #000000, inset 0px 0px 10px 0px #000000;
+    border: 3px solid #333333;
+    background-color: #222222;
+
+    border-radius: 15px;
+
+    z-index: 10;   
+}
+#ppCont{
+    z-index: 10;
+    top:-15px;
+    position: relative;
+    justify-content: space-around;
+    display: flex;
+    
+}
+
+#mapStatus{
+    z-index: 10;   
+    position: relative;
+    justify-content: space-around;
+    display: flex;
+    padding-top: 10px;
+    
+}
+
+#mapStatus hr{
+    z-index: 10;
+    height: 10px;
+    bottom:0px; 
+    height: 3px;
+    border-radius: 6px;
+    width: auto;
+    margin-right: -10px;
+    margin-left: -10px;
+    border: none;
+}
+.status{
+    line-height: 3px;
+
+}
+#cs hr{
+    background-color: #4A9C36;
+    box-shadow: 0px 0px 10px 0px #4A9C36;
+}
+#ar hr{
+    background-color: #9C9236;
+    box-shadow: 0px 0px 10px 0px #9C9236;
+
+}
+#od hr{
+    background-color: #9c3636;
+    box-shadow: 0px 0px 10px 0px #9c3636;
+}
+#cs {
+	bottom: 195px;
+}
+#ar {
+	bottom: 245px;
+}
+#od {
+	bottom: 295px;
+}
+
+.text{
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+#BackgroundIMG{
+    width: 1920px;
+    height:1080px;
+    top:0px;
+    left:0px;
+    border:none;
+    position: absolute;
+}
+#BGBruh{
+    position:absolute;
+    width:1920px;          /* this is an example */
+    height:1080px; 
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index:0;
+}
+#BGDIV{
+    z-index:-1;
+    
+    
+    width:1920px;          /* this is an example */
+    height:1080px;         /* this is an example */
+    overflow:hidden;
+    transform: scale(1.1); 
+}
+#bg{
+    
+    object-fit: cover;
+    width: 1920px;
+    height: 1080px;
+    clip-path: url(../static/ah.svg);
+    
+}
+
+#Square{
+    position: absolute;
+    width: 1920px;
+    height: 1080px;
+    z-index: 1;
+    top:190px;
+}
+#MapTxt, #Rank{
+    position: absolute;
+    text-align: center;
+    z-index: 2;
+    top:50px;
+}
+#MapTxt2{
+    transform: translate(400px);
+    animation: slide 10s linear infinite;
+}
+#MapTxt{
+    box-shadow: 0px 0px 10px 0px #000000, inset 0px 0px 10px 0px #000000;
+    border: 3px solid #333333;
+    background-color: #222222;
+    border-radius: 15px;
+    padding: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    left: 550px;
+    top: -30px;
+    width: 800px;
+}
+@keyframes slide {
+    0% {transform: translate(1020px);}
+    100% { transform: translate(-100%);; }
+}
+#Artist, #Title, #Diff{
+    text-shadow: 0px 2px 0px #000000, 0px 0px 5px #000000;    
+    right:40%;  
+    left:40%;
+    font-family: "Sen";
+    font-weight: normal;
+    color: white;
+    font-size: 40px !important;
+}
+
+#Rank{
+    font-size: 400px !important;
+    font-family: "Sen";
+    font-weight: normal;
+    color: white;
+    left:1070px
+}
+#SquareBG{
+    margin: 0 auto;
+    right:50%;
+    left:50%;
+    width: 1000px;
+    height: 700px;
+    box-shadow: 0px 0px 50px 0px #000000, inset 0px 0px 25px 0px #000000;
+    border: 3px solid #333333;
+    background-color: #222222;
+    border-radius: 15px;
+    vertical-align:middle;
+
+}
+#ScoreBruh{
+    width: 1920px;
+    height: 1080px;
+    font-family: "Sen";
+    font-weight: normal;
+    color: white;
+    font-size: 30px;
+    vertical-align:middle;
+    text-align: start;
+    top:150px;
+    z-index: 10;
+
+}
+#ranktxt1{
+    text-align: end;
+    float: right;
+}
+#RankURDIV, #RankAccDIV, #RankScoreDIV, #MaxRankComboDIV, #RankhunDIV, #RankfifDIV,
+#RankMissDIV, #RankSBDIV, #RankgekiDIV, #RankthreehunDIV, #RankSRDIV, #RankPPDIV{
+    position:absolute;
+    height:34px;
+    width: 120px;
+    text-align: start ;
+    padding: 10px 30px 10px 30px;
+    box-shadow: 0px 0px 10px 0px #000000, inset 0px 0px 10px 0px #000000;
+    border: 3px solid #333333;
+    background-color: #222222;
+    border-radius: 15px;
+    z-index:3;
+}
+
+#RankScoreDIV{
+    position:absolute;
+    width: 320px;
+    text-align: start ;
+    padding: 10px 30px 10px 30px;
+    box-shadow: 0px 0px 10px 0px #000000, inset 0px 0px 10px 0px #000000;
+    border: 3px solid #333333;
+    background-color: #222222;
+    border-radius: 15px;
+    z-index:3;
+    bottom: 740px;
+    left:500px;
+    text-align: center;
+}
+#RankSRDIV{
+    position:absolute;
+    bottom: 160px;
+    right:680px;
+}
+.combztxtee{
+
+}
+.sbtxt{
+    color: #a7a7a7;
+    text-shadow: 0px 1px 5px #7e7e7e;
+}
+
+.misstxt{
+    color: #aa4c4c;
+    text-shadow: 0px 1px 5px #9c3636;
+}
+.huntxt{
+    color: #4caa60;
+    text-shadow: 0px 1px 5px #4a9c36;
+}
+.Rankfiftxt{
+    color: #aa864c;
+    text-shadow: 0px 1px 5px #9c6736;
+}
+.htxt, .gekitxt{
+    color: #4caa9a;
+    text-shadow: 0px 1px 5px #369c72;
+}
+#RankPPDIV{
+    position:absolute;
+    bottom: 160px;
+    right:1120px;
+}
+#RankgekiDIV{
+    position:absolute;
+    bottom: 640px;
+    left:700px;
+}
+#RankthreehunDIV{
+    position:absolute;
+    bottom: 640px;
+    left:500px;
+}
+#RankSBDIV{
+    position:absolute;
+    bottom: 400px;
+    left:700px;
+}
+#RankfifDIV{
+    position:absolute;
+    bottom: 520px;
+    left:700px;
+}
+#RankURDIV{
+    
+    position:absolute;
+    bottom: 160px;
+    right:900px;
+}
+#RankMissDIV{
+    position:absolute;
+    bottom: 400px;
+    left:500px;
+}
+
+#RankhunDIV{
+    position:absolute;
+    bottom: 520px;
+    left:500px;
+}
+
+#MaxRankComboDIV{
+    position:absolute;
+    bottom: 270px;
+    left:500px;
+}
+
+#RankAccDIV{
+    position:absolute;
+    bottom: 270px;
+    left:700px;
+}
+
+#RankingPPValues{
+    border-radius:  0px 15px 15px 0px  ;
+    top: 340px;
+    right: 360px;
+    position: absolute;
+    display: grid;
+    justify-content: start;
+    text-align: center;
+    background-color: #222222;
+    padding-right: 5px;
+    padding-left: 0px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    width: 100px;
+    box-shadow: 0px 0px 10px 0px #000000;
+    z-index: 0;
+}
+#RankingStatustxt{
+    font-family: "Sen";
+    font-weight: normal;
+    color: white;
+    font-size: 20px !important;
+}
+
+#RankingPPtxt{
+    color: #637f99;
+    text-shadow: #637f99 1px 0 10px;
+}
+
+#RankingCombotxt{
+    color: #c2c2c2;
+    text-shadow: #7e7e7e 1px 0 10px;
+}
+
+#h0txt{
+    color: #b67575;
+    text-shadow: #996363 1px 0 10px;
+}
+
+#h50txt{
+    color: #b69475;
+    text-shadow: #998663 1px 0 10px;
+}
+
+#h100txt{
+    color: #5b7c5a;
+    text-shadow: #304e2f 1px 0 10px;
+}
+
+#ScoreInfo{
+    font-family: "Sen";
+    font-weight: normal;
+    color: white;
+    font-size: 30px;
+    height: 1920px;
+    width:  1080px;
+
+}
+#RankingPPtxt{
+    font-family: "Sen";
+    font-weight: normal;
+    color: white;
+    font-size: 20px !important;
+}
+
+#SSPPtxt{
+    color: #637f99;
+    text-shadow: #637f99 1px 0 10px;
+}
+
+#ninePPtxt{
+    color: #536a80;
+    text-shadow: #536a80 1px 0 10px;
+}
+
+#eightPPtxt{
+    color: #4a5f72;
+    text-shadow: #4a5f72 1px 0 10px;
+}
+    
+#sevenPPtxt{
+    color: #3d4f5f;
+    text-shadow: #3d4f5f 1px 0 10px;
+}
+
+#fivePPtxt{
+    color: #374755;
+    text-shadow: #374755 1px 0 10px;
+}
+ul {
+    list-style-type: none;
+}
+.body::-webkit-scrollbar {
+    display: none;
+  }
+
+.over{ 
+    transform: translate(300px);
+    animation: slide 15s linear infinite;
+}
+
+
+#Scoreboard{
+    font-family: "Sen";
+    font-weight: normal;
+    color: white;
+    font-size: 20px !important;
+    position: absolute;
+    left:0px;
+    width:200px;
+    top:400px;
+    background-color: rgba(44, 44, 44, 0.363);
+    padding: 10px 20px 10px 10px;
+    border-radius: 0px 20px 20px 0px;
+    box-shadow: 0px -5px 0px #333333, 0px 5px 0px #333333, 0px 0px 10px 0px #000000;
+    text-shadow: 0px 2px 5px #000000;
+    z-index:-100;
+
+}
+#Player1{
+    padding-top: 20px;
+}
+#Player5{
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+
+}
+#Player1, #Player2, #Player3, #Player4{
+    padding-bottom:20px;
+    margin-bottom: 30px;
+
+}
+#Player1, #Player2, #Player3, #Player4, #Player5{
+    text-align: left;
+}
+#ScorePlayer1, #ScorePlayer2, #ScorePlayer3, #ScorePlayer4, #ScorePlayer5{
+    text-align: left;
+    float: left;
+}
+
+#combxtxt1, #combxtxt2, #combxtxt3, #combxtxt4, #combxtxt5,
+#ComboPlayer1, #ComboPlayer2, #ComboPlayer3, #ComboPlayer4, #ComboPlayer5 {
+    float: right;
+}
+
+#ComboPlayer1, #ComboPlayer2, #ComboPlayer3, #ComboPlayer4, #ComboPlayer5{
+    text-align: left;
+}
+#combxtxt1, #combxtxt2, #combxtxt3, #combxtxt4, #combxtxt5{
+    text-align: end;
+    float: right;
+}
+
+#NamePlayer1div, #NamePlayer2div, #NamePlayer3div, #NamePlayer4div, #NamePlayer5div{
+    margin-left: 20px;
+    width: 100%;
+    overflow:hidden;
+    object-fit: contain;
+    white-space: nowrap;
+}
+
+.NamePlayerClass{
+    width: 100%;
+    text-align: right;
+    color: #91b1cf;
+    text-shadow: #637f99 1px 0 10px;
+}
+
+.combztxt{
+    color: #63b8d9;
+    text-shadow: 0px 1px 5px #365a9c;
+}
+.combztxtee{
+    color: #63b8d9;
+    text-shadow: 0px 1px 5px #365a9c;
+    margin-bottom: 30px;
+}
+.PlayerOver{
+    color: #cf9191; 
+    text-shadow: #996363 1px 0 10px;
+}
+
+.CombOver{
+    color: #bb7d7d; 
+    text-shadow: #863c3c 1px 0 10px;
+}
+#mods{
+    position: fixed;
+    display: flex;
+    bottom: 330px;
+    left: 1300px;
+    justify-items: flex-end;
+    margin-right: 25px;
+    z-index:40
+}
+.mod img{
+    position: relative;
+    height: 70px;
+    width: 70px;
+    z-index: 1;
+    object-fit: cover;
+    margin-right: -25px;
+    -webkit-filter: drop-shadow( -5px 5px 5px rgba(0,0,0,0.7));
+    -moz-filter: drop-shadow(-5px 5px 10px rgba(0,0,0,0.7));
+    -ms-filter: drop-shadow(-5px 5px 10px rgba(0,0,0,0.7));
+    -o-filter: drop-shadow(-5px 5px 10px rgba(0,0,0,0.7));
+}
+
+.Transition{
+    transition: ease-in-out 300ms;
+}
