@@ -35,6 +35,18 @@ By: [Dartandr][1]<br>
 <img  src="https://cdn.discordapp.com/attachments/530940222771560452/732545954468593664/unknown.png"  width="500">\
 By: [Dartandr][1]<br>
   
+### DarkAndWhite
+
+> Size: 840x140\
+<img  src="https://i.imgur.com/oTaA9Gw.png"  width="500">\
+Gameplay No miss
+
+<img  src="https://i.imgur.com/9Szy8af.png"  width="500">\
+Gameplay No miss
+
+<img  src="https://i.imgur.com/dndmH7y.png"  width="500">\
+Ranking Panel
+By: [Ayreth][5]<br>
 
 ### DarkAndWhite
 
@@ -107,3 +119,5 @@ By: [cyperdark][2]<br>
 [3]: https://github.com/inix1257
 
 [4]: https://github.com/VictimCrasher
+
+[5]: https://twitter.com/Ayreth2
