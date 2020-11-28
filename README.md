@@ -38,13 +38,13 @@ By: [Dartandr][1]<br>
 ### DarkAndWhite
 
 > Size: 840x140\
-<img  src="https://i.imgur.com/oTaA9Gw.png"  width="500">\
-Gameplay No miss
-
 <img  src="https://i.imgur.com/9Szy8af.png"  width="500">\
-Gameplay No miss
+Gameplay 1
 
-<img  src="https://i.imgur.com/dndmH7y.png"  width="500">\
+> <img  src="https://i.imgur.com/dndmH7y.png"  width="500">\
+Gameplay 2
+
+> <img  src="https://i.imgur.com/oTaA9Gw.png"  width="500">\
 Ranking Panel
 By: [Ayreth][5]<br>
 
