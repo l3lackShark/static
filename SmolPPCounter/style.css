@@ -1,0 +1,170 @@
+#main-container{
+  border-radius: 30px;
+  overflow: hidden;
+  height: 150px;
+  width: 500px;
+}
+
+#bg-wrapper{
+  z-index: 1;
+}
+
+@font-face {
+  font-family: myfirstfont;
+  src: url('fonts/VAG-Rundschrift-D.ttf');
+}
+
+#title {
+	font-family: myfirstfont;
+	font-size: 30px;
+	margin: 0 auto;
+	color: #fff;
+	margin: 50px auto; 
+	position: absolute; 
+	left:0; 
+	right: 0; 
+	top:0; 
+	bottom:0; 
+	width: 100%; 
+	z-index: 100;
+}
+
+#artist {
+	font-family: myfirstfont;
+	font-size: 20px;
+	margin: 0 auto;
+	color: #fff; 
+	margin-top: 27px; 
+	position: absolute; 
+	left:0; 
+	right: 0; 
+	top:0; 
+	bottom:0; 
+	width: 100%; 
+	z-index: 100;
+}
+
+#ppCont{
+    position: absolute;
+    font-family: myfirstfont !important;
+	font-size: 23px;
+	margin: 0px auto;
+	color: #fff; 
+	margin-top: 120px;
+	margin-left: 215px; 
+	left:0; 
+	right: 0; 
+	top:0; 
+	bottom:0; 
+	width: 100%; 
+	z-index: 100;
+}
+
+#pp{
+	font-size: 23px !important;
+	text-align: right !important;
+	margin-top: -4px;
+	font-family: myfirstfont !important;
+}
+
+#greend{
+	font-size: 23px !important;
+	margin-left: 20px;
+	margin-top: -45px;
+	position: absolute;
+	color: #fff;
+	font-family: myfirstfont !important;
+}
+
+#brownd{
+	font-size: 23px !important;
+	margin-left: 92px;
+	margin-top: -45px;
+	color: #fff;
+	position: absolute;
+	font-family: myfirstfont !important;
+}
+
+#redd{
+	font-size: 23px !important;
+	margin-left: 164px;
+	margin-top: -45px;
+	color: #fff;
+	position: absolute;
+	font-family: myfirstfont !important;
+}
+
+#squaregreen {
+			background-color: #134C1D;
+			height: 7px;
+			border-radius: 4px;
+			margin-left: 23px;
+			margin-top: -15px; /* if active #26943C */ 
+			position: absolute;
+			width: 7px;
+  			box-shadow: 2px 5px 15px #0E2A11;
+		}
+
+		#squarebrown {
+			background-color: #6C4C1C;
+			height: 7px;
+			border-radius: 4px;
+			margin-left: 95px;
+			margin-top: -15px;
+			position: absolute;
+			width: 7px;
+  			box-shadow: 2px 5px 15px #4C3315;
+		}
+
+		#squarered {
+			background-color: #6E1D1F;
+			margin-left: 167px;
+			height: 7px;
+			border-radius: 4px;
+			margin-top: -15px;
+			position: absolute;
+			width: 7px;
+			transition: 1s;
+  			box-shadow: 2px 5px 15px #4A1315;
+		}
+
+#ppText {
+	margin-left: -2px;
+    text-shadow: 0 0 0.5rem #d6c253;
+	color: #d6c253 !important;
+}
+
+#rank {
+	font-family: myfirstfont;
+	font-size: 40px;
+	margin: 0 auto;
+	color: #fff; 
+	transition: all 1s ease;
+	margin-top: 65px; 
+	position: absolute; 
+	left:0; 
+	right: 0; 
+	top:0; 
+	bottom:0; 
+	width: 100%; 
+	z-index: 100;
+}
+
+#bg-container {
+  overflow: hidden;
+  position: absolute;
+  height: 150px;
+  width: 500px;
+  text-align: center;
+  border-radius: 13px;
+  box-shadow: 5px 5px 20px #000;
+}
+
+#bg-container img {
+  filter: brightness(50%);
+  object-fit: cover;
+  z-index: -1;
+  max-height: 150px;
+  width: 500px;
+  transition: all 1s ease;
+}
