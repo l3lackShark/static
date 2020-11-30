@@ -44,7 +44,7 @@ Gameplay
 > <img  src="https://i.imgur.com/oTaA9Gw.png"  width="500">\
 Ranking Panel
 
-By: [Ayreth][5]<br>
+>By: [Ayreth][5]<br>
 
   
   
