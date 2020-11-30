@@ -121,7 +121,7 @@ socket.onmessage = event => {
 			//Box
 			document.documentElement.style.setProperty('--width', ` 500px`);
 			// Line
-			document.documentElement.style.setProperty('--progress', ` ${(menu.bm.time.current / menu.bm.time.full * 100).toFixed(2)}%`);
+			document.documentElement.style.setProperty('--progress', ` ${(menu.bm.time.current / menu.bm.time.mp3 * 100).toFixed(2)}%`);
 			line.style.cssText = "transition: transform 500ms ease, opacity 20ms ease, width 500ms ease;";
 			line.style.transform = "translate(0px, 5px)"
 			line.style.opacity = "1"
