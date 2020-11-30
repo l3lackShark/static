@@ -1,6 +1,9 @@
 :root {
 	--height: 90px;
 	--border-radius: 10px;
+	--bg: linear-gradient(90deg, #313131, #161616);
+	--accent: rgb(88, 55, 236);
+	--accent2: rgb(48, 29, 131);
 }
 
 * {
@@ -11,7 +14,7 @@
 
 body {
 	margin: 10px;
-    padding: 10px;
+	padding: 10px;
 }
 
 #main {
@@ -19,8 +22,8 @@ body {
 	height: 100px;
 	display: flex;
 	flex-direction: row;
-    align-items: center;
-    transition: opacity 300ms ease;
+	align-items: center;
+	transition: opacity 300ms ease;
 }
 
 .wrapper {
@@ -41,7 +44,7 @@ body {
 	justify-content: center;
 	align-items: center;
 	font-size: 75px;
-    letter-spacing: -2px;
+	letter-spacing: -2px;
 }
 
 
@@ -52,7 +55,7 @@ body {
 	height: var(--height);
 	position: relative;
 	border-radius: var(--border-radius);
-	background: linear-gradient(90deg, #313131, #161616);
+	background: var(--bg);
 	transition: width 500ms ease;
 }
 
@@ -66,8 +69,8 @@ body {
 	height: var(--height);
 	position: absolute;
 	border-radius: var(--border-radius);
-    transform: translate(0px, 2px);
-    overflow: hidden;
+	transform: translate(0px, 2px);
+	overflow: hidden;
 }
 
 #line::before,
@@ -80,10 +83,10 @@ body {
 }
 
 #line::before {
-	background: linear-gradient(-45deg, rgb(59, 43, 131), rgb(88, 55, 236));
+	background: linear-gradient(-45deg, var(--accent), var(--accent2));
 	background-size: 200%;
-    width: var(--progress);
-    transition: width 100ms;
+	width: var(--progress);
+	transition: width 100ms;
 	/* clip-path: polygon(0 0, var(--progress) 0, var(--progress) 100%, 0% 100%); */
 }
 
@@ -133,14 +136,14 @@ body {
 	position: relative;
 	width: 200px;
 	height: 100%;
-    font-size: 44px;
-    margin-left: 20px;
+	font-size: 44px;
+	margin-left: 20px;
 }
 
 .accent {
 	font-weight: bold;
-	color: rgb(88, 55, 236);
-	text-shadow: 0 0 10px rgba(88, 55, 236, 0.5);
+	color: var(--accent);
+	text-shadow: 0 0 10px var(--accent2);
 }
 
 
@@ -250,8 +253,8 @@ body {
 }
 
 #ppfc {
-	background: linear-gradient(to right, rgb(134, 107, 255), rgb(74, 34, 255));
-	box-shadow: 0 2px 5px rgb(134, 107, 255);
+	background: linear-gradient(to right, var(--accent), var(--accent2));
+	box-shadow: 0 2px 5px var(--accent);
 	position: absolute;
 	top: -15px;
 	left: 70px;
