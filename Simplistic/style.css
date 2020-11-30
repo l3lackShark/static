@@ -1,4 +1,5 @@
 :root {
+	--width: 500px;
 	--height: 90px;
 	--border-radius: 10px;
 	--bg: linear-gradient(90deg, #313131, #161616);
