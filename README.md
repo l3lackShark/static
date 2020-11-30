@@ -41,7 +41,7 @@ By: [Dartandr][1]<br>
 > *Song Selection*\
 <img src="https://i.postimg.cc/zvN5nxTZ/download.png">\
 >*Gameplay 1*\
-<img src="https://i.postimg.cc/Znb2b2rR/download.png">\
+<img src="https://i.postimg.cc/NMMhcLmV/Screenshot-1.png">\
 By: [jassper0][5]<br>
   
 
