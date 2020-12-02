@@ -1,3 +1,6 @@
+
+
+
 let socket = new ReconnectingWebSocket("ws://127.0.0.1:24050/ws");
 
 let progressChart = document.getElementById("progress");
@@ -93,7 +96,13 @@ socket.onclose = event => {
   console.log("Socket Closed Connection: ", event);
   socket.send("Client Closed!");
 };
+var p = document.getElementById("SubmitID");
+  p.onclick = Slide;
 
+function Slide () {
+    document.getElementById("lmfao").style.transform = "scale(0)";
+    document.getElementById("lmfao").style.transform = "translateY(-100px)";
+    document.getElementById("lmfao").style.opacity = "0";}
 socket.onerror = error => console.log("Socket Error: ", error);
 
 let Score = new CountUp('Score', 0, 0, 0, .5, { useEasing: true, useGrouping: true, separator: " ", decimal: "." })
@@ -113,7 +122,7 @@ socket.onmessage = event => {
     
     if(gameState !== data.menu.state){
         gameState = data.menu.state;
-        if(gameState === 1 ){
+        if(gameState === 2 ){
         Scoreboard.style.transform = "translateY(0px)";
         Scoreboard.style.opacity = "1";
 
@@ -211,165 +220,166 @@ let LBRank2 ="NamePlayer" + Math.round(+`${data.gameplay.leaderboard.ourplayer.p
 let LBRank ="NamePlayer" + `${data.gameplay.leaderboard.ourplayer.position}`;
 let TempourName
 let TempourPos
-
-if(data.gameplay.leaderboard.hasLeaderboard == true && data.gameplay.leaderboard.slots[data.gameplay.leaderboard.slots.length-1].position > 5 && gameState === 2){
-    Scoreboard.style.opacity = "1";       
-    Scoreboard.style.transform = "translateX(0px)";   
-
-
-if (data.gameplay.leaderboard.ourplayer.name != TempourName) {
-TempourName = data.gameplay.leaderboard.ourplayer.name
-TempourName.innerHTML ="" + data.gameplay.leaderboard.ourplayer.name + "";
-}
-if (data.gameplay.leaderboard.ourplayer.position != TempourPos) {
-TempourPos = data.gameplay.leaderboard.ourplayer.position
-TempourPos.innerHTML ="" + data.gameplay.leaderboard.ourplayer.position + "";
-}
-
-if (data.gameplay.leaderboard.ourplayer.position >5){
- pos1 = board[0].position;
- pos2 = +data.gameplay.leaderboard.ourplayer.position - 4;
- pos3 = +data.gameplay.leaderboard.ourplayer.position - 3;
- pos4 = +data.gameplay.leaderboard.ourplayer.position - 2;
- pos5 = +data.gameplay.leaderboard.ourplayer.position -1;
-    if(data.gameplay.leaderboard.ourplayer.position > 5){
-        document.getElementById("NamePlayer5").classList.add("PlayerOver");
-        document.getElementById("combxtxt5").classList.add("CombOver");
-    }else{
-        document.getElementById(`${LBRank2}`).classList.contains('PlayerOver') 
-        document.getElementById(`${LBRank2}`).classList.remove('PlayerOver');
-        document.getElementById(`${LBComb2}`).classList.contains("CombOver")
-        document.getElementById(`${LBComb2}`).classList.remove("CombOver");
-    }
-
-    if (data.gameplay.leaderboard.ourplayer.position = 5){
-        NamePlayer1.classList.remove('PlayerOver');
-        NamePlayer2.classList.remove('PlayerOver');
-        NamePlayer3.classList.remove('PlayerOver');
-        NamePlayer4.classList.remove('PlayerOver');
-    }
-
-}
-else{
- pos1 = 0;
- pos2 = 1;
- pos3 = 2;
- pos4 = 3;
- pos5 = 4;
- if(data.gameplay.leaderboard.ourplayer.position < 5){
-    document.getElementById(`${LBComb}`).classList.add("CombOver");
-    document.getElementById(`${LBRank}`).classList.add("PlayerOver");
-        if(document.getElementById(`${LBRank2}`).classList.contains("PlayerOver")){
-            document.getElementById(`${LBRank2}`).classList.remove("PlayerOver");}
-        if(document.getElementById(`${LBComb2}`).classList.contains("CombOver")){
-            document.getElementById(`${LBComb2}`).classList.remove("CombOver");}
-    }
-else{
-    }
-}
-        var x1 = "" + board[pos1].score,
-        x1 = x1.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-
-        var x2 = "" + board[pos2].score,
-        x2 = x2.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-
-        var x3 = "" + board[pos3].score,
-        x3 = x3.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-
-        var x4 = "" + board[pos4].score,
-        x4 = x4.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-
-        var x5 = "" + board[pos5].score,
-        x5 = x5.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+//ScoreboardBox.onclick = function() { 
+    if(data.gameplay.leaderboard.hasLeaderboard == true && data.gameplay.leaderboard.slots[data.gameplay.leaderboard.slots.length-1].position > 5 && gameState === 2){
+        Scoreboard.style.opacity = "1";       
+        Scoreboard.style.transform = "translateX(0px)";   
 
 
-    if (board[0].name != TempName1) {
-        TempName1 = board[0].name
-        NamePlayer1.innerHTML ="" + board[0].name + "";
+    if (data.gameplay.leaderboard.ourplayer.name != TempourName) {
+    TempourName = data.gameplay.leaderboard.ourplayer.name
+    TempourName.innerHTML ="" + data.gameplay.leaderboard.ourplayer.name + "";
     }
-    if (board[0].score != TempScore1) {
-        TempScore1 = board[0].score
-        ScorePlayer1.innerHTML ="" + x1 + "";
-    }
-    if (board[0].maxCombo != TempCombo1) {
-        TempCombo1 = board[0].maxCombo
-        ComboPlayer1.innerHTML ="" + board[0].maxCombo + "";
-    }
-    if (board[0].position != TempRankPL1) {
-        TempRankPL1 = board[0].position
-        RankPlayer1.innerHTML ="#" + board[0].position + "";
+    if (data.gameplay.leaderboard.ourplayer.position != TempourPos) {
+    TempourPos = data.gameplay.leaderboard.ourplayer.position
+    TempourPos.innerHTML ="" + data.gameplay.leaderboard.ourplayer.position + "";
     }
 
-    if (board[pos2].name != TempName2) {
-        TempName2 = board[pos2].name
-        NamePlayer2.innerHTML ="" + board[pos2].name + "";
-    }
-    if (board[pos2].score != TempScore2) {
-        TempScore2 = board[pos2].score
-        ScorePlayer2.innerHTML ="" + x2 + "";
-    }
-    if (board[pos2].maxCombo != TempCombo2) {
-        TempCombo2 = board[pos2].maxCombo
-        ComboPlayer2.innerHTML ="" + board[pos2].maxCombo + "";
-    }
-    if (board[pos2].position != TempRankPL2) {
-        TempRankPL2 = board[pos2].position
-        RankPlayer2.innerHTML ="#" + board[pos2].position + "";
-    }
+    if (data.gameplay.leaderboard.ourplayer.position >5){
+    pos1 = board[0].position;
+    pos2 = +data.gameplay.leaderboard.ourplayer.position - 4;
+    pos3 = +data.gameplay.leaderboard.ourplayer.position - 3;
+    pos4 = +data.gameplay.leaderboard.ourplayer.position - 2;
+    pos5 = +data.gameplay.leaderboard.ourplayer.position -1;
+        if(data.gameplay.leaderboard.ourplayer.position > 5){
+            document.getElementById("NamePlayer5").classList.add("PlayerOver");
+            document.getElementById("combxtxt5").classList.add("CombOver");
+        }else{
+            document.getElementById(`${LBRank2}`).classList.contains('PlayerOver') 
+            document.getElementById(`${LBRank2}`).classList.remove('PlayerOver');
+            document.getElementById(`${LBComb2}`).classList.contains("CombOver")
+            document.getElementById(`${LBComb2}`).classList.remove("CombOver");
+        }
 
-    if (board[pos3].name != TempName3) {
-        TempName3 = board[pos3].name
-        NamePlayer3.innerHTML ="" + board[pos3].name + "";
-    }
-    if (board[pos3].score != TempScore3) {
-        TempScore3 = board[pos3].score
-        ScorePlayer3.innerHTML ="" + x3 + "";
-    }
-    if (board[pos3].maxCombo != TempCombo3) {
-        TempCombo3 = board[pos3].maxCombo
-        ComboPlayer3.innerHTML ="" + board[pos3].maxCombo + "";
-    }
-    if (board[pos3].position != TempRankPL3) {
-        TempRankPL3 = board[pos3].position
-        RankPlayer3.innerHTML ="#" + board[pos3].position + "";
-    }
+        if (data.gameplay.leaderboard.ourplayer.position = 5){
+            NamePlayer1.classList.remove('PlayerOver');
+            NamePlayer2.classList.remove('PlayerOver');
+            NamePlayer3.classList.remove('PlayerOver');
+            NamePlayer4.classList.remove('PlayerOver');
+        }
 
-    if (board[pos4].name != TempName4) {
-        TempName4 = board[pos4].name
-        NamePlayer4.innerHTML ="" + board[pos4].name + "";
     }
-    if (board[pos4].score != TempScore4) {
-        TempScore4 = board[pos4].score
-        ScorePlayer4.innerHTML ="" + x4 + "";
+    else{
+    pos1 = 0;
+    pos2 = 1;
+    pos3 = 2;
+    pos4 = 3;
+    pos5 = 4;
+    if(data.gameplay.leaderboard.ourplayer.position < 5){
+        document.getElementById(`${LBComb}`).classList.add("CombOver");
+        document.getElementById(`${LBRank}`).classList.add("PlayerOver");
+            if(document.getElementById(`${LBRank2}`).classList.contains("PlayerOver")){
+                document.getElementById(`${LBRank2}`).classList.remove("PlayerOver");}
+            if(document.getElementById(`${LBComb2}`).classList.contains("CombOver")){
+                document.getElementById(`${LBComb2}`).classList.remove("CombOver");}
+        }
+    else{
+        }
     }
-    if (board[pos4].maxCombo != TempCombo4) {
-        TempCombo4 = board[pos4].maxCombo
-        ComboPlayer4.innerHTML ="" + board[pos4].maxCombo + "";
-    }
-    if (board[pos4].position != TempRankPL4) {
-        TempRankPL4 = board[pos4].position
-        RankPlayer4.innerHTML ="#" + board[pos4].position + "";
-    }
+            var x1 = "" + board[pos1].score,
+            x1 = x1.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 
-    if (board[pos5].name != TempName5) {
-        TempName5 = board[pos5].name
-        NamePlayer5.innerHTML ="" + board[pos5].name + "";
-    }
-    if (board[pos5].score != TempScore5) {
-        TempScore5 = x5
-        ScorePlayer5.innerHTML ="" + x5 + "";
-    }
-    if (board[pos5].maxCombo != TempCombo5) {
-        TempCombo5 = board[pos5].maxCombo
-        ComboPlayer5.innerHTML ="" + board[pos5].maxCombo + "";
-    }       
-    if (board[pos5].position != TempRankPL5) {
-        TempRankPL5 = board[pos5].position
-        RankPlayer5.innerHTML ="#" + board[pos5].position + "";
-    } }else{
-        Scoreboard.style.transform = "translateX(-150px)";  
-        Scoreboard.style.opacity = "0";  
-       }
+            var x2 = "" + board[pos2].score,
+            x2 = x2.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+
+            var x3 = "" + board[pos3].score,
+            x3 = x3.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+
+            var x4 = "" + board[pos4].score,
+            x4 = x4.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+
+            var x5 = "" + board[pos5].score,
+            x5 = x5.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+
+
+        if (board[0].name != TempName1) {
+            TempName1 = board[0].name
+            NamePlayer1.innerHTML ="" + board[0].name + "";
+        }
+        if (board[0].score != TempScore1) {
+            TempScore1 = board[0].score
+            ScorePlayer1.innerHTML ="" + x1 + "";
+        }
+        if (board[0].maxCombo != TempCombo1) {
+            TempCombo1 = board[0].maxCombo
+            ComboPlayer1.innerHTML ="" + board[0].maxCombo + "";
+        }
+        if (board[0].position != TempRankPL1) {
+            TempRankPL1 = board[0].position
+            RankPlayer1.innerHTML ="#" + board[0].position + "";
+        }
+
+        if (board[pos2].name != TempName2) {
+            TempName2 = board[pos2].name
+            NamePlayer2.innerHTML ="" + board[pos2].name + "";
+        }
+        if (board[pos2].score != TempScore2) {
+            TempScore2 = board[pos2].score
+            ScorePlayer2.innerHTML ="" + x2 + "";
+        }
+        if (board[pos2].maxCombo != TempCombo2) {
+            TempCombo2 = board[pos2].maxCombo
+            ComboPlayer2.innerHTML ="" + board[pos2].maxCombo + "";
+        }
+        if (board[pos2].position != TempRankPL2) {
+            TempRankPL2 = board[pos2].position
+            RankPlayer2.innerHTML ="#" + board[pos2].position + "";
+        }
+
+        if (board[pos3].name != TempName3) {
+            TempName3 = board[pos3].name
+            NamePlayer3.innerHTML ="" + board[pos3].name + "";
+        }
+        if (board[pos3].score != TempScore3) {
+            TempScore3 = board[pos3].score
+            ScorePlayer3.innerHTML ="" + x3 + "";
+        }
+        if (board[pos3].maxCombo != TempCombo3) {
+            TempCombo3 = board[pos3].maxCombo
+            ComboPlayer3.innerHTML ="" + board[pos3].maxCombo + "";
+        }
+        if (board[pos3].position != TempRankPL3) {
+            TempRankPL3 = board[pos3].position
+            RankPlayer3.innerHTML ="#" + board[pos3].position + "";
+        }
+
+        if (board[pos4].name != TempName4) {
+            TempName4 = board[pos4].name
+            NamePlayer4.innerHTML ="" + board[pos4].name + "";
+        }
+        if (board[pos4].score != TempScore4) {
+            TempScore4 = board[pos4].score
+            ScorePlayer4.innerHTML ="" + x4 + "";
+        }
+        if (board[pos4].maxCombo != TempCombo4) {
+            TempCombo4 = board[pos4].maxCombo
+            ComboPlayer4.innerHTML ="" + board[pos4].maxCombo + "";
+        }
+        if (board[pos4].position != TempRankPL4) {
+            TempRankPL4 = board[pos4].position
+            RankPlayer4.innerHTML ="#" + board[pos4].position + "";
+        }
+
+        if (board[pos5].name != TempName5) {
+            TempName5 = board[pos5].name
+            NamePlayer5.innerHTML ="" + board[pos5].name + "";
+        }
+        if (board[pos5].score != TempScore5) {
+            TempScore5 = x5
+            ScorePlayer5.innerHTML ="" + x5 + "";
+        }
+        if (board[pos5].maxCombo != TempCombo5) {
+            TempCombo5 = board[pos5].maxCombo
+            ComboPlayer5.innerHTML ="" + board[pos5].maxCombo + "";
+        }       
+        if (board[pos5].position != TempRankPL5) {
+            TempRankPL5 = board[pos5].position
+            RankPlayer5.innerHTML ="#" + board[pos5].position + "";
+        } }else{
+            Scoreboard.style.transform = "translateX(-150px)";  
+            Scoreboard.style.opacity = "0";  
+        }
+    //}; 
        if (data.gameplay.hp.smooth > 0) {
         hpbar.style.width = (data.gameplay.hp.smooth / 200) * 1300 + "px";
         console.log(data.gameplay.hp.smooth)

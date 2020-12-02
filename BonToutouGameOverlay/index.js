@@ -466,6 +466,7 @@ if(RankingState !== data.menu.state){
         mods.style.transform = "scale(1)";
         RankSRDIV.style.transform = "scale(1)";
         RankPPDIV.style.transform = "scale(1)";
+        
     }else{
         RankingStatus.style.transform = "translateX(-500px)";
         RankingPPValues.style.transform = "translateX(500px)";
@@ -485,12 +486,13 @@ if(RankingState !== data.menu.state){
         mods.style.transform = "scale(0)";
         RankSRDIV.style.transform = "scale(0)";
         RankPPDIV.style.transform = "scale(0)";
+        
 
     }
 }
 
-if(tempMods != data.menu.mods.str){
-    tempMods = data.menu.mods.str
+if(tempMods != data.resultsScreen.mods.str){
+    tempMods = data.resultsScreen.mods.str
     if (tempMods == "" || tempMods == "NM"){
         mods.innerHTML = '';
     }
@@ -525,6 +527,7 @@ if(tempMods != data.menu.mods.str){
     if(data.menu.bm.metadata.artist  != '') {
         Artist.innerHTML = data.menu.bm.metadata.artist +  " - ";
     }
+
     if(data.menu.bm.metadata.title  != '') {
         Title.innerHTML = data.menu.bm.metadata.title + " ";
     }
@@ -542,14 +545,14 @@ if(tempMods != data.menu.mods.str){
     let MaxRankCombo = document.getElementById("MaxRankCombo");
 
 
-    if(data.gameplay.combo.max != TempRankingMaxComboData){
-        TempRankingMaxComboData = data.gameplay.combo.max
-		MaxRankCombo.innerHTML = `${data.gameplay.combo.max}`;
+    if(data.resultsScreen.maxCombo != TempRankingMaxComboData){
+        TempRankingMaxComboData = data.resultsScreen.maxCombo
+		MaxRankCombo.innerHTML = `${data.resultsScreen.maxCombo}`;
     }
     
     let RankAcc = document.getElementById("RankAcc")
 
-    if (data.gameplay.accuracy > 0) {
+    if (data.resultsScreen.accuracy > 0) {
 		let ACCdata = data.gameplay.accuracy;
 		RankAcc.innerHTML = parseFloat(ACCdata).toFixed(2);
 	} else {
@@ -557,48 +560,40 @@ if(tempMods != data.menu.mods.str){
     }
     
 
-/*----------------------------------- Left Thing -----------------------------------*/
-    if(data.gameplay.hits[300] != temph300){
-        temph300 = data.gameplay.hits[300]
-        h300 = `${data.gameplay.hits[300]}`;
-    }
-    if(data.gameplay.hits[100] != temprankhun){
-        temprankhun = data.gameplay.hits[100]
-		rankhun.innerHTML = `${data.gameplay.hits[100]}  ` + "  ";
-	}
-    if(data.gameplay.hits[50] != temprankfifty){
-        temprankfifty = data.gameplay.hits[50]
-		rankfifty.innerHTML = `${data.gameplay.hits[50]}`;
-	}
-    if(data.gameplay.hits[0] != temprankmiss){
-        temprankmiss = data.gameplay.hits[0]
-		rankmiss.innerHTML = `${data.gameplay.hits[0]}`;
-    }
+if(data.resultsScreen[100] != temprankhun){
+    temprankhun = data.resultsScreen[100]
+    rankhun.innerHTML = `${data.resultsScreen[100]}  ` + "  ";
+}
+if(data.resultsScreen[50] != temprankfifty){
+    temprankfifty = data.resultsScreen[50]
+    rankfifty.innerHTML = `${data.resultsScreen[50]}`;
+}
+if(data.resultsScreen[0] != temprankmiss){
+    temprankmiss = data.resultsScreen[0]
+    rankmiss.innerHTML = `${data.resultsScreen[0]}`;
+}
 
-    if(data.gameplay.hits.sliderBreaks != tempranksb){
-        tempranksb = data.gameplay.hits.sliderBreaks
-		RanksliderBreaks.innerHTML = `${data.gameplay.hits.sliderBreaks}`;
-	}
-    if(data.gameplay.hits.geki != tempRankgeki){
-        tempRankgeki = data.gameplay.hits.geki
-		Rankgeki.innerHTML = `${data.gameplay.hits.geki}`;
-    }
-    if(data.gameplay.hits[300] != tempRankthreehun){
-        tempRankthreehun = data.gameplay.hits[300]
-		Rankthreehun.innerHTML = `${data.gameplay.hits[300]}`;
-	}
-    if (data.gameplay.pp.current != '') {
-		let RankPPData = data.gameplay.pp.current;
-		RankPP.innerHTML = Math.round(RankPPData);
-	} else {
-		RankPP.innerHTML = "";
-	}
-    if (data.gameplay.combo.max != temprankcombo) {
-        temprankcombo = data.gameplay.combo.max;
-		rankcombo.innerHTML = `${data.gameplay.combo.max}`;
-    }
-    
-/*----------------------------------- Right Thing -----------------------------------*/
+if(data.gameplay.hits.sliderBreaks != tempranksb){
+    tempranksb = data.gameplay.hits.sliderBreaks
+    RanksliderBreaks.innerHTML = `${data.gameplay.hits.sliderBreaks}`;
+}
+if(data.resultsScreen.geki != tempRankgeki){
+    tempRankgeki = data.resultsScreen.geki
+    Rankgeki.innerHTML = `${data.resultsScreen.geki}`;
+}
+if(data.resultsScreen[300] != tempRankthreehun){
+    tempRankthreehun = data.resultsScreen[300]
+    Rankthreehun.innerHTML = `${data.resultsScreen[300]}`;
+}
+if (data.gameplay.pp.current != '') {
+    let RankPPData = data.gameplay.pp.current;
+    RankPP.innerHTML = Math.round(RankPPData);
+} else {
+    RankPP.innerHTML = "";
+}
+
+ 
+
 
 if(data.menu.pp[100] != temprankSSPP){
     temprankSSPP = data.menu.pp[100]
@@ -620,8 +615,8 @@ if(data.menu.pp[95] != temprankfivePP){
     temprankfivePP = data.menu.pp[95]
     rankfivePP.innerHTML = `${data.menu.pp[95]}`;
 }
-if (data.gameplay.score != TempRankScore) {
-    TempRankScore = data.gameplay.score
+if (data.resultsScreen.score != TempRankScore) {
+    TempRankScore = data.resultsScreen.score
         var qdfs = "" + TempRankScore,
         qdfs = qdfs.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
     Rankscore.innerHTML = qdfs + "";
@@ -643,14 +638,14 @@ let hdfl = false;
 if(data.menu.mods.str.includes("HD") || data.menu.mods.str.includes("FL")){
     hdfl = true;
 }
+let PlayerRank = data.gameplay.hits.grade.current;
 
 //cyperdark's rank calculator logic 
 params.totalHits = +hits[50] + +hits[100] + +hits[300] + +hits[0];
 params.acc = params.totalHits > 0 ? (+hits[50] * 50 + +hits[100] * 100 + +hits[300] * 300) / (params.totalHits * 300) : 1;
 params.ratio300 = +hits[300] / params.totalHits, params.ratio50 = +hits[50] / params.totalHits;
-
-if (params.ratio300 == 1 || params.acc == 1) {
-    params.rank = 'SS';
+if (PlayerRank == "SS" ) {
+    params.rank = 'S+';
     if(hdfl == true){
         rank.style.color = '#D3D3D3';
         rank.style.textShadow = '0 0 0.5em #D3D3D3'
@@ -659,7 +654,7 @@ if (params.ratio300 == 1 || params.acc == 1) {
         rank.style.textShadow = '0 0 0.5em #d6c253'
     }
 }
-else if (params.ratio300 > 0.9 && params.ratio50 <= 0.01 && hits[0] == 0) {
+else if (PlayerRank == "S") {
     params.rank = 'S';
     if(hdfl == true){
         rank.style.color = '#D3D3D3';
@@ -669,17 +664,17 @@ else if (params.ratio300 > 0.9 && params.ratio50 <= 0.01 && hits[0] == 0) {
         rank.style.textShadow = '0 0 0.5em #d6c253'
     }
 }
-else if ((params.ratio300 > 0.8 && hits[0] == 0) || params.ratio300 > 0.9) {
+else if (PlayerRank == "A") {
     params.rank = 'A';
     rank.style.color = '#7ed653';
     rank.style.textShadow = '0 0 0.5em #7ed653'
 }
-else if ((params.ratio300 > 0.7 && hits[0] == 0) || params.ratio300 > 0.8) {
+else if (PlayerRank == "B") {
     params.rank = 'B';
     rank.style.color = '#53d4d6';
     rank.style.textShadow = '0 0 0.5em #53d4d6'
 }
-else if (params.ratio300 > 0.6) {
+else if (PlayerRank == "C") {
     params.rank = 'C';
     rank.style.color = '#d6538e';
     rank.style.textShadow = '0 0 0.5em #d6538e'
@@ -691,6 +686,7 @@ else {
 }
 
 rank.innerHTML = params.rank;
+
 
 
 }

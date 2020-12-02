@@ -372,7 +372,6 @@ else{
        }
        if (data.gameplay.hp.smooth > 0) {
         hpbar.style.width = (data.gameplay.hp.smooth / 200) * 1300 + "px";
-        console.log(data.gameplay.hp.smooth)
 	} else {
 		hpbar.style.width = 1300;
 	}
@@ -481,14 +480,11 @@ else{
     if(data.menu.mods.str.includes("HD") || data.menu.mods.str.includes("FL")){
         hdfl = true;
     }
-      
-params.totalHits = +hits[50] + +hits[100] + +hits[300] + +hits[0];
-params.acc = params.totalHits > 0 ? (+hits[50] * 50 + +hits[100] * 100 + +hits[300] * 300) / (params.totalHits * 300) : 1;
-params.ratio300 = +hits[300] / params.totalHits, params.ratio50 = +hits[50] / params.totalHits;
+
 let PlayerRank = data.gameplay.hits.grade.current;
 
-if (PlayerRank == "SS" ) {
-    params.rank = 'S+';
+/*if (PlayerRank == "SS" || data.gameplay.hits.grade.current == "") {
+    
     if(hdfl == true){
         rank.style.color = '#D3D3D3';
         rank.style.textShadow = '0 0 0.5em #D3D3D3'
@@ -496,7 +492,11 @@ if (PlayerRank == "SS" ) {
         rank.style.color = '#d6c253';
         rank.style.textShadow = '0 0 0.5em #d6c253'
     }
-}
+}*/
+if (PlayerRank == "D"){
+    params.rank = 'D';
+    rank.style.color = '#d65353';
+    rank.style.textShadow = '0 0 0.75em #d65353'}
 else if (PlayerRank == "S") {
     params.rank = 'S';
     if(hdfl == true){
@@ -523,9 +523,14 @@ else if (PlayerRank == "C") {
     rank.style.textShadow = '0 0 0.5em #d6538e'
 }
 else {
-    params.rank = 'D';
-    rank.style.color = '#d65353';
-    rank.style.textShadow = '0 0 0.75em #d65353'
+    params.rank = 'S+';
+    if(hdfl == true){
+        rank.style.color = '#D3D3D3';
+        rank.style.textShadow = '0 0 0.5em #D3D3D3'
+    } else{
+        rank.style.color = '#d6c253';
+        rank.style.textShadow = '0 0 0.5em #d6c253'
+    }
 }
 
 rank.innerHTML = params.rank;

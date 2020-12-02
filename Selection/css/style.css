@@ -17,6 +17,88 @@ body,html{
     height: 1080px;
     position: relative;
 }
+
+#lmfao{
+    width: 1920px;
+    height: 1080px;
+    background-color: #423c38;
+    top:0px
+}
+#Text1{
+    
+    padding-top: 25px;
+    text-shadow: 0px 5px 10px #000000, 0px 0px 5px #000000;    
+    font-family: 'Roboto', sans-serif;
+    color:rgb(255, 255, 255);
+    font-size: 40px;
+    text-align: center;
+    justify-content: center;
+}
+#ButtonsLine1, #ButtonsLine2, #ButtonsLine3, #ButtonsLine4{
+    width: 1500px;
+    font-size: 30px;
+    padding-top: 30px;
+    text-shadow: 0px 2px 0px #000000, 0px 0px 5px #000000;    
+    font-family: 'Roboto', sans-serif;
+    color:rgb(255, 255, 255);
+    text-align: center;
+    margin: 0 auto;
+}
+#ButtonsLine2{
+    margin-top:5px
+}
+.ButtonSubmit{
+    border: none;
+    outline:none;
+    border: 0;
+    line-height: 2.5;
+    padding: 0 30px;
+    font-size: 1rem;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 30px;
+    transform: scale(1.3);
+    background-color: rgb(36, 36, 36);
+    background-image: linear-gradient(to top left,
+                                        rgba(0, 0, 0, .2),
+                                        rgba(0, 0, 0, .2) 30%,
+                                        rgba(0, 0, 0, 0));
+    box-shadow: 0px 0px 5px 0px #000000;
+}
+.ButtonSubmit:hover {
+    background-color: rgba(10, 10, 10, 0.787);
+}
+.ButtonSubmit:focus {
+    filter:blur(1.5px);
+    transition: 0.1s;
+    outline:0;
+}
+.q{
+    max-width: 1500px;
+    margin-right: 20px;
+    background: linear-gradient(50deg, rgba(42,42,42,1) 0%, rgba(47,47,47,1) 100%);
+    border-radius: 50px;
+    padding: 5px 15px 5px 15px;
+    justify-content: space-around;
+    box-shadow: 0px 0px 10px 0px #111111, inset 0px 0px 10px 0px #222222;
+
+
+}
+.Button1{
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0px 0px 10px 0px #000000;
+    color:rgb(39, 39, 39);
+    background-color: #000000;
+    margin-right: 10px;
+    text-align: center;
+    vertical-align: middle;
+    top:-2px;
+    margin-top: -2px;
+    width: 15px;
+    height: 15px;
+}
+
 .line {
     position: absolute;
     top: 70px;

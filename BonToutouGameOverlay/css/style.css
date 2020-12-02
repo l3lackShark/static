@@ -712,6 +712,8 @@ ul {
     overflow:hidden;
     object-fit: contain;
     white-space: nowrap;
+    text-overflow: ellipsis;
+
 }
 
 .NamePlayerClass{
@@ -743,10 +745,11 @@ ul {
     position: fixed;
     display: flex;
     bottom: 330px;
-    left: 1300px;
-    justify-items: flex-end;
+    left: 1100px;
+    justify-items: end;
     margin-right: 25px;
-    z-index:40
+    z-index:40;
+    text-align: right   ;
 }
 .mod img{
     position: relative;
