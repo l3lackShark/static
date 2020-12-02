@@ -113,6 +113,8 @@ socket.onmessage = event => {
 		}
 		//Game State Check
 		switch (menu.state) {
+            case 7:
+            case 14:
             case 2:
                 //Main
                 mainContainer.style.opacity = "1";
@@ -158,8 +160,6 @@ socket.onmessage = event => {
                 //Main
                 mainContainer.style.opacity = "0";
                 break;
-            case 7:
-            case 14:
             default:
                 //Main
                 mainContainer.style.opacity = "1";
