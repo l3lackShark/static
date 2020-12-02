@@ -252,7 +252,7 @@ body,html{
     top:25px;
     width: 1920px;
     height: 100px;
-    background-image: url('../static/hpbar.png');
+    background-image: url(https://i.imgur.com/SPB7rLx.png);
     background-repeat: no-repeat;
     transition: ease-in 100ms;
 }
