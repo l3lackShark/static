@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/odometr.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="deps/odometr.js"></script>
+	<script src="deps/reconnecting-websocket.min.js"></script>
+	<script src="deps/countUp.js"></script>
+    <script src="deps/Chart.min.js"></script>
+    <script src="deps/smooth.js"></script>
+</head>
+
+<body>
+	<div id="lmfao" class="scene2">
+		<div id="Text1">
+				<span id="TextInfo">Please select any items you would like to have!</span>
+		</div>	
+		<div id="sad">
+			<div id="ButtonsLine1">
+				<span class="q"><input type="checkbox" class="Button1" id="HPBarBox" name="HPBar" value="HPbar" checked>HPbar</input></span>
+				<span class="q"><input type="checkbox" class="Button1" id="ScoreBox" name="Score" checked>Score</input></span>
+				<span class="q"><input type="checkbox" class="Button1" id="RankBox" name="Rank" checked>Rank</input></span>
+				<span class="q"><input type="checkbox" class="Button1" id="AccuracyBox" name="Accuracy" checked>Accuracy</input></span>
+				<span class="q"><input type="checkbox" class="Button1" id="ProgressBox" name="Progress" checked>Progress</input></span>
+			</div>
+			<div id="ButtonsLine2">
+				<span class="q"><input type="checkbox" class="Button1" id="ScoreboardBox" name="ScoreBoard">ScoreBoard</input></span>
+				<span class="q"><input type="checkbox" class="Button1" id="ScoreBox" name="PPNow">PP Now</input></span>
+				<span class="q"><input type="checkbox" class="Button1" id="RankBox" name="PPFC">PP FC</input></span>
+				<span class="q"><input type="checkbox" class="Button1" id="AccuracyBox" name="ComboNow">Combo Now</input></span>
+				<span class="q"><input type="checkbox" class="Button1" id="ProgressBox" name="ComboFC">Combo FC</input></span>
+			</div>
+			<div id="ButtonsLine3">
+				<span class="q"><input type="checkbox" class="Button1" id="StrainGraphBox" name="StrainGraph">StrainGraph</input></span>
+			</div>
+			<div id="ButtonsLine4">
+				<button class="ButtonSubmit" 
+					id="SubmitID"
+        			type="button">
+    				Submit
+				</button>
+			</div>
+		</div>	
+	</div>
+	<div id="Gameplay">
+		<div id="main">
+			<div id="adsdas" class="scene2">
+				<div class="line"></div>
+			</div>
+			<div id= "Top Right">
+				<div id="PPCounter" style="z-index: 100;"> 
+					<div id="HitDiv" class="scene3">
+						<div id="mapStatus">
+							<div id="hit100">
+								<div id="h100" class="status">
+									<hr>
+								</div>
+							</div>
+							<div id="hit50">
+								<div id="h50" class="status">
+									<hr>
+								</div>
+							</div>
+							<div id="hit0">
+								<div id="h0" class="status">
+									<hr>
+								</div>
+							</div>
+						</div>	
+					</div>
+					<div id="URDiv" class="scene">
+						<div id="URCont">
+							<span id="urtxt"></span><span id="pptxt3" class="ppclass2">&nbsp;UR</span>
+						</div>
+					</div>
+					<div id="man" class="scene">
+						<div id="ppCont" class="status">
+							<div id="ppCont2">
+								<span id="pp" class="odometer"></span><span id="pptxt3" class="ppclass2">pp</span><hr>
+							</div>
+						</div>
+					</div>
+					<div id="hpbar"></div>
+
+					<div id="man2" class="scene2">
+						<div id="ifppCont" class="status">
+							<div id="ifppCont2" class ="scene">
+								<span id="ifpp" class="odometer"></span><span id="pptxt3" class="ppclass2">pp</span><hr>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+				<div id="yeahhh">
+					<div id="strainGraph" class="scene22">
+						<div id="basegraph">
+							<canvas id="canvas" width="280" height="90"></canvas>
+						</div>
+						<div id="progress">
+							<canvas id="canvasSecond" width="280" height="90"></canvas>
+						</div>
+					</div>
+				</div>
+
+				<div id= "Scorediv" class="scene21">
+					<span id="Score"></span>
+				</div>
+
+
+				<div id= "Accdiv" class="scene21">
+					<span id="Acc"></span><span id="Acctxt">%</span>
+				</div>
+
+				<div id="bottom">
+					<div id="comboxpp">
+						<div id="comboCont">
+							<div id="adnsjkl2">
+								<span id="combo" class="odometer"></span><span id="combtxt3" class="ppclass2">x</span>
+							</div>
+						</div>
+						<div id="maxcomboConte" class="scene2">
+							<div id="adnsjkl">
+								<span id="maxcombo" class="odometer"></span><span id="combtxt3" class="ppclass2">x</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div id= "Rankdiv" class="scene22">
+					<span id="Rank"></span>
+				</div>
+
+				<div id="Scoreboard" class ="scene2">
+					<div id="Player1">
+						<div id="NamePlayer1div">
+							<span id="RankPlayer1" class="RankPlayerClass"></span>
+							<span id="NamePlayer1" class="NamePlayerClass"></span>
+						</div>
+						
+						<div id="PlayerInfo1">
+							<span id="ScorePlayer1" ></span> 
+							<span id="combxtxt1" class="combztxt">x</span><span id="ComboPlayer1" class="combotxt"></span>
+						</div>
+					</div>
+					<hr>
+					<div id="Player2">
+						<div id="NamePlayer2div">
+							<span id="RankPlayer2" class="RankPlayerClass"></span>
+							<span id="NamePlayer2" class="NamePlayerClass"></span>
+						</div>
+						<div id="PlayerInfo2">
+							<span id="ScorePlayer2"></span> 
+							<span id="combxtxt2" class="combztxt">x</span><span id="ComboPlayer2" class="combotxt"></span>
+						</div>
+					</div>
+					<hr>
+					<div id="Player3">
+						<div id="NamePlayer3div">
+							<span id="RankPlayer3" class="RankPlayerClass"></span>
+							<span id="NamePlayer3" class="NamePlayerClass"></span>
+						</div>
+						<div id="PlayerInfo3">
+							<span id="ScorePlayer3"></span> 
+							<span id="combxtxt3" class="combztxt">x</span><span id="ComboPlayer3" class="combotxt"></span>
+						</div>
+					</div>
+					<hr>
+					<div id="Player4">
+						<div id="NamePlayer4div">
+							<span id="RankPlayer4" class="RankPlayerClass"></span>
+							<span id="NamePlayer4" class="NamePlayerClass"></span>
+						</div>
+						<div id="PlayerInfo4">
+							<span id="ScorePlayer4"></span> 
+							<span id="combxtxt4" class="combztxt">x</span><span id="ComboPlayer4" class="combotxt"></span>
+						</div>
+					</div>
+					<hr>
+					<div id="Player5">
+						<div id="NamePlayer5div">
+							<span id="RankPlayer5" class="RankPlayerClass"></span>
+							
+							<span id="NamePlayer5" class="NamePlayerClass"></span>
+						</div>
+						<div id="PlayerInfo5">
+							<span id="ScorePlayer5"></span> 
+							<span id="combxtxt5" class="combztxt">x</span><span id="ComboPlayer5" class="combotxt"></span>
+						</div>
+					</div>
+				
+			</div>
+		</div>
+	</div>
+	<div id="xasmnkl"> </div>
+    <script src="index.js"></script>
+    <script defer>
+        {
+            let el = document.getElementsByClassName('odometer');
+			for (i = 0; i < el.length; i++) {
+				od = new Odometer({
+					el: el[i],
+					format: '( ddd).dd',
+					duration: 5000
+				});
+			}
+        }
+    </script>
+</body>
+
+</html>

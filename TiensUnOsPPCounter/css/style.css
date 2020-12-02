@@ -1,0 +1,186 @@
+
+body,html{
+    padding: 0;
+    margin: 0;
+    width: 550px;
+    height: 200px;
+    overflow-y: hidden; 
+    overflow-x: hidden; 
+}
+#main{
+    font-family: 'Varela Round', sans-serif;
+    font-weight: normal;
+    color: white;
+    background-color: rgba(255, 255, 255, 0);
+    width: 550px;
+    height: 200px;
+    position: relative;
+}
+.odometer.odometer-auto-theme{
+    font-family: "VAG Rundschrift D", Helvetica, sans-serif !important;
+    font-weight: normal !important;	
+}
+.odometer.odometer-auto-theme .odometer-digit .odometer-digit-inner, .odometer.odometer-theme-default .odometer-digit .odometer-digit-inner {
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+    margin-left: -5px !important;
+    margin-right: -5px !important;  
+}
+
+#SBCont{
+    padding:15px;
+    bottom: 48px;
+	position: absolute;
+    max-height: 200px;
+	font-size: 20px !important;
+    text-align: center !important;
+    border-radius: 7px;
+    background-image: repeating-linear-gradient(37deg, #7c8187, #515457 104%);
+    box-shadow: 0px 0px 10px 0px #4d4d4d;
+}
+#ifppCont2{
+    left: 65px;
+    top: 35px;
+    padding:15px;
+	position: absolute;
+    max-height: 200px;
+	font-size: 20px !important;
+    text-align: center !important;
+    border-radius: 7px;
+    background-image: repeating-linear-gradient(37deg, #7c8187, #515457 104%);
+    box-shadow: 0px 0px 10px 0px #4d4d4d;
+    z-index:12
+}
+#SBCont{
+    left: 360px;
+    z-index:12;
+    top: 35px;
+    height: 0px;
+}
+
+#mapStatus, #SBCont, #maxcomboCont, #ifppCont2{
+    text-shadow: 0px 2px 0px #000000, 0px 0px 5px #000000;    
+
+}
+
+.ppOver{
+    color: #cf9191; 
+    text-shadow: #996363 1px 0 10px;
+}
+#pp{
+    text-shadow: 0px 2px 0px #000000, 0px 0px 5px #000000;    
+}
+#CurrentSRCont{
+    font-size: 25px;
+}
+.ppclass2, .SRclass2, #URtxt{
+    font-family: "Sen";
+    font-weight: normal;
+    color: #63b8d9;
+    text-shadow: 0px 1px 5px #365a9c;
+}
+
+#PPCounter{
+    z-index: 100;
+}
+#man{
+    
+    position: absolute;
+    font-size: 30px;
+
+    width: 370px;
+    max-height: 20px;
+    padding: 20px;
+    padding-top: 20px;
+    top: 50px;
+    left: 50px;
+
+    
+    box-shadow: 0px 0px 10px 0px #000000, inset 0px 0px 10px 0px #000000;
+    border: 3px solid #333333;
+    background-color: #222222;
+
+    border-radius: 15px;
+
+    z-index: 10;   
+}
+#ppCont{
+    z-index: 10;
+    top:-15px;
+    position: relative;
+    justify-content: space-around;
+    display: flex;
+    
+}
+
+#mapStatus{
+    z-index: 10;   
+    position: relative;
+    justify-content: space-around;
+    display: flex;
+    padding-top: 10px;
+    
+}
+
+#mapStatus hr{
+    z-index: 10;
+    height: 10px;
+    bottom:0px; 
+    height: 3px;
+    border-radius: 6px;
+    text-align: center;
+    width: 75%;
+    margin-right: center;
+    border: none;
+}
+.status{
+    line-height: 3px;
+
+}
+#h100 hr{
+    background-color: #4A9C36;
+    box-shadow: 0px 0px 10px 0px #4A9C36;
+}
+#h50 hr{
+    background-color: #9C9236;
+    box-shadow: 0px 0px 10px 0px #9C9236;
+
+}
+#h0 hr{
+    background-color: #9c3636;
+    box-shadow: 0px 0px 10px 0px #9c3636;
+}
+#h100 {
+	bottom: 195px;
+}
+#h50 {
+	bottom: 245px;
+}
+#h0 {
+	bottom: 295px;
+}
+
+.text{
+    display: flex;
+    justify-content: center;
+}
+
+.click{
+    animation: click 100ms 2;
+    animation-direction: alternate;
+}
+@keyframes click{
+    0%{
+        transform: scale(1);
+        filter: blur(0px);
+
+    }
+    100%{
+        transform: scale(0.9);
+        filter: blur(1px);
+
+    }
+}
+.scene{ 
+        transition: ease-in-out 300ms;
+}
