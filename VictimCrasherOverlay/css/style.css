@@ -55,7 +55,7 @@ body,html{
 	background-image: url('../static/hpbar.png');
 	background-repeat: no-repeat;
 	z-index: -1;
-    transition: ease-in-out 500ms;
+    transition: ease-in-out 50ms;
 }
 #strainGraph{
     position: absolute;
