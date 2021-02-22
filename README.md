@@ -50,7 +50,7 @@ By: [jassper0][5]<br>
 > *Song Selection*\
 <img src="https://i.imgur.com/kudDoco.png" width="600">\
 >*Gameplay*\
-<img src="https://i.imgur.com/msUWdb8.png" width="600">
+<img src="https://i.imgur.com/msUWdb8.png" width="600">\
 By: [Xynogen][6]<br>
 
 ### DarkAndWhite
