@@ -79,6 +79,8 @@ body{
     object-fit: cover;
     height: 100%;
     width: 100%;
+    filter: blur(0.05rem);
+    transform: scale(1.1);
 }
 .container{
     position: absolute;
@@ -253,5 +255,5 @@ body{
     }
     100%{
       transform: translate3D(calc(-50% - 9rem), 0, 0);
-   }
+    }
 }
