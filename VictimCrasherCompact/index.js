@@ -1,4 +1,4 @@
-let socket = new ReconnectingWebSocket("ws://" + location.host + "/ws");
+let socket = new ReconnectingWebSocket(`ws://${location.host}/ws`);
 let mapid = document.getElementById('mapid');
 
 let bg = document.getElementById("bg");

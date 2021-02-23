@@ -1,4 +1,4 @@
-let socket = new ReconnectingWebSocket("ws://127.0.0.1:24050/ws");
+let socket = new ReconnectingWebSocket(`ws://${location.host}/ws`);
 
 let bg = document.getElementById("bg");
 let star = document.getElementById("star");
@@ -27,7 +27,7 @@ socket.onmessage = event => {
 	let data = JSON.parse(event.data);
 	if (tempState !== data.menu.bm.path.full) {
 		tempState = data.menu.bm.path.full
-		bg.setAttribute('src', `http://127.0.0.1:24050/Songs/${data.menu.bm.path.full}?a=${Math.random(10000)}`)
+		bg.setAttribute('src',`http://${location.host}/Songs/${data.menu.bm.path.full}?a=${Math.random(10000)}`)
 	}
 	if (data.menu.bm.time.current > 1000) {
 		let seconds = (data.menu.bm.time.current/1000).toFixed(0);

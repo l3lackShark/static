@@ -1,4 +1,4 @@
-let socket = new ReconnectingWebSocket("ws://127.0.0.1:24050/ws");
+let socket = new ReconnectingWebSocket(`ws://${location.host}/ws`);
 let scoreColor = document.getElementById('sbColor')
 let score = document.getElementById('score');
 let wrapper = document.getElementById('wrapper');

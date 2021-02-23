@@ -1,4 +1,4 @@
-let socket = new ReconnectingWebSocket("ws://127.0.0.1:24050/ws");
+let socket = new ReconnectingWebSocket(`ws://${location.host}/ws`);
 let mapid = document.getElementById('mapid');
 
 let bg = document.getElementById("bg");
@@ -36,7 +36,7 @@ socket.onmessage = event => {
     if(tempImg !== data.menu.bm.path.full){
         tempImg = data.menu.bm.path.full
         let img = data.menu.bm.path.full.replace(/#/g,'%23').replace(/%/g,'%25')
-        bg.setAttribute('src',`http://127.0.0.1:24050/Songs/${img}?a=${Math.random(10000)}`)
+        bg.setAttribute('src',`http://${location.host}/Songs/${img}?a=${Math.random(10000)}`)
     }
     if(tempTitle !== data.menu.bm.metadata.artist + ' - ' + data.menu.bm.metadata.title){
         tempTitle = data.menu.bm.metadata.artist + ' - ' + data.menu.bm.metadata.title;
