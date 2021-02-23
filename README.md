@@ -48,9 +48,9 @@ By: [jassper0][5]<br>
 
 > Size: 1152x245\
 > *Song Selection*\
-<img src="https://i.imgur.com/kudDoco.png" width="600">\
+<img src="https://i.imgur.com/R4WL8YJ.png" width="600">\
 >*Gameplay*\
-<img src="https://i.imgur.com/msUWdb8.png" width="600">\
+<img src="https://i.imgur.com/IFCtP5T.png" width="600">\
 By: [Xynogen][6]<br>
 
 ### DarkAndWhite
