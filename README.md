@@ -43,7 +43,7 @@ By: [Dartandr][1]<br>
 >*Gameplay 1*\
 <img src="https://i.postimg.cc/NMMhcLmV/Screenshot-1.png">\
 By: [jassper0][5]<br>
-  
+
 ### reComfortaa
 
 > Size: 1152x245\
@@ -115,7 +115,15 @@ By: [cyperdark][2]<br>
 <img  src="https://cdn.discordapp.com/attachments/641255341245333514/731842011514011698/unknown.png">\
 By: [cyperdark][2]<br>
   
-  
+### SimpleMania
+
+> Size: 1920X1080\
+> *Gameplay*\
+> Note: Only works on Mania.
+<img src="https://media.discordapp.net/attachments/608070341461540864/813623841485750312/unknown.png">\
+By: [Ripball][7]<br>
+
+
 
 [1]: https://github.com/Dartandr
 
@@ -128,3 +136,5 @@ By: [cyperdark][2]<br>
 [5]: https://github.com/jassper0
 
 [6]: https://github.com/Xyn0gen
+
+[7]: https://github.com/Ripball
