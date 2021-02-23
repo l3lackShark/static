@@ -1,4 +1,4 @@
-let socket = new ReconnectingWebSocket("ws://127.0.0.1:24050/ws");
+let socket = new ReconnectingWebSocket("ws://" + location.host + "/ws");
 let mapid = document.getElementById('mapid');
 
 let playername = document.getElementById("playername");
@@ -34,6 +34,7 @@ const modsImgs = {
     'at': './static/autoplay.png',
     'cn': './static/cinema.png',
     'v2': './static/v2.png',
+    'tp': './static/target.png',
 };
 
 socket.onopen = () => {
@@ -108,7 +109,7 @@ socket.onmessage = event => {
 		pp.innerHTML = "";
 	}
 	if (data.gameplay.hp.smooth > 0) {
-		hpbar.style.width = (data.gameplay.hp.smooth / 200) * 1300 + "px";
+		hpbar.style.width = (data.gameplay.hp.normal / 200) * 1300 + "px";
 	} else {
 		hpbar.style.width = 1300;
 	}
