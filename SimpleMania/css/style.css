@@ -1,0 +1,338 @@
+@font-face {
+    font-family: "Saxony-Serial-Medium";
+    src: url("../fonts/saxony-serial-medium-regular.ttf");
+}
+body,html{
+    padding: 0;
+    margin: 0;
+    overflow-y: hidden;
+}
+#main{
+    font-size: 20px;
+    font-family: "Saxony-Serial-Medium", Helvetica, sans-serif;
+    font-weight: normal;
+    color: white;
+    width: 1920px;
+    height: 1080px;
+    position: relative;
+	text-shadow: 0px 0px 8px black;
+}
+.odometer.odometer-auto-theme{
+    font-size: 24px !important;
+    font-family: "Saxony-Serial-Medium", Helvetica, sans-serif !important;
+    font-weight: normal !important;	
+}
+.odometer.odometer-auto-theme .odometer-digit .odometer-digit-inner, .odometer.odometer-theme-default .odometer-digit .odometer-digit-inner {
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+    margin-left: -5px !important;
+    margin-right: -5px !important;
+}
+#bottom {
+	position: absolute;
+	bottom: 0px;
+    width: 1920px;
+    height: 600px;
+	background-image: url('../img/mania.png');
+	background-repeat: no-repeat;	
+
+	z-index: 0;
+}
+
+#ppCont{
+    font-size: 30px !important;
+    position: absolute;
+    text-align: right;
+    bottom: 105px;
+	right: 270px;
+    max-height: 200px;
+    transition: ease-in-out 500ms;
+}
+#pp{
+	font-size: 25px !important;
+	text-align: right !important;
+}
+#player{
+	position: absolute;
+    top: 15px;
+	left: 20px;
+	font-size: 30px !important;
+}
+#bg{
+    background-color: rgb(71, 83, 109);
+    position: absolute;
+    height: 210px;
+    width: 370px;
+    right:31px;
+    bottom:500px;
+    object-fit: cover;
+    z-index: -1;
+}
+#playername{
+	position: absolute;
+    top: 45px;
+	left: 20px;
+	font-size: 50px !important;
+}
+#score{
+	position: absolute;
+	right: 180px;
+    bottom: 479px;
+	font-size: 30px !important;
+	text-align: left !important;
+}
+#pos{
+	position: absolute;
+	right: 95px;
+    bottom: 479px;
+	font-size: 30px !important;
+	text-align: left !important;
+}
+#accuracy{
+	position: absolute;
+    bottom: 396px;
+	right: 70px;
+	font-size: 30px !important;
+	text-align: right !important;
+}
+#percent{
+	position: absolute;
+    bottom: 396px;
+	right: 45px;
+	font-size: 20px !important;
+	text-align: right !important;
+}
+#combo{
+	position: absolute;
+    bottom: 95px;
+    max-height: 200px;
+    right: 45px;
+	font-size: 30px !important;
+	text-align: right !important;
+}
+#h100,#h50,#h0,[id='300'] ,#geki,#katu,#ur{
+	position: absolute;
+	right: 270px;
+    width: max-content;
+    max-height: 200px;
+	font-size: 25px !important;
+	text-align: right !important;	
+}
+#ur {
+	bottom: 67px;
+    right: 270px;
+}
+#h0 {
+	bottom: 157px;
+    right: 270px;
+}
+#h50 {
+	bottom: 194px;
+    right: 270px;
+}
+#h100 {
+	bottom: 234px;
+    right: 270px;
+}
+#katu {
+	bottom: 275px;
+    right: 270px;
+}
+#geki {
+	bottom: 358px;
+    right: 270px;
+}
+[id='300']  {
+	bottom: 315px;
+    right: 270px;
+}
+
+
+.over{ 
+    transform: translate(300px);
+    animation: slide 5s linear infinite;
+}
+#mods{
+    position: absolute;
+    top: 127px;
+	right: 205px;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    transition: ease-in-out 500ms;
+
+}
+.mod{
+    width: 36px;
+    height: 36px;
+    display: contents;
+}
+.mod img{
+    position: relative;
+    height: 36px;
+    width: 36px;
+    z-index: 1;
+
+    object-fit: cover;
+    -webkit-filter: drop-shadow( -1px 1px 1px rgba(0,0,0,0.7));
+    -moz-filter: drop-shadow(-5px 5px 10px rgba(0,0,0,0.7));
+    -ms-filter: drop-shadow(-5px 5px 10px rgba(0,0,0,0.7));
+    -o-filter: drop-shadow(-5px 5px 10px rgba(0,0,0,0.7));
+}
+.text{
+    display: flex;
+    justify-content: center;
+}
+
+#rank {
+	position: absolute;
+	right: 270px;
+    bottom: 396px;
+	font-size: 30px !important;
+	text-align: right !important;
+}
+
+.scroll-left {
+    font-size: 30px;
+    font-family: 'Sica 3', sans-serif;
+    font-weight: normal;
+ height: 50px;
+ right: -35px;
+ top: 365px;
+ overflow: hidden;
+ position: relative;
+}
+.scroll-left p {
+ position: absolute;
+ width: max-content;
+ height: 100%;
+ margin: 0;
+ line-height: 70px;
+ text-align: center;
+ /* Starting position */
+ -moz-transform:translateX(120%);
+ -webkit-transform:translateX(120%);	
+ transform:translateX(120%);
+ /* Apply animation to this element */	
+ -moz-animation: scroll-left 7s linear infinite;
+ -webkit-animation: scroll-left 7s linear infinite;
+ animation: scroll-left 7s linear infinite;
+}
+/* Move it (define the animation) */
+@-moz-keyframes scroll-left {
+ 0%   { -moz-transform: translateX(120%); }
+ 100% { -moz-transform: translateX(-120%); }
+}
+@-webkit-keyframes scroll-left {
+ 0%   { -webkit-transform: translateX(120%); }
+ 100% { -webkit-transform: translateX(-120%); }
+}
+@keyframes scroll-left {
+ 0%   { 
+ -moz-transform: translateX(150%); /* Browser bug fix */
+ -webkit-transform: translateX(120%); /* Browser bug fix */
+ transform: translateX(120%); 		
+ }
+ 100% { 
+ -moz-transform: translateX(-120%); /* Browser bug fix */
+ -webkit-transform: translateX(-120%); /* Browser bug fix */
+ transform: translateX(-120%); 
+ }
+}
+
+#line {
+	box-shadow: 0px 1px 0px #000;
+	z-index: -1;
+	width: 410px;
+	height: 5px;
+    bottom: 60px;
+    left: 43px;
+	position: absolute;
+	border-radius: 10px;
+	transform: translate(0px, 2px);
+	overflow: hidden;
+}
+
+#line::before,
+#line::after {
+	position: absolute;
+	content: "";
+	height: 100%;
+	border-radius: 10px;
+	animation: slide 5s linear infinite alternate;
+}
+
+#line::before {
+	background: linear-gradient(-45deg, rgb(163, 162, 160) , rgb(92, 91, 89));
+	background-size: 200%;
+	width: var(--progress);
+	transition: width 100ms;
+	/* clip-path: polygon(0 0, var(--progress) 0, var(--progress) 100%, 0% 100%); */
+}
+
+#line::after {
+	z-index: -1;
+	width: 100%;
+	background-color: rgb(255, 255, 255);
+}
+
+@keyframes slide {
+	0% {
+		background-position: 0%;
+	}
+	100% {
+		background-position: 100%;
+	}
+}
+
+#mapDesc {
+    position: absolute;
+    left: 48px;
+    width: 430px;
+    bottom: 133px;
+    height: auto;
+    white-space: initial;
+    overflow: visible;
+    text-overflow:clip;
+    z-index: 0;
+    font-size: 20px;
+    /*text-shadow: 2px 2px 3px black;*/
+    text-shadow: -1px 1px 2px #000, 1px 1px 2px #000, 1px -1px 2px #000, -1px -1px 2px #000;
+    text-align: left;
+    z-index: 2;
+}
+
+#stars,#OD,#HP,#CS {
+    position: absolute;
+    width: 150px;
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    z-index: 0;
+    font-size: 20px;
+    padding: 5px 0px 5px 0px;
+    color: white; 
+    bottom: 74px;
+}
+
+#stars {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    left: 36px;
+}
+#OD {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    left: 135px;
+}
+#HP {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    left: 230px;
+}
+#CS {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    left: 360px;
+}
