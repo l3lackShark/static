@@ -24,6 +24,9 @@ function reflow(elt){
 }
 
 let shape = document.getElementsByClassName('shape');
+let diffClass = document.getElementsByClassName('diff');
+let mapperClass = document.getElementsByClassName('mapper');
+let secondary_font = document.getElementsByClassName('secondary-font');
 let rank = document.getElementById('rank');
 let title = document.getElementById('title');
 let artist = document.getElementById('artist');
@@ -75,9 +78,9 @@ socket.onmessage = event => {
       mapperName = menu.mapper;
       mapper.innerHTML = mapperName;
     }
+
     var widthLimit = shape[0].getBoundingClientRect().width * 0.9;
     var totalWidth = artist_title.getBoundingClientRect().width;
-
     if (totalWidth > widthLimit) {
       var speed = totalWidth / 64;
       artist_title.style.animationDuration = speed + "s";
@@ -86,13 +89,32 @@ socket.onmessage = event => {
       artist_title.className = "";
     }
 
+    var diffMapperWidthLimit = shape[0].getBoundingClientRect().width / 4;
+    var diffWidth = diff.getBoundingClientRect().width + secondary_font[0].getBoundingClientRect().width;
+    var mapperWidth = mapper.getBoundingClientRect().width + secondary_font[1].getBoundingClientRect().width;
+
+    if (diffWidth > diffMapperWidthLimit) {
+      diffClass[0].classList.add('hide');
+    } else {
+      diffClass[0].classList.remove('hide');
+    }
+
+    if (mapperWidth > diffMapperWidthLimit) {
+      mapperClass[0].classList.add('hide');
+    } else {
+      mapperClass[0].classList.remove('hide');
+    }
+
+
     if (gameState !== data.menu.state) {
       gameState = data.menu.state;
       if (gameState === 2 || gameState === 7 || gameState === 14) {
-        container[0].style.transform = "translateY(-0.3rem)";
+        container[0].style.transform = "translateY(50%)";
+        container[0].style.bottom = "50%";
         info[0].style.transform = "translateY(-1.8rem)";
       } else {
         container[0].style.transform = "translateY(100%)";
+        container[0].style.bottom = "0";
         info[0].style.transform = "translateY(-50%)";
       }
     }
@@ -135,7 +157,10 @@ socket.onmessage = event => {
     if (mods.includes("HD") || mods.includes("FL")) {
       hdfl = true;
     } else hdfl = false;
-    params.rank = hits.grade.current
+    if (hits.grade.current === "") {
+      params.rank = 'SS'
+    } else params.rank = hits.grade.current
+
     if (params.rank == 'SS'){
       if (hdfl == true) {
         rank.style.color = getComputedStyle(document.documentElement).getPropertyValue('--SHD');
