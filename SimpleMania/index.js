@@ -5,7 +5,8 @@ let mapid = document.getElementById('mapid');
 let mainContainer = document.getElementById("main");
 let title = document.getElementById("title");
 let mapTitle = document.getElementById("mapTitle");
-let mapDesc = document.getElementById("mapDesc")
+let mapDesc = document.getElementById("mapDesc");
+let mapper = document.getElementById("mapper");
 let stars = document.getElementById("stars");
 let OD = document.getElementById("OD");
 let HP = document.getElementById("HP");
@@ -28,42 +29,10 @@ let hun = document.getElementById("h100");
 let fifty = document.getElementById("h50");
 let miss = document.getElementById("h0");
 
-
-
-let bottom_cont = document.getElementById("bottom");
+// Overlay
+let box_right = document.getElementById("box_right");
+let box_left = document.getElementById("box_left");
 let progressChart = document.getElementById("progress");
-
-
-const modsImgs = {
-    'nm': './img/NM.png',
-    'ez': './img/EZ.png',
-    'nf': './img/NF.png',
-    'ht': './img/HF.png',
-    'hr': './img/HR.png',
-    'sd': './img/SD.png',
-    'pf': './img/PF.png',
-    'dt': './img/DT.png',
-    'nc': './img/NC.png',
-    'hd': './img/HD.png',
-    'fl': './img/FL.png',
-    'at': './img/AT.png',
-    'cn': './img/CM.png',
-    'v2': './img/V2.png',
-    'fi': './img/FI.png',
-    'mr': './img/MR.png',
-    'rd': './img/RD.png',
-    '1k': './img/1K.png',
-    '2k': './img/2K.png',
-    '3k': './img/3K.png',
-    '4k': './img/4K.png',
-    '5k': './img/5K.png',
-    '6k': './img/6K.png',
-    '7k': './img/7K.png',
-    '8k': './img/8K.png',
-    '9k': './img/9K.png',
-    '10k': './img/10K.png',
-    'co': './img/CO.png'
-};
 
 socket.onopen = () => {
     console.log("Successfully Connected");
@@ -73,6 +42,14 @@ let animation = {
     acc:  new CountUp('accuracy', 0, 0, 2, .2, {useEasing: true, useGrouping: true,   separator: " ", decimal: "." }),
     ur:  new CountUp('ur', 0, 0, 2, .2, {useEasing: true, useGrouping: true,   separator: " ", decimal: "." }),
     score:  new CountUp('score', 0, 0, 0, .2, {useEasing: true, useGrouping: true,   separator: "", decimal: "." }),
+    Marv: new CountUp('geki', 0, 0, 0, .2, {useEasing: true, useEasing: true, separator: "", decimal: ""}),
+    Perfect: new CountUp('300', 0, 0, 0, .2, {useEasing: true, useEasing: true, separator: "", decimal: ""}),
+    Great: new CountUp('katu', 0, 0, 0, .2, {useEasing: true, useEasing: true, separator: "", decimal: ""}),
+    hun: new CountUp('h100', 0, 0, 0, .2, {useEasing: true, useEasing: true, separator: "", decimal: ""}),
+    fifty: new CountUp('h50', 0, 0, 0, .2, {useEasing: true, useEasing: true, separator: "", decimal: ""}),
+    miss: new CountUp('h0', 0, 0, 0, .2, {useEasing: true, useEasing: true, separator: "", decimal: ""}),
+    pp: new CountUp('pp', 0, 0, 0, .2, {useEasing: true, useEasing: true, separator: "", decimal: "."}),
+    combo: new CountUp('combo', 0, 0, 0, .2, {useEasing: true, useEasing: true, separator: "", decimal: "."}),
 }
 
 socket.onclose = event => {
@@ -88,7 +65,7 @@ let tempTitle;
 let tempDiff;
 let tempMods;
 let gameState;
-
+let tmods;
 
 let tempMapArtist;
 let tempMapName;
@@ -107,30 +84,25 @@ let tempHP;
 let tempCS;
 let tempPos;
 // Simplistic code
-function setRankStyle(text, color, shadow) {
-	rank.innerHTML = text;
-	rank.style.color = color;
-	rank.style.textShadow = shadow;
+function setRankStyle(text, color, shadow,GM) {
+    switch (GM){
+        case 3:
+            rank.innerHTML = text;
+            rank.style.color = color;
+            rank.style.textShadow = shadow;
+        break;
+    }
 }
 
 socket.onmessage = event => {
     try {
     let data = JSON.parse(event.data)
     , menu = data.menu
-    , play = data.gameplay
     , hitGrade = data.gameplay.hits.grade.current
     , hdflfi = (data.menu.mods.str.includes("HD") || data.menu.mods.str.includes("FL") || data.menu.mods.str.includes("FI") ? true : false)
     , tempGrade = ""
     , tempColor = ""
     , tempShadow = "";
-
-// Check GameMode and hide bottom on all modes except mania.
-if (data.menu.state === 2){
- bottom_cont.style.display = "block";}
-else{
- bottom_cont.style.display = "none";
- ur.innerHTML = 0;
-}
 
 // Rank Check (added FadeIn mod on silver SS/S rank)
 function rankCheck(hitGrade) {
@@ -167,46 +139,65 @@ function rankCheck(hitGrade) {
             break;
         default:
             tempGrade = "SS";
-            tempColor = (hdfl ? "#ffffff" : "#d6c253");
-            tempShadow = (hdfl ? "0 0 0.5rem #ffffff" : "0 0 0.5rem #d6c253");;
+            tempColor = (hdflfi ? "#ffffff" : "#d6c253");
+            tempShadow = (hdflfi ? "0 0 0.5rem #ffffff" : "0 0 0.5rem #d6c253");;
             break;
     }
 }
+
+// Check GameMode and hide on all modes except mania.
+if(gameState !== data.menu.state){
+gameState = data.menu.state
+if (gameState === 2 && data.gameplay.gameMode === 3){
+    box_left.style.visibility = "visible";
+    box_left.style.opacity = "1";
+    box_left.style.transition = "opacity .2s linear";
+
+    box_right.style.visibility = "visible";
+    box_right.style.opacity = "1";
+    box_right.style.transition = "opacity .2s linear";
+}else{
+    box_left.style.visibility = "hidden";
+    box_left.style.opacity = "0";
+    box_left.style.transition = "visibility 0s .2s, opacity .2s linear";
+
+    box_right.style.visibility = "hidden";
+    box_right.style.opacity = "0";
+    box_right.style.transition = "visibility 0s .2s, opacity .2s linear";
+    ur.innerHTML = 0;
+}
+}
 // Change rank by acc value (this will work until rank got fixed on json, mania only).
-if (data.gameplay.gameMode = 3){
-    
 switch (menu.state) {
    case 2:   
- accuracy = (data.gameplay.accuracy);
-    if (accuracy > "99.99"){
-        hitGrade = "SS"
+   switch (data.gameplay.gameMode){
+       case 3:
+        accuracy = (data.gameplay.accuracy);
+        if (accuracy > "99.99"){
+            hitGrade = "SS"
+        }
+    else if (accuracy >= "95.00") {
+    hitGrade = "S"
     }
-else if (accuracy >= "95.00") {
-hitGrade = "S"
-}
-else if (accuracy <= "94.99" && accuracy >= "90.00"){
-hitGrade = "A"
-}
-else if (accuracy <= "89.99" && accuracy >= "80.00"){
-hitGrade = "B"
-}
-else if (accuracy <= "79.99" && accuracy >= "70.00"){
-hitGrade = "C"
-}
-else if (accuracy < "70"){
-hitGrade = "D"
-}   
-rankCheck(hitGrade);
-setRankStyle(tempGrade,tempColor,tempShadow);
+    else if (accuracy <= "94.99" && accuracy >= "90.00"){
+    hitGrade = "A"
+    }
+    else if (accuracy <= "89.99" && accuracy >= "80.00"){
+    hitGrade = "B"
+    }
+    else if (accuracy <= "79.99" && accuracy >= "70.00"){
+    hitGrade = "C"
+    }
+    else if (accuracy < "70"){
+    hitGrade = "D"
+    }   
+    rankCheck(hitGrade);
+    setRankStyle(tempGrade,tempColor,tempShadow,3);
+   }
    default:
 }
 
-}
-
-if (data.gameplay.gameMode = 3) {
-
-
-    gameState = data.menu.state
+  
         if(gameState === 2){
             mainContainer.style.opacity = "1";
             document.documentElement.style.setProperty('--progress', ` ${(menu.bm.time.current / menu.bm.time.mp3 * 100).toFixed(2)}%`);
@@ -226,136 +217,133 @@ if (data.gameplay.gameMode = 3) {
             line.style.transform = "translate(0px, 5px)"
             line.style.opacity = "1"
         }
-    if(tempTitle !== data.menu.bm.metadata.artist + ' - ' + data.menu.bm.metadata.title){
-        tempTitle = data.menu.bm.metadata.artist + ' - ' + data.menu.bm.metadata.title;
-        title.innerHTML = tempTitle
-    }
 
-	if(fullTime !== data.menu.bm.time.mp3){
-		fullTime = data.menu.bm.time.mp3;
-		onepart = 1400/fullTime;
-	}
 
-    if (tempStars !== data.menu.bm.stats.fullSR) {
-        tempStars = data.menu.bm.stats.fullSR;
-        stars.innerHTML = tempStars;
-    }
-    if (tempOD !== data.menu.bm.stats.memoryOD){
-        tempOD = data.menu.bm.stats.memoryOD;
-        OD.innerHTML = tempOD;       
-    }
-
-    if (tempHP !== data.menu.bm.stats.memoryHP){
-        tempHP = data.menu.bm.stats.memoryHP;
-        HP.innerHTML = tempHP;       
-    }
-
-    if (tempCS !== data.menu.bm.stats.memoryCS){
-        tempCS = data.menu.bm.stats.memoryCS;
-        CS.innerHTML = tempCS;       
-    }
-
-    if (tempPos !== data.gameplay.leaderboard.ourplayer.position){
-        tempPos = data.gameplay.leaderboard.ourplayer.position;
-        if (tempPos > 50){
-            pos.innerHTML = "51+"
-        }else{
-            pos.innerHTML = tempPos
+switch (menu.state){
+    case 2:
+        if(tempTitle !== data.menu.bm.metadata.artist + ' - ' + data.menu.bm.metadata.title){
+            tempTitle = data.menu.bm.metadata.artist + ' - ' + data.menu.bm.metadata.title;
+            title.innerHTML = tempTitle
         }
-        pos.innerHTML = tempPos
-    }
-
     
-    if (tempMapDiff !== '[' + data.menu.bm.metadata.difficulty + ']') {
-        tempMapDiff = '[' + data.menu.bm.metadata.difficulty + ']';
-        tempMapper = data.menu.bm.metadata.mapper;
-        mapDesc.innerHTML = '' + tempMapDiff + " by " + tempMapper;
-    }
-
-
-	if (data.gameplay.pp.current != '') {
-		let ppData = data.gameplay.pp.current;
-		pp.innerHTML = Math.round(ppData);
-	} else {
-		pp.innerHTML = "0";
-	}
-	if (data.gameplay.score > 0) {
-		animation.score.update(data.gameplay.score);
-	} else {
-		animation.score.update(data.gameplay.score);
-	}
-	if (data.gameplay.accuracy > 0) {
-		animation.acc.update(data.gameplay.accuracy);
-	} else {
-		animation.acc.update(0)
-	}
-	if (data.gameplay.combo.current != '') {
-		let comboData = data.gameplay.combo.current;
-		combo.innerHTML = comboData + "x";
-	} else {
-		combo.innerHTML = "0x";
-	}
-    if (data.gameplay.hits['geki'] > 0) {
-		Marv.innerHTML = data.gameplay.hits['geki'];
-	} else {
-		Marv.innerHTML = 0;
-	}
-    if (data.gameplay.hits[300] > 0) {
-		Perfect.innerHTML = data.gameplay.hits[300];
-	} else {
-		Perfect.innerHTML = 0;
-	}
-    if (data.gameplay.hits['katu'] > 0) {
-		Great.innerHTML = data.gameplay.hits['katu'];
-	} else {
-		Great.innerHTML = 0;
-	}
-	if (data.gameplay.hits[100] > 0) {
-		hun.innerHTML = data.gameplay.hits[100];
-	} else {
-		hun.innerHTML = 0;
-	}
-	if (data.gameplay.hits[50] > 0) {
-		fifty.innerHTML = data.gameplay.hits[50];
-	} else {
-		fifty.innerHTML = 0;
-	}
-	if (data.gameplay.hits[0] > 0) {
-		miss.innerHTML = data.gameplay.hits[0];
-	} else {
-		miss.innerHTML = 0;
-	}
-	if (data.gameplay.hits.unstableRate > 0) {
-		animation.ur.update(data.gameplay.hits.unstableRate);
-	} else {
-		animation.ur.update(0);
-	}
-    if(tempMods != data.menu.mods.str){
-        tempMods = data.menu.mods.str;
-        if (tempMods == ""){
-           tempMods = 'NM';
+        if(fullTime !== data.menu.bm.time.mp3){
+            fullTime = data.menu.bm.time.mp3;
+            onepart = 1400/fullTime;
         }
-		mods.innerHTML = '';
-		let modsApplied = tempMods.toLowerCase();
-		
-		if(modsApplied.indexOf('nc') != -1){
-			modsApplied = modsApplied.replace('dt','');
-		}
-		if(modsApplied.indexOf('pf') != -1){
-			modsApplied = modsApplied.replace('sd','');
-		}
-		let modsArr = modsApplied.match(/.{1,2}/g);
-		for(let i = 0; i < modsArr.length; i++){
-			let mod = document.createElement('div');
-			mod.setAttribute('class','mod');
-			let modImg = document.createElement('img');
-			modImg.setAttribute('src', modsImgs[modsArr[i]]);
-			mod.appendChild(modImg);
-			mods.appendChild(mod);
-		}
-    }
-}
+    
+        if (tempStars !== data.menu.bm.stats.fullSR) {
+            tempStars = data.menu.bm.stats.fullSR;
+            stars.innerHTML = tempStars;
+        }
+        if (tempOD !== data.menu.bm.stats.memoryOD){
+            tempOD = data.menu.bm.stats.memoryOD;
+            OD.innerHTML = tempOD;       
+        }
+    
+        if (tempHP !== data.menu.bm.stats.memoryHP){
+            tempHP = data.menu.bm.stats.memoryHP;
+            HP.innerHTML = tempHP;       
+        }
+    
+        if (tempCS !== data.menu.bm.stats.memoryCS){
+            tempCS = data.menu.bm.stats.memoryCS;
+            CS.innerHTML = tempCS;       
+        }
+    
+        tempPos = data.gameplay.leaderboard.ourplayer.position;
+        if (tempPos >= 50){
+            pos.innerHTML = "(#??)"
+        }else if(tempPos < 50){
+            pos.innerHTML = '(#' + tempPos + ")"
+        }
 
+
+        if (tempMapDiff !== '[' + data.menu.bm.metadata.difficulty + ']') {
+            tempMapDiff = '[' + data.menu.bm.metadata.difficulty + ']';
+            tempMapper = data.menu.bm.metadata.mapper;
+            mapDesc.innerHTML = '' + tempMapDiff;
+            mapper.innerHTML = 'by ' + tempMapper;
+        }
+        switch (data.gameplay.gameMode){        
+            case 3:      
+                if (data.gameplay.pp.current != '') {
+                    animation.pp.update(Math.round(data.gameplay.pp.current))
+                  } else {
+                    animation.pp.update(0)
+                }
+                if (data.gameplay.score > 0) {
+                    animation.score.update(data.gameplay.score);
+                } else {
+                    animation.score.update(data.gameplay.score);
+                }
+                if (data.gameplay.accuracy > 0) {
+                    animation.acc.update(data.gameplay.accuracy);
+                } else {
+                    animation.acc.update(0)
+                }
+                if (data.gameplay.combo.current != '') {
+                    animation.combo.update(data.gameplay.combo.current);
+                } else {
+                    animation.combo.update(0)
+                }
+                if (data.gameplay.hits['geki'] > 0) {
+                    animation.Marv.update(data.gameplay.hits['geki']);
+                } else {
+                    animation.Marv.update(0)
+                }
+                if (data.gameplay.hits[300] > 0) {
+                    animation.Perfect.update(data.gameplay.hits[300]);
+                } else {
+                    animation.Perfect.update(0)
+                }
+                if (data.gameplay.hits['katu'] > 0) {
+                    animation.Great.update(data.gameplay.hits['katu']);
+                } else {
+                    animation.Great.update(0)
+                }
+                if (data.gameplay.hits[100] > 0) {
+                    animation.hun.update(data.gameplay.hits[100]);
+                } else {
+                    animation.hun.update(0)
+                }
+                if (data.gameplay.hits[50] > 0) {
+                    animation.fifty.update(data.gameplay.hits[50]);
+                } else {
+                    animation.fifty.update(0)
+                }
+                if (data.gameplay.hits[0] > 0) {
+                    animation.miss.update(data.gameplay.hits[0]);
+                } else {
+                    animation.miss.update(0)
+                }
+                if (data.gameplay.hits.unstableRate > 0) {
+                    animation.ur.update(data.gameplay.hits.unstableRate);
+                } else {
+                    animation.ur.update(0);
+                }
+        }
+
+        if(tempMods != data.menu.mods.str){
+            tempMods = data.menu.mods.str;
+            if (tempMods == ""){
+               tempMods = 'NM';
+            }
+            mods.innerHTML = '';
+            let modsApplied = tempMods;
+            
+            if(modsApplied.indexOf('NC') != -1){
+                modsApplied = modsApplied.replace('DT','');
+            }
+            if(modsApplied.indexOf('PF') != -1){
+                modsApplied = modsApplied.replace('SD','');
+            }
+            let modsArr = modsApplied.match(/.{1,2}/g);
+            for(let i = 0; i < modsArr.length; i++){            
+            mods.innerHTML = '' + mods.innerHTML + '   ' + '   '+ modsArr[i];
+            }
+        }
+    default: 
+}
 } catch (err) {
 console.log(err);
 };

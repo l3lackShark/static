@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">	
     <link rel="stylesheet" href="css/odometr.css">
     <script src="deps/odometr.js"></script>
     <script src="deps/countUp.js"></script>
@@ -14,39 +14,72 @@
 
 <body>
     <div id="main">
-		<div id="bottom" style="display: none;">
-			<div style="width:430px;height: 50px;" class="scroll-left">
+		<div id="box_right">
+		
+			
+			<div id="GP_Values">				
+				<span id="score"></span>
+				<span id="accuracy"></span>
+				<span id="percent">%</span>
+				<span id="mods"></span>
+				<span id="RR">Rank</span>
+				<span id="rank">SS</span>
+				<span id="Scc">Score</span>
+				<span id="MD">Mods</span>
+				<span id="ur"></span>
+				<span id="pos"></span>
+				<span id="pp"></span>
+				<span id="ppcont">PP</span>
+				<span id="urcont">UR</span>
+				<span id="combo"></span>
+				<span id="xcombo">x</span>
+			</div>
+
+			<div id="hitlabels">
+				<span id="Mar">MA</span>
+				<span id="Per">PF</span>
+				<span id="Gre">GR</span>
+				<span id="Gud">GD</span>
+				<span id="Ba">BD</span>
+				<span id="Mi">MS</span>
+			</div>
+			<div id="hitvalues">
+				<span id="geki"></span>
+				<span id="300"></span>
+				<span id="katu"></span>			
+				<span id="h100"></span>
+				<span id="h50"></span>
+				<span id="h0"></span>
+			</div>
+
+		
+		
+		</div>
+
+		<div id="box_left">
+			<div style="width:400px;height: 50px;" class="scroll-left">
 				<p id="title"></p>
 				</div>
-			<div id="line"></div>
-			<span id="combo">x</span>
-			<span id="geki"></span>
-			<span id="300"></span>
-			<span id="katu"></span>			
-			<span id="h100"></span>
-			<span id="h50"></span>
-			<span id="h0"></span>
-			<span id="score"></span>
-			<span id="accuracy"></span>
-			<span id="percent">%</span>
+		<div id="lbls">
+			<span id="SRL">SR</span>
+			<span id="ODL">OD</span>
+			<span id="CSL">Keys</span>
+			<span id="HPL">HP</span>
+			<span id="NP">Now playing:</span>
+		
+		</div>		
+   		<div id="songstt">
 			<span id="mapDesc"></span>
+			<span id="mapper"></span>
 			<span id="stars"></span>
 			<span id="OD"></span>
 			<span id="HP"></span>
 			<span id="CS"></span>
-			<span id="pos"></span>
-			<div id="mods"></div>
-			<div class="rank">
-				<span id="rank">SS</span>
-			 </div>
-			<span id="ur"></span>
-		
-			<div class="pp">
-				<div id="ppCont">
-					<span id="pp"></span>
-				</div>
-			</div>		
 		</div>
+			<div id="line"></div>
+			
+		</div>
+		
     </div>
     <script src="index.js"></script>
     <script defer>
