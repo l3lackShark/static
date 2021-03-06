@@ -4,51 +4,76 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/style.css">	
-    <link rel="stylesheet" href="css/odometr.css">
-    <script src="deps/odometr.js"></script>
     <script src="deps/countUp.js"></script>
     <script src="deps/reconnecting-websocket.min.js"></script>
-    <script src="deps/Chart.min.js"></script>
-    <script src="deps/smooth.js"></script>
 </head>
 
 <body>
     <div id="main">
-		<div id="box_right">		
-			<div id="GP_Values">				
-				<span id="score"></span>
-				<span id="accuracy"></span>
-				<span id="percent">%</span>
-				<span id="mods"></span>
-				<span id="RR">Rank</span>
-				<span id="rank">SS</span>
-				<span id="Scc">Score</span>
-				<span id="MD">Mods</span>
-				<span id="ur"></span>
-				<span id="pos"></span>
-				<span id="pp"></span>
-				<span id="ppcont">PP</span>
-				<span id="urcont">UR</span>
-				<span id="combo"></span>
-				<span id="xcombo">x</span>
-			</div>
-			<div id="hitlabels">
-				<span id="Mar">MA</span>
-				<span id="Per">PF</span>
-				<span id="Gre">GR</span>
-				<span id="Gud">GD</span>
-				<span id="Ba">BD</span>
-				<span id="Mi">MS</span>
-			</div>
-			<div id="hitvalues">
-				<span id="geki"></span>
-				<span id="300"></span>
-				<span id="katu"></span>			
-				<span id="h100"></span>
-				<span id="h50"></span>
-				<span id="h0"></span>
+		<div id="box_right">													
+			<div class="hitlabels">
+				<div class="row">
+					<div class="column">Mods</div>
+					<div class="column">
+						<div id="mods" class="hitvalues mods"></div>
+					</div>
+				</div>
+					<hr>	
+				<div id="RR">Rank
+					<div id="rank" class="hitvalues"></div>
+				</div>
+
+				<div class="row"> 
+					<div class="column">Score</div>
+					<div class="column rowpos"><div id="pos" class="hitvalues"></div></div>
+					<div id="score" class="hitvalues" ></div>
+				</div>
+				
+				<div>Acc
+					<div class="righttext">%</div>
+					<div id="accuracy" class="hitvalues"></div>
+				</div>
+					<hr>
+
+				<div class="Marvelous">MA
+					<div id="geki" class="hitvalues"></div>
+				</div>
+
+				<div class="Perfect">PF
+					<div id="300" class="hitvalues"></div>
+				</div>
+
+				<div class="Great">GR
+					<div id="katu" class="hitvalues"></div>
+				</div>
+
+				<div class="Good">GD
+					<div id="h100" class="hitvalues"></div>
+				</div>
+
+				<div class="Bad">BD
+					<div id="h50" class="hitvalues"></div>
+				</div>
+
+				<div class="Miss">MS
+					<div id="h0" class="hitvalues"></div>
+				</div>
+
+				<div>&nbsp;
+					<div class="righttext">x</div>
+					<div id="combo" class="hitvalues"></div>				
+				</div>
+				
+				<hr>
+				<div>PP				
+					<div id="pp" class="hitvalues"></div>
+				</div>
+
+				<div>UR
+					<div id="ur" class="hitvalues"></div>
+				</div>
+
 			</div>	
-		</div>		
     </div>
     <script src="index.js"></script>
    

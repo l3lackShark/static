@@ -12,28 +12,11 @@ body,html{
     font-family: "Sica 3", Helvetica, sans-serif;
     font-weight: normal;
     color: white;
-    width: 460px;
-    height: 550px;
-    padding: 20px;
-    position: relative;
-}
-.odometer.odometer-auto-theme{
-    font-size: 24px !important;
-    font-family: "Sica 3", Helvetica, sans-serif !important;
-    font-weight: normal !important;	
-}
-.odometer.odometer-auto-theme .odometer-digit .odometer-digit-inner, .odometer.odometer-theme-default .odometer-digit .odometer-digit-inner {
-    padding-left: 5px !important;
-    padding-right: 5px !important;
-    margin-left: -5px !important;
-    margin-right: -5px !important;
 }
 
 #box_right {
-	width: 400px;
-	height: 550px;
-    right: 40px;
-    bottom: 20px;
+	width: 270px;
+	height: 500px;
     border: 4px solid white;
 	position: absolute;
 	border-radius: 10px;
@@ -41,183 +24,84 @@ body,html{
 	transition: width 500ms ease;
 }
 /*Right Side*/
-#accuracy{
-    position: absolute;
-    right: 90px;
-    bottom: 350px;
-    text-align: left;
-    z-index: 0;
-    font-size: 25px;
-    padding: 30px;
-}
-#percent{
-    position: absolute;
-    right: 60px;
-    bottom: 350px;
-    text-align: left;
-    z-index: 0;
-    font-size: 25px;
-    padding: 30px;
-}
-#xcombo{
-    position: absolute;
-    right: -17px;
-    bottom: 10px;
-    text-align: left;
-    z-index: 0;
-    font-size: 25px;
-    padding: 30px;
-}
-#combo{
-    position: absolute;
-    right: 0px;
-    bottom: 10px;
-    text-align: left;
-    z-index: 0;
-    font-size: 25px;
-    padding: 30px;
-}
-
-
 .over{ 
     transform: translate(300px);
     animation: slide 5s linear infinite;
 }
 
-.mod{
-    width: 64px;
-    height: 64px;
-    display: contents;
-}
-.mod img{
-    position: relative;
-    height: 64px;
-    width: 64px;
-    z-index: 1;
-    display: block;
-    float: left;
-    object-fit: cover;
-    -webkit-filter: drop-shadow( -1px 1px 1px rgba(0,0,0,0.7));
-    -moz-filter: drop-shadow(-5px 5px 10px rgba(0,0,0,0.7));
-    -ms-filter: drop-shadow(-5px 5px 10px rgba(0,0,0,0.7));
-    -o-filter: drop-shadow(-5px 5px 10px rgba(0,0,0,0.7));
-}
 .text{
     display: flex;
     justify-content: center;
 }
 
-#mods{
+.hitlabels
+{
     position: absolute;
-    width: 300px;
-    right: 45px;
-    top: 35px;
+    width: 230px;
+    left: 20px;
+    bottom: 15px;
+    text-align: left;
+    z-index: 0;
+    font-size: 20px;
+    float: left;
+    text-shadow: -1px 1px 2px #000, 1px 1px 2px #000, 1px -1px 0 #000, -1px -1px 0 #000;  
+}
+
+.hitvalues
+{
     text-align: right;
-    z-index: 0;
-    font-size: 30px;
+    float: right;
+    font-size: 20px;
+    text-shadow: -1px 1px 2px #000, 1px 1px 2px #000, 1px -1px 0 #000, -1px -1px 0 #000;   
+}
 
+.column
+{
+    float: left;
+}
+.row:after
+{
+  content: "";
+  display: table;
+  clear: both;
+}
+.rowpos
+{
+    margin-left: 20px;
+}
+.mods
+{
+    height: 50px;
+    margin-left: 20px;
+    color:rgb(65,105,225) ; 
     text-shadow: -1px 1px 2px #FFF, 1px 1px 2px #FFF, 1px -1px 0 #FFF, -1px -1px 0 #FFF;
-    color:rgb(65,105,225) ;
 }
-#h100,#h50,#h0,[id='300'] ,#geki,#katu,#pp,#ur
+.righttext
 {
-    position: absolute;
-    width: 30px;
-    right: 200px;
-    text-align: left;
-    z-index: 0;
-    font-size: 25px;
-    padding: 30px; 
+    float: right;
 }
 
-#Mar,#Per,#Gre,#Gud,#Ba,#Mi,#RR,#Scc,#MD,#ppcont,#urcont
+.Marvelous
 {
-    position: absolute;
-    width: 30px;
-    right: 310px;
-    text-align: left;
-    z-index: 0;
-    font-size: 25px;
-    padding: 30px;
-    text-shadow: -1px 1px 2px #000, 1px 1px 2px #000, 1px -1px 0 #000, -1px -1px 0 #000;
+    color:aqua;
 }
-
-#Mar,#geki
+.Perfect
 {
-bottom: 300px;
-color:aqua;
+    color:yellow;
 }
-#Per,[id='300'] 
+.Great
 {
-bottom: 260px;
-color: yellow;
+    color:lightgreen;
 }
-#Gre,#katu
+.Good
 {
-bottom: 220px;
-color: lightgreen;
+    color:rgb(173,216,230);
 }
-#Gud,#h100
+.Bad
 {
-bottom: 180px;
-color: rgb(173,216,230);
+    color: mediumorchid;
 }
-#Ba,#h50
+.Miss
 {
-bottom: 140px;
-color: mediumorchid;
-}
-#Mi,#h0
-{
-bottom: 100px;
-color:orangered;
-}
-#Scc{
-    bottom: 400px
-}
-#MD{
-    bottom: 440px;
-}
-#urcont,#ur {
-	bottom: 10px;
-}
-#ppcont,#pp{
-    bottom: 50px;
-}
-#rank {
-    position: absolute;
-    width: 30px;
-    right: 200px;
-    bottom: 350px;
-    text-align: left;
-    z-index: 0;
-    font-size: 25px;
-    padding: 30px;
-}
-#score{
-    position: absolute;
-    right: 120px;
-    bottom: 400px;
-    text-align: left;
-    z-index: 0;
-    font-size: 25px;
-    padding: 30px;
-    text-shadow: -1px 1px 2px #000, 1px 1px 2px #000, 1px -1px 0 #000, -1px -1px 0 #000;
-}
-#pos{
-    font-family: 'Sica 3';
-    src: url('../fonts/SicaExtraBold.otf');
-    position: absolute;
-    right: 40px;
-    bottom: 400px;
-    text-align: left;
-    z-index: 0;
-    font-size: 25px;
-    padding: 30px;
-    text-shadow: -1px 1px 2px #000, 1px 1px 2px #000, 1px -1px 0 #000, -1px -1px 0 #000;
-}
-#RR
-{
-bottom: 350px;
-text-shadow: -1px 1px 2px #000, 1px 1px 2px #000, 1px -1px 0 #000, -1px -1px 0 #000;
+    color: orangered;
 }

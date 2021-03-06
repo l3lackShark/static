@@ -1,7 +1,6 @@
 let socket = new ReconnectingWebSocket("ws://127.0.0.1:24050/ws");
 
 // Beatmap values
-let mapid = document.getElementById('mapid');
 let mainContainer = document.getElementById("main");
 
 // Gameplay values (Mania)
@@ -51,28 +50,9 @@ socket.onerror = error => {
     console.log("Socket Error: ", error);
 };
 
-let tempTitle;
-let tempDiff;
 let tempMods;
 let gameState;
-let tmods;
 
-let tempMapArtist;
-let tempMapName;
-let tempMapDiff;
-let tempMapper;
-let tempStars;
-
-let tempStrainBase;
-let smoothOffset = 2;
-let seek;
-let fullTime;
-let tempImg;
-let GR = 0;
-let tempOD;
-let tempHP;
-let tempCS;
-let tempPos;
 // Simplistic code
 function setRankStyle(text, color, shadow,GM) {
     switch (GM){
@@ -180,14 +160,7 @@ switch (menu.state) {
    }
    default:
 }
-        if(gameState === 2){
-            mainContainer.style.opacity = "1";
-        }else if (gameState === 0){
-            mainContainer.style.opacity = "0";
-        }else{
-        mainContainer.style.opacity = "1";
-        }
-
+     
 
 switch (menu.state){
     case 2:     
