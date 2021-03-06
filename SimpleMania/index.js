@@ -146,7 +146,6 @@ function rankCheck(hitGrade) {
 }
 
 // Check GameMode and hide on all modes except mania.
-if(gameState !== data.menu.state){
 gameState = data.menu.state
 if (gameState === 2 && data.gameplay.gameMode === 3){
     box_left.style.visibility = "visible";
@@ -166,7 +165,7 @@ if (gameState === 2 && data.gameplay.gameMode === 3){
     box_right.style.transition = "visibility 0s .2s, opacity .2s linear";
     ur.innerHTML = 0;
 }
-}
+
 // Change rank by acc value (this will work until rank got fixed on json, mania only).
 switch (menu.state) {
    case 2:   
