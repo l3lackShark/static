@@ -3,14 +3,6 @@ let socket = new ReconnectingWebSocket("ws://127.0.0.1:24050/ws");
 // Beatmap values
 let mapid = document.getElementById('mapid');
 let mainContainer = document.getElementById("main");
-let title = document.getElementById("title");
-let mapTitle = document.getElementById("mapTitle");
-let mapDesc = document.getElementById("mapDesc");
-let mapper = document.getElementById("mapper");
-let stars = document.getElementById("stars");
-let OD = document.getElementById("OD");
-let HP = document.getElementById("HP");
-let CS = document.getElementById("CS");
 
 // Gameplay values (Mania)
 let mods = document.getElementById("mods");
@@ -31,8 +23,6 @@ let miss = document.getElementById("h0");
 
 // Overlay
 let box_right = document.getElementById("box_right");
-let box_left = document.getElementById("box_left");
-let progressChart = document.getElementById("progress");
 
 socket.onopen = () => {
     console.log("Successfully Connected");
@@ -95,7 +85,7 @@ function setRankStyle(text, color, shadow,GM) {
 }
 
 socket.onmessage = event => {
-    try {
+    
     let data = JSON.parse(event.data)
     , menu = data.menu
     , hitGrade = data.gameplay.hits.grade.current
@@ -146,25 +136,20 @@ function rankCheck(hitGrade) {
 }
 
 // Check GameMode and hide on all modes except mania.
-gameState = data.menu.state
-if (gameState === 2 && data.gameplay.gameMode === 3){
-    box_left.style.visibility = "visible";
-    box_left.style.opacity = "1";
-    box_left.style.transition = "opacity .2s linear";
 
+gameState = data.menu.state
+//if (gameState === 2 && data.gameplay.gameMode === 3){
+    if (gameState === 2){
     box_right.style.visibility = "visible";
     box_right.style.opacity = "1";
     box_right.style.transition = "opacity .2s linear";
 }else{
-    box_left.style.visibility = "hidden";
-    box_left.style.opacity = "0";
-    box_left.style.transition = "visibility 0s .2s, opacity .2s linear";
-
     box_right.style.visibility = "hidden";
     box_right.style.opacity = "0";
     box_right.style.transition = "visibility 0s .2s, opacity .2s linear";
     ur.innerHTML = 0;
 }
+
 
 // Change rank by acc value (this will work until rank got fixed on json, mania only).
 switch (menu.state) {
@@ -195,73 +180,22 @@ switch (menu.state) {
    }
    default:
 }
-
-  
         if(gameState === 2){
             mainContainer.style.opacity = "1";
-            document.documentElement.style.setProperty('--progress', ` ${(menu.bm.time.current / menu.bm.time.mp3 * 100).toFixed(2)}%`);
-            line.style.cssText = "transition: transform 500ms ease, opacity 20ms ease, width 500ms ease;";
-            line.style.transform = "translate(0px, 5px)"
-            line.style.opacity = "1"
         }else if (gameState === 0){
             mainContainer.style.opacity = "0";
-            document.documentElement.style.setProperty('--progress', ` 100%`);
-            line.style.cssText = "transition: transform 500ms ease, opacity 20ms ease, width 300ms ease;";
-            line.style.transform = "translate(0px, 5px)"
-            line.style.opacity = "1"
         }else{
         mainContainer.style.opacity = "1";
-            document.documentElement.style.setProperty('--progress', ` 100%`);
-            line.style.cssText = "transition: transform 500ms ease, opacity 20ms ease, width 300ms ease;";
-            line.style.transform = "translate(0px, 5px)"
-            line.style.opacity = "1"
         }
 
 
 switch (menu.state){
-    case 2:
-        if(tempTitle !== data.menu.bm.metadata.artist + ' - ' + data.menu.bm.metadata.title){
-            tempTitle = data.menu.bm.metadata.artist + ' - ' + data.menu.bm.metadata.title;
-            title.innerHTML = tempTitle
-        }
-    
-        if(fullTime !== data.menu.bm.time.mp3){
-            fullTime = data.menu.bm.time.mp3;
-            onepart = 1400/fullTime;
-        }
-    
-        if (tempStars !== data.menu.bm.stats.fullSR) {
-            tempStars = data.menu.bm.stats.fullSR;
-            stars.innerHTML = tempStars;
-        }
-        if (tempOD !== data.menu.bm.stats.memoryOD){
-            tempOD = data.menu.bm.stats.memoryOD;
-            OD.innerHTML = tempOD;       
-        }
-    
-        if (tempHP !== data.menu.bm.stats.memoryHP){
-            tempHP = data.menu.bm.stats.memoryHP;
-            HP.innerHTML = tempHP;       
-        }
-    
-        if (tempCS !== data.menu.bm.stats.memoryCS){
-            tempCS = data.menu.bm.stats.memoryCS;
-            CS.innerHTML = tempCS;       
-        }
-    
+    case 2:     
         tempPos = data.gameplay.leaderboard.ourplayer.position;
         if (tempPos >= 50){
             pos.innerHTML = "(#??)"
         }else if(tempPos < 50){
             pos.innerHTML = '(#' + tempPos + ")"
-        }
-
-
-        if (tempMapDiff !== '[' + data.menu.bm.metadata.difficulty + ']') {
-            tempMapDiff = '[' + data.menu.bm.metadata.difficulty + ']';
-            tempMapper = data.menu.bm.metadata.mapper;
-            mapDesc.innerHTML = '' + tempMapDiff;
-            mapper.innerHTML = 'by ' + tempMapper;
         }
         switch (data.gameplay.gameMode){        
             case 3:      
@@ -321,7 +255,6 @@ switch (menu.state){
                     animation.ur.update(0);
                 }
         }
-
         if(tempMods != data.menu.mods.str){
             tempMods = data.menu.mods.str;
             if (tempMods == ""){
@@ -343,7 +276,5 @@ switch (menu.state){
         }
     default: 
 }
-} catch (err) {
-console.log(err);
-};
+
 };

@@ -14,9 +14,7 @@
 
 <body>
     <div id="main">
-		<div id="box_right">
-		
-			
+		<div id="box_right">		
 			<div id="GP_Values">				
 				<span id="score"></span>
 				<span id="accuracy"></span>
@@ -34,7 +32,6 @@
 				<span id="combo"></span>
 				<span id="xcombo">x</span>
 			</div>
-
 			<div id="hitlabels">
 				<span id="Mar">MA</span>
 				<span id="Per">PF</span>
@@ -50,50 +47,11 @@
 				<span id="h100"></span>
 				<span id="h50"></span>
 				<span id="h0"></span>
-			</div>
-
-		
-		
-		</div>
-
-		<div id="box_left">
-			<div style="width:400px;height: 50px;" class="scroll-left">
-				<p id="title"></p>
-				</div>
-		<div id="lbls">
-			<span id="SRL">SR</span>
-			<span id="ODL">OD</span>
-			<span id="CSL">Keys</span>
-			<span id="HPL">HP</span>
-			<span id="NP">Now playing:</span>
-		
+			</div>	
 		</div>		
-   		<div id="songstt">
-			<span id="mapDesc"></span>
-			<span id="mapper"></span>
-			<span id="stars"></span>
-			<span id="OD"></span>
-			<span id="HP"></span>
-			<span id="CS"></span>
-		</div>
-			<div id="line"></div>
-			
-		</div>
-		
     </div>
     <script src="index.js"></script>
-    <script defer>
-        {
-			let el = document.getElementsByClassName('odometer');
-			for (i = 0; i < el.length; i++) {
-				od = new Odometer({
-					el: el[i],
-					format: '( ddd).dd',
-					duration: 1
-				});
-			}
-        }
-    </script>
+   
 </body>
 
 </html>
