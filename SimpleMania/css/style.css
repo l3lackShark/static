@@ -1,6 +1,6 @@
 @font-face {
-    font-family: "Sica 3";
-    src: url("../fonts/SicaExtraBold.otf");
+    font-family: "PetitaBold";
+    src: url("../fonts/PetitaBold.ttf");
 }
 body,html{
     padding: 0;
@@ -9,14 +9,14 @@ body,html{
 }
 #main{
     font-size: 20px;
-    font-family: "Sica 3", Helvetica, sans-serif;
+    font-family: "PetitaBold", Helvetica, sans-serif;
     font-weight: normal;
     color: white;
 }
 
 #box_right {
 	width: 270px;
-	height: 500px;
+	height: 450px;
     border: 4px solid white;
 	position: absolute;
 	border-radius: 10px;
