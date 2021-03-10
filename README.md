@@ -135,6 +135,7 @@ By: [cyperdark][2]<br>
 By: [cyperdark][2]<br>
   
 ### SimpleMania
+
 > Size: 270x450\
 > Note: Only works for Mania.
 <img src="https://cdn.discordapp.com/attachments/608070341461540864/819006720768606209/unknown.png">\
