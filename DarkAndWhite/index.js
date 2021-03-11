@@ -37,6 +37,7 @@ socket.onmessage = event => {
     let data = JSON.parse(event.data),
       menu = data.menu,
       play = data.gameplay;
+    olddata=data;
     document.documentElement.style.setProperty('--progress', `${(menu.bm.time.current / menu.bm.time.full * 100).toFixed(2)}%`);
     if (menu.state == 2) {
       if (cache.id != 0) cache.id = 0;

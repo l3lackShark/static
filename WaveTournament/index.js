@@ -67,6 +67,7 @@ let tempClass = 'unknown';
 
 socket.onmessage = event => {
     let data = JSON.parse(event.data);
+    olddata=data;
 	if(scoreVisibleTemp !== data.tourney.manager.bools.scoreVisible) {
 		scoreVisibleTemp = data.tourney.manager.bools.scoreVisible;
 		if(scoreVisibleTemp) {

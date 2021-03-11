@@ -21,6 +21,7 @@ socket.onerror = error => {
 
 socket.onmessage = event => {
     let data = JSON.parse(event.data);
+    olddata=data;
     if(data.gameplay.pp.current != ''){
         let ppData = data.gameplay.pp.current
         currentPP.innerHTML = Math.round(ppData)
