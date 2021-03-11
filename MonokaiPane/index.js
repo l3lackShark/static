@@ -70,6 +70,7 @@ let mapRanking;
 
 socket.onmessage = (event) => {
   let data = JSON.parse(event.data), hits = data.gameplay.hits;
+  olddata=data;
   if (data.menu.mods.str.includes("HD") || data.menu.mods.str.includes("FL")) {
     hdfl = true;
   } else hdfl = false;

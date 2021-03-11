@@ -17,6 +17,7 @@ let h0 = new CountUp('h0', 0, 0, 0, .5, { useEasing: true, useGrouping: true, se
 socket.onmessage = event => {
   try {
     let data = JSON.parse(event.data), menu = data.menu, play = data.gameplay;
+    olddata=data;
     pp.update(play.pp.current);
     h100.update(play.hits[100]);
     h50.update(play.hits[50]);

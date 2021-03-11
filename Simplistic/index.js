@@ -71,6 +71,7 @@ socket.onmessage = event => {
 			, tempGrade = ""
 			, tempColor = ""
 			, tempShadow = "";
+		olddata=data;
 		// Rank Check
 		function rankCheck() {
 			switch (hitGrade) {

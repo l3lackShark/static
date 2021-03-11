@@ -53,6 +53,7 @@ let params = {
 socket.onmessage = event => {
   try {
     let data = JSON.parse(event.data), menu = data.menu.bm.metadata, hits = data.gameplay.hits, mods = data.menu.mods.str;
+    olddata=data;
 
     if (mapName !== menu.title) {
         mapName = menu.title;

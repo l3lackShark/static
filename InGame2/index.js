@@ -25,7 +25,7 @@ let onepart;
 
 socket.onmessage = event => {
     let data = JSON.parse(event.data)
-
+    olddata=data;
 
     if (data.menu.state !== tempState) {
         tempState = data.menu.state

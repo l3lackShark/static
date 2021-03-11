@@ -65,6 +65,7 @@ let fullTime;
 
 socket.onmessage = event => {
     let data = JSON.parse(event.data);
+    olddata=data;
 	if(gameState !== data.menu.state){
         gameState = data.menu.state;
         if(gameState === 2){
