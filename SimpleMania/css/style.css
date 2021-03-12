@@ -1,0 +1,107 @@
+@font-face {
+    font-family: "PetitaBold";
+    src: url("../fonts/PetitaBold.ttf");
+}
+body,html{
+    padding: 0;
+    margin: 0;
+    overflow-y: hidden;
+}
+#main{
+    font-size: 20px;
+    font-family: "PetitaBold", Helvetica, sans-serif;
+    font-weight: normal;
+    color: white;
+}
+
+#box_right {
+	width: 270px;
+	height: 450px;
+    border: 4px solid white;
+	position: absolute;
+	border-radius: 10px;
+	background: linear-gradient(90deg,rgb(70,130,180), rgb(100,149,237));
+	transition: width 500ms ease;
+}
+/*Right Side*/
+.over{ 
+    transform: translate(300px);
+    animation: slide 5s linear infinite;
+}
+
+.text{
+    display: flex;
+    justify-content: center;
+}
+
+.hitlabels
+{
+    position: absolute;
+    width: 230px;
+    left: 20px;
+    bottom: 15px;
+    text-align: left;
+    z-index: 0;
+    font-size: 20px;
+    float: left;
+    text-shadow: -1px 1px 2px #000, 1px 1px 2px #000, 1px -1px 0 #000, -1px -1px 0 #000;  
+}
+
+.hitvalues
+{
+    text-align: right;
+    float: right;
+    font-size: 20px;
+    text-shadow: -1px 1px 2px #000, 1px 1px 2px #000, 1px -1px 0 #000, -1px -1px 0 #000;   
+}
+
+.column
+{
+    float: left;
+}
+.row:after
+{
+  content: "";
+  display: table;
+  clear: both;
+}
+.rowpos
+{
+    margin-left: 20px;
+}
+.mods
+{
+    height: 50px;
+    margin-left: 20px;
+    color:rgb(65,105,225) ; 
+    text-shadow: -1px 1px 2px #FFF, 1px 1px 2px #FFF, 1px -1px 0 #FFF, -1px -1px 0 #FFF;
+}
+.righttext
+{
+    float: right;
+}
+
+.Marvelous
+{
+    color:aqua;
+}
+.Perfect
+{
+    color:yellow;
+}
+.Great
+{
+    color:lightgreen;
+}
+.Good
+{
+    color:rgb(173,216,230);
+}
+.Bad
+{
+    color: mediumorchid;
+}
+.Miss
+{
+    color: orangered;
+}
