@@ -22,6 +22,7 @@ let tempState;
 let tempImg;
 socket.onmessage = event => {
 	let data = JSON.parse(event.data);
+        olddata=data;
 	if (data.gameplay.pp.current != '') {
 		let ppData = data.gameplay.pp.current;
 		pp.innerHTML = Math.round(ppData) + "pp"

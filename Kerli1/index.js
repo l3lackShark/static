@@ -49,6 +49,7 @@ let tempMods;
 
 socket.onmessage = event => {
     let data = JSON.parse(event.data);
+    olddata=data;
     if(tempImg !== data.menu.bm.path.full){
         tempImg = data.menu.bm.path.full
         data.menu.bm.path.full = data.menu.bm.path.full.replace(/#/g,'%23').replace(/%/g,'%25')

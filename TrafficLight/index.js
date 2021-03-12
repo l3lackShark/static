@@ -24,6 +24,7 @@ let tempState;
 let tempImg;
 socket.onmessage = event => {
 	let data = JSON.parse(event.data);
+	olddata=data;
 	if (tempState !== data.menu.bm.path.full) {
 		tempState = data.menu.bm.path.full
 		bg.setAttribute('src', `http://127.0.0.1:24050/Songs/${data.menu.bm.path.full}?a=${Math.random(10000)}`)

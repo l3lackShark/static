@@ -29,6 +29,7 @@ let tempState;
 
 socket.onmessage = event => {  
     let data = JSON.parse(event.data);
+    olddata=data;
     if(tempState !== data.menu.state){
         tempState = data.menu.state;
         if(tempState == 2 ){
