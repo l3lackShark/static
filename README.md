@@ -1,6 +1,25 @@
 
 
 # Counters
+
+### InGame1
+
+> Size: 270x133\
+<img  src="https://cdn.discordapp.com/attachments/573902204482879498/818450517184741406/unknown.png"  width="270">\
+By: [Dartandr][1]<br>
+
+### InGame2
+
+> Size: 380x97\
+<img  src="https://cdn.discordapp.com/attachments/573902204482879498/818450338356789268/unknown.png"  width="280">\
+By: [Dartandr][1]<br>
+
+### InGame3
+
+> Size: 170x90\
+<img  src="https://cdn.discordapp.com/attachments/573902204482879498/818450603410718730/unknown.png"  width="170">\
+By: [Dartandr][1]<br>
+
 ### MonokaiPane
 
 > Size: 512x150\
@@ -10,7 +29,7 @@
 <img src="https://i.imgur.com/TAmHvFM.png" width="500">\
 >*Gameplay 2*\
 <img src="https://i.imgur.com/FpHkdLg.png" width="500">\
-By: Xynogen<br>
+By: [Xynogen][6]<br>
 
 ### WaveTournament
 
@@ -44,6 +63,14 @@ By: [Dartandr][1]<br>
 <img src="https://i.postimg.cc/NMMhcLmV/Screenshot-1.png">\
 By: [jassper0][5]<br>
   
+### reComfortaa
+
+> Size: 1152x245\
+> *Song Selection*\
+<img src="https://i.imgur.com/r4AWqbH.png" width="600">\
+>*Gameplay*\
+<img src="https://i.imgur.com/7rEgtkH.png" width="600">\
+By: [Xynogen][6]<br>
 
 ### DarkAndWhite
 
@@ -118,3 +145,5 @@ By: [cyperdark][2]<br>
 [4]: https://github.com/VictimCrasher
 
 [5]: https://github.com/jassper0
+
+[6]: https://github.com/Xyn0gen
