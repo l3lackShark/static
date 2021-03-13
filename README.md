@@ -1,4 +1,29 @@
+# About this Fork
+This Fork will add a Twitch bot, which replies to various commands regarding the current state of osu!.
+To make this bot work, you will need to add your twitch token to the [twitch.js](https://github.com/C0D3-M4513R/twitch-static/blob/master/twitch.js) file.
+You can get a token two different ways:
 
+- Using an Twitch app
+- Just using your account
+
+The upside of choosing the first way is, that the generated token will only be usable, for the things, that you want the bot to access. Therefore if the token is somehow leaked, it is no big deal. The downside is, that it is slightly harder to setup. Functionally it is all the same though.
+
+## Getting a Token using a Twitch app
+- Create a Twitch app at https://dev.twitch.tv/console/apps.
+- Copy the `Client-ID`
+- Add `https://twitchapps.com/tokengen/` as a `OAuth Redirect URLs`
+- Go to https://twitchapps.com/tokengen/
+- Paste the `Client-ID`, that you copied
+- Enter `chat:read chat:edit` as the scope.
+- Click `Connect` on the https://twitchapps.com Website
+- Click `Authorize` on the https://id.twitch.tv Website, that opened. This link will NOT work!
+- Copy the OAuth-Token. Keep it safe, because with that token, and your username, one could write chat messages, as you.
+
+## Getting a Token without setting up a Twitch app
+- Go to https://twitchapps.com/tmi
+- Click `Connect` on the https://twitchapps.com Website
+- Click `Authorize` on the https://id.twitch.tv Website, that opened. This link will NOT work!
+- Copy the OAuth-Token. Keep it safe, because with that token, and your username, one could do pretty much anything, including: (sending chast messages, doing mod things, changing stream information, edit vods)
 
 # Counters
 
