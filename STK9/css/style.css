@@ -1,0 +1,304 @@
+@font-face {
+    font-family: "Typo_Round_Bold";
+    src: url("../fonts/Typo_Round_Bold_Demo.otf");
+}
+body,html{
+    padding: 0;
+    margin: 0;
+    overflow-y: hidden;
+}
+#main{
+    font-size: 30px;
+    font-family: Typo_Round_Bold, Helvetica, sans-serif;
+    font-weight: normal;
+    color: white;
+    width: 1920px;
+    height: 1080px;
+    position: relative;
+}
+.odometer.odometer-auto-theme{
+    font-size: 24px !important;
+    font-family: Typo_Round_Bold, Helvetica, sans-serif !important;
+    font-weight: normal !important;	
+}
+.odometer.odometer-auto-theme .odometer-digit .odometer-digit-inner, .odometer.odometer-theme-default .odometer-digit .odometer-digit-inner {
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+    margin-left: -5px !important;
+    margin-right: -5px !important;
+}
+#top {
+	display: flex;
+	position: absolute;
+    width: 1920px;
+    height: 200px;
+	background-image: url('../static/top.png');
+	background-repeat: no-repeat;
+    transition: ease-in-out 500ms;
+	z-index: 0;
+	background-size: cover;
+}
+#bottom {
+	position: absolute;
+	bottom: 0px;
+    width: 1920px;
+    height: 200px;
+	background-image: url('../static/bottomplay.png');
+	background-repeat: no-repeat;	
+    transition: ease-in-out 200ms;
+	z-index: 0;
+	background-size: cover;
+}
+
+#scoreBlue {
+	box-sizing: border-box;
+	width: 50%;
+	height: 90%;
+	margin-right: 50px;
+    font-size: 30px;
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+    flex-wrap: wrap;
+	transition: ease-in-out 500ms;
+}
+#scoreRed {
+	box-sizing: border-box;
+	width: 50%;
+	height: 90%;
+	margin-left: 50px;
+    font-size: 30px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-end;
+    flex-wrap: wrap;
+	transition: ease-in-out 500ms;
+}
+.scoreNone {
+	width: 20px;
+	height: 20px;
+	background-image: url('../static/score-none.png');
+	background-repeat: no-repeat;
+	background-size: cover;	
+}
+.scoreFill {
+	width: 20px;
+	height: 20px;
+	background-image: url('../static/score-fill.png');
+	background-repeat: no-repeat;
+	background-size: cover;	
+}
+#logo {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	
+	width: 200px;
+	height: 100px;
+	background-image: url('../static/logo.png');
+	background-repeat: no-repeat;
+	background-size: cover;	
+	z-index: 1;
+}
+#teamBlue {
+	position: absolute;
+	left: 200px;
+	top: 50px;
+    font-size: 25px;
+	color: white;
+    transition: ease-in-out 500ms;
+}
+#teamBlueName {
+	padding: 10px 30px 10px 30px;
+	width: 500px;
+	color: black;
+	background-color: white;
+	border-radius: 10px;
+}
+#teamRed {
+	position: absolute;
+	right: 200px;
+	top: 50px;
+	text-align: right;
+    font-size: 25px;
+	color: white;
+    transition: ease-in-out 500ms;
+}
+#teamRedName {
+	padding: 10px 30px 10px 30px;
+	width: 500px;
+	color: black;
+	background-color: white;
+	border-radius: 10px;
+}
+
+#partner {
+	position: absolute;
+	padding: 5px 30px 5px 30px;
+	left: 30px;
+	bottom: 130px;
+	color: rgb(43,12,75);
+	background-color: white;
+	border-radius: 25px;
+	box-shadow: 0px 0px 20px -3px black;	
+}
+
+#nowPlayingContainer {
+	position: absolute;
+	right: 30px;
+	bottom: 60px;
+	width: 400px;
+	height: 100px;
+	text-align: center;
+	align-content: center;
+}
+#nowPlayingText {
+	position: relative;
+	padding: 5px 20px 5px 20px;
+	margin: 0px 50px 0px 50px;
+	margin-bottom: -10px;
+	color: rgb(43,12,75);
+	background-color: white;
+	border-radius: 25px;
+	box-shadow: 0px 0px 20px -5px black;
+	z-index: 1;
+}
+#playScoreBlue {
+	position: absolute;
+	text-align: center;
+	border-radius: 25px;
+	left: 532px;
+	bottom: 110px;
+	height: 66px;
+	width: 402px;
+	
+	background-color: #642f9c;
+	color: white;
+    font-family: Typo_Round_Bold;
+	font-size: 40px;
+	line-height: 60px;
+	
+    transition: ease-in-out 500ms;
+}
+#playScoreRed {
+	position: absolute;
+	text-align: center;
+	border-radius: 25px;
+	right: 532px;
+	bottom: 110px;
+	height: 66px;
+	width: 402px;
+
+	background-color: #642f9c;
+	color: white;
+    font-family: Typo_Round_Bold;
+	font-size: 40px;
+	line-height: 60px;
+	
+    transition: ease-in-out 500ms;
+}
+#mapContainer {
+	position: relative;
+	padding-top: 20px;
+	height: 100px;
+	width: 100%;
+	background-color: black;
+    background-size: cover;
+	border-radius: 25px;
+	z-index: -1;
+	box-shadow: 0px 0px 20px -3px black;
+}
+#overlay {
+	position: fixed;
+	transform: translateY(-20px);
+	height: 120px;
+	width: 400px;
+	z-index: 0;
+    background-color: rgba(0,0,0,0.50);
+	border-radius: 25px;
+}
+#mapTitle, #mapDifficulty {
+	position: relative;
+	padding-left:5%;
+	width: 90%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	z-index: 0;
+}
+#chats {
+	box-sizing: border-box;
+	background: rgba(0,0,0,0.95);
+	position: absolute;
+	left: 513px;
+	width: 900px;
+	height: 133px;
+	bottom: 11px;
+	border-radius: 25px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	padding: 5px 12px;
+	font-size: 18px;
+    font-family: Typo_Round_Bold;
+    transition: ease-in-out 500ms;
+}
+
+.chat {
+	display: flex;
+	text-align: left;
+}
+
+.chatTime {
+	width: 8%;
+	color: silver;
+	padding-right: 10px;
+}
+.wholeChat {
+	width: 92%;
+	display: flex;
+}
+.chatName {
+	color: white;
+	white-space: nowrap;
+	width: max-content;
+}
+.chatText {
+	white-space: normal;
+	word-wrap: break-word;
+	overflow: hidden;
+}
+.unknown {
+	color: yellow;
+}
+.bot {
+	color: #FF66AA;
+}
+.left {
+	color: #1fd0ed;
+}
+.right {
+	color: #ed1855;
+}
+
+
+/*Scrollbar*/
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    margin-top: 25px;
+    margin-bottom: 25px;
+	visibility: 0;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: rgba(0,0,0,0);
+	border-radius: 10px;
+}
+.text{
+    display: flex;
+    justify-content: center;
+}
