@@ -1,7 +1,8 @@
 @font-face {
-    font-family: "Typo_Round_Bold";
-    src: url("../fonts/Typo_Round_Bold_Demo.otf");
+	font-family:Visby_Round;
+	src: url("../fonts/VisbyRoundCF-Bold.ttf");
 }
+
 body,html{
     padding: 0;
     margin: 0;
@@ -9,8 +10,8 @@ body,html{
 }
 #main{
     font-size: 30px;
-    font-family: Typo_Round_Bold, Helvetica, sans-serif;
-    font-weight: normal;
+	font-family:Visby_Round;
+	font-weight: normal;
     color: white;
     width: 1920px;
     height: 1080px;
@@ -18,7 +19,7 @@ body,html{
 }
 .odometer.odometer-auto-theme{
     font-size: 24px !important;
-    font-family: Typo_Round_Bold, Helvetica, sans-serif !important;
+    font-family:Visby_Round !important;
     font-weight: normal !important;	
 }
 .odometer.odometer-auto-theme .odometer-digit .odometer-digit-inner, .odometer.odometer-theme-default .odometer-digit .odometer-digit-inner {
@@ -174,7 +175,7 @@ body,html{
 	
 	background-color: #642f9c;
 	color: white;
-    font-family: Typo_Round_Bold;
+    font-family:Visby_Round;
 	font-size: 40px;
 	line-height: 60px;
 	
@@ -191,7 +192,7 @@ body,html{
 
 	background-color: #642f9c;
 	color: white;
-    font-family: Typo_Round_Bold;
+    font-family:Visby_Round;
 	font-size: 40px;
 	line-height: 60px;
 	
@@ -239,7 +240,7 @@ body,html{
 	overflow-x: hidden;
 	padding: 5px 12px;
 	font-size: 18px;
-    font-family: Typo_Round_Bold;
+    font-family:Visby_Round;
     transition: ease-in-out 500ms;
 }
 
