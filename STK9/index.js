@@ -59,6 +59,9 @@ let teamNameBlueTemp;
 let teamNameRedTemp;
 let gameState;
 
+let preScoreBlue = 0;
+let preScoreRed = 0;
+
 let chatLen = 0;
 let tempClass = 'unknown';
 
@@ -108,29 +111,86 @@ socket.onmessage = event => {
 		
 		scoreBlueTemp = data.tourney.manager.stars.left;
 		scoreBlue.innerHTML = '';
-		for(var i = 0; i < bestOfTemp-scoreBlueTemp; i++) {
-			let scoreNone = document.createElement('div');
-			scoreNone.setAttribute('class','scoreNone');	
-			scoreBlue.appendChild(scoreNone);			
-		}
-		for(var i = 0; i < scoreBlueTemp; i++) {
-			let scoreFill = document.createElement('div');
-			scoreFill.setAttribute('class','scoreFill');	
-			scoreBlue.appendChild(scoreFill);		
+
+		for (var i = 0; i < bestOfTemp; i++) {
+			if (i == scoreBlueTemp-1 && scoreBlueTemp > preScoreBlue) {
+				let scoreFill = document.createElement('div');
+				scoreFill.setAttribute('class','scoreFillFade');
+				scoreBlue.appendChild(scoreFill);
+			} else if (i == scoreBlueTemp && scoreBlueTemp < preScoreBlue) {
+				let scoreNone = document.createElement('div');
+				scoreNone.setAttribute('class','scoreNoneFade');
+				scoreBlue.appendChild(scoreNone);
+			} else if (i < scoreBlueTemp){
+				let scoreFill = document.createElement('div');
+				scoreFill.setAttribute('class','scoreFill');
+				scoreBlue.appendChild(scoreFill);
+			} else {
+				let scoreNone = document.createElement('div');
+				scoreNone.setAttribute('class','scoreNone');
+				scoreBlue.appendChild(scoreNone);
+			}
 		}
 		
+		preScoreBlue = scoreBlueTemp;
+
 		scoreRedTemp = data.tourney.manager.stars.right;
 		scoreRed.innerHTML = '';
-		for(var i = 0; i < scoreRedTemp; i++) {
-			let scoreFill = document.createElement('div');
-			scoreFill.setAttribute('class','scoreFill');	
-			scoreRed.appendChild(scoreFill);		
+
+		for (var i = bestOfTemp; i > 0; i--) {
+			if (i == scoreRedTemp && scoreRedTemp > preScoreRed) {
+				let scoreFill = document.createElement('div');
+				scoreFill.setAttribute('class','scoreFillFade');
+				scoreRed.appendChild(scoreFill);
+			} else if (i == scoreRedTemp+1 && scoreRedTemp < preScoreRed) {
+				let scoreNone = document.createElement('div');
+				scoreNone.setAttribute('class','scoreNoneFade');
+				scoreRed.appendChild(scoreNone);
+			} else if (i <= scoreRedTemp){
+				let scoreFill = document.createElement('div');
+				scoreFill.setAttribute('class','scoreFill');
+				scoreRed.appendChild(scoreFill);
+			} else {
+				let scoreNone = document.createElement('div');
+				scoreNone.setAttribute('class','scoreNone');
+				scoreRed.appendChild(scoreNone);
+			}
 		}
-		for(var i = 0; i < bestOfTemp-scoreRedTemp; i++) {
-			let scoreNone = document.createElement('div');
-			scoreNone.setAttribute('class','scoreNone');	
-			scoreRed.appendChild(scoreNone);			
-		}
+
+		preScoreRed = scoreRedTemp;
+		
+		// for(var i = 0; i < scoreBlueTemp; i++) {
+		// 	let scoreFill = document.createElement('div');
+		// 	scoreFill.setAttribute('class','scoreFill');
+		// 	scoreBlue.appendChild(scoreFill);		
+		// }
+		// for(var i = 0; i < bestOfTemp-scoreBlueTemp; i++) {
+		// 	let scoreNone = document.createElement('div');
+		// 	scoreNone.setAttribute('class','scoreNone');	
+		// 	scoreBlue.appendChild(scoreNone);			
+		// }
+		
+		
+		// for(var i = 0; i < bestOfTemp-scoreRedTemp; i++) {
+		// 	let scoreNone = document.createElement('div');
+		// 	scoreNone.setAttribute('class','scoreNone');	
+		// 	scoreRed.appendChild(scoreNone);			
+		// }
+		// for(var i = 0; i < scoreRedTemp; i++) {
+		// 	let scoreFill = document.createElement('div');
+		// 	scoreFill.setAttribute('class','scoreFill');	
+		// 	scoreRed.appendChild(scoreFill);		
+		// }
+
+		// if (scoreRedTemp == bestOfTemp) {
+		// 	let tree = document.createElement('div');
+		// 	tree.setAttribute('class','redWin');
+		// 	tree.appendChild(treeRed);
+		// } else if (scoreBlueTemp == bestOfTemp) {
+		// 	let tree = document.createElement('div');
+		// 	tree.setAttribute('class','blueWin');
+		// 	tree.appendChild(treeRed);
+		// }
 	}
 	if(teamNameBlueTemp !== data.tourney.manager.teamName.left) {
 		teamNameBlueTemp = data.tourney.manager.teamName.left;
