@@ -17,7 +17,7 @@ body,html{
     height: 1080px;
     position: relative;
 }
-.odometer.odometer-auto-theme{
+/* .odometer.odometer-auto-theme{
     font-size: 24px !important;
     font-family:Visby_Round !important;
     font-weight: normal !important;	
@@ -27,7 +27,7 @@ body,html{
     padding-right: 5px !important;
     margin-left: -5px !important;
     margin-right: -5px !important;
-}
+} */
 #top {
 	display: flex;
 	position: absolute;
@@ -39,6 +39,12 @@ body,html{
 	z-index: 0;
 	background-size: cover;
 }
+
+#scoreTree {
+	width:202px;
+	height:202px;
+}
+
 #bottom {
 	position: absolute;
 	bottom: 0px;
@@ -62,6 +68,7 @@ body,html{
 	align-items: flex-end;
     flex-wrap: wrap;
 	transition: ease-in-out 500ms;
+	transform:translateX(100px);
 }
 #scoreRed {
 	box-sizing: border-box;
@@ -74,6 +81,7 @@ body,html{
 	align-items: flex-end;
     flex-wrap: wrap;
 	transition: ease-in-out 500ms;
+	transform:translateX(-100px);
 }
 .scoreNone {
 	width: 20px;
