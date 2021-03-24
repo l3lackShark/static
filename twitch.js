@@ -4,6 +4,7 @@ let olddata=undefined;
 const username = "c0d3_m4513r";
 const token = "${{TWITCH_API_TOKEN}}";
 const channel = "#c0d3_m4513r"
+const enabled =  true
 
 const run = async ()=>{
     const chat = new window.TwitchJs.Chat(
@@ -120,4 +121,4 @@ const run = async ()=>{
   await chat.join(channel);
 }
 
-run()
+if (enabled) run()
