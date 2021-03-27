@@ -3,8 +3,9 @@ let olddata=undefined;
 //----------------------------------------
 const username = "c0d3_m4513r";
 const token = "${{TWITCH_API_TOKEN}}";
-const channel = "#c0d3_m4513r"
+const channel = "c0d3_m4513r"
 const enabled =  true
+const deleteAfterDone = true
 
 const run = async ()=>{
     const chat = new window.TwitchJs.Chat(
@@ -113,12 +114,19 @@ const run = async ()=>{
     }
     if(send!==undefined){
 	console.log("trying to send msg. with content:"+send)
-	chat.say(channel,send).then(()=>{console.log("sucess")});
+	chat.say(channel,send)
+		.then(
+		()=>{
+			console.log("sucess")
+			if(deleteAfterDone){
+				return chat.delete(channel, message.tags.id).then(()=>{console.log("success delete")})
+			}
+	});
     }
   });
   
   await chat.connect();
-  await chat.join(channel);
+  await chat.join("#"+channel);
 }
 
 if (enabled) run()
