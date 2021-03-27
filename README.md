@@ -15,6 +15,7 @@ The upside of choosing the first way is, that the generated token will only be u
 - Go to https://twitchapps.com/tokengen/
 - Paste the `Client-ID`, that you copied
 - Enter `chat:read chat:edit` as the scope.
+- If you want the Bot to be able to delete the Commands for the Bot (`deleteAfterDone`), you will additionally need the `channel:moderate` scope. If you are unsure, if you want this, just add the scope, as you can still enable/disable the feature from the JS file, as you like.
 - Click `Connect` on the https://twitchapps.com Website
 - Click `Authorize` on the https://id.twitch.tv Website, that opened. This link will NOT work!
 - Copy the OAuth-Token. Keep it safe, because with that token, and your username, one could write chat messages, as you.
