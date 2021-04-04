@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sibyl</title>
+
+  <script defer src="./deps/anime.min.js"></script>
+  <script defer src="./deps/reconnecting-websocket.min.js"></script>
+  <script defer src="./utils.js"></script>
+  <script defer src="./index.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="map">
+    <div class="blackmask"></div> 
+    <img id="background" src="">
+
+    <div class="title">
+      <p id="titlep">Title Here!</p>
+    </div>
+  </div>
+  
+  <div class="hits" style="transform: translateY(-100px);">
+
+    <div class="blackmask"></div> 
+    <img id="background2" src="">
+
+    <div class="hit">
+      <div class="circle green"></div>
+      <p class="hitcount" id="100">0</p>
+    </div>
+
+    <div class="hit">
+      <div class="circle yellow"></div>
+      <p class="hitcount" id="50">0</p>
+    </div>
+
+    <div class="hit">
+      <div class="circle red"></div>
+      <p class="hitcount" id="miss">0</p>
+    </div>
+
+    <div class="pp">
+      <p id="pp">0pp</p>
+    </div>
+
+  </div>
+</body>
+</html>

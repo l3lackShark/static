@@ -1,0 +1,120 @@
+@font-face {
+  src: url(style/GothicIt.TTF);
+  font-family: Gothic;
+  font-weight: bolder;
+}
+
+p {
+  font-size: 18pt;
+  margin: 0;
+  color: white;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: fit-content;
+  height: fit-content;
+
+  font-family: Gothic;
+}
+
+.map {
+  width: 420px;
+  height: 150px;
+  background-color: black;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+}
+
+.blackmask {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.50);
+  position: absolute;
+  z-index: 2;
+}
+
+#background, #background2 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  z-index: 1;
+}
+
+#background2 {
+  filter: blur(2px);
+}
+
+.title {
+  text-shadow: 2px 2px 5px black;
+
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hits {
+  width: 420px;
+  height: 50px;
+  border-radius: 5px;
+  margin-top: 5px;
+  z-index: -1;
+
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.hit {
+  display: flex;
+  margin-left: 5px;
+  margin-right: 5px;
+  z-index: 3;
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  box-shadow: 2px 2px 5px black;
+
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.hitcount {
+  text-shadow: 2px 2px 5px black;
+  display: flex;
+  align-items: center;
+}
+
+.green {
+  border: 3px solid #7cc576;
+}
+
+.yellow {
+  border: 3px solid #fff568;
+}
+
+.red {
+  border: 3px solid #f26c4f;
+}
+
+.pp {
+  width: 105px;
+  text-align: center;
+  z-index: 3;
+}
