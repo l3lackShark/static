@@ -55,12 +55,10 @@ let tempMapDiff;
 
 let scoreBlueTemp;
 let scoreRedTemp;
+let scoreEvent;
 let teamNameBlueTemp;
 let teamNameRedTemp;
 let gameState;
-
-let preScoreBlue = 0;
-let preScoreRed = 0;
 
 let chatLen = 0;
 let tempClass = 'unknown';
@@ -101,13 +99,22 @@ socket.onmessage = event => {
     if(tempMapName !== data.menu.bm.metadata.title){
         tempMapName = data.menu.bm.metadata.title;
         mapTitle.innerHTML = tempMapName;
+		
+		if(mapTitle.getBoundingClientRect().width >= 380) {
+			mapTitle.classList.add("wrap");
+		} else {
+			mapTitle.classList.remove("wrap");
+		}
     }
     if(tempMapDiff !== '[' + data.menu.bm.metadata.difficulty + ']'){
         tempMapDiff = '[' + data.menu.bm.metadata.difficulty + ']';
         mapDifficulty.innerHTML = tempMapDiff;
     }
 	if (bestOfTemp !== Math.ceil(data.tourney.manager.bestOF / 2) || scoreBlueTemp !== data.tourney.manager.stars.left || scoreRedTemp !== data.tourney.manager.stars.right) {
+		
 		// Courtesy of Victim-Crasher
+		bestOfTemp = Math.ceil(data.tourney.manager.bestOF / 2);
+
 		// To know where to blow or pop score
 		if (scoreBlueTemp < data.tourney.manager.stars.left) {
 			scoreEvent = "blue-add";
@@ -168,61 +175,26 @@ socket.onmessage = event => {
 				scoreRed.appendChild(scoreFill);
 			}
 		}
-
-		// for (var i = bestOfTemp; i > 0; i--) {
-		// 	if (i == scoreRedTemp && scoreRedTemp > preScoreRed) {
-		// 		let scoreFill = document.createElement('div');
-		// 		scoreFill.setAttribute('class','scoreFillFade');
-		// 		scoreRed.appendChild(scoreFill);
-		// 	} else if (i == scoreRedTemp+1 && scoreRedTemp < preScoreRed) {
-		// 		let scoreNone = document.createElement('div');
-		// 		scoreNone.setAttribute('class','scoreNoneFade');
-		// 		scoreRed.appendChild(scoreNone);
-		// 	} else if (i <= scoreRedTemp){
-		// 		let scoreFill = document.createElement('div');
-		// 		scoreFill.setAttribute('class','scoreFill');
-		// 		scoreRed.appendChild(scoreFill);
-		// 	} else {
-		// 		let scoreNone = document.createElement('div');
-		// 		scoreNone.setAttribute('class','scoreNone');
-		// 		scoreRed.appendChild(scoreNone);
-		// 	}
-		// }
-
-		// preScoreRed = scoreRedTemp;
 		
-		// for(var i = 0; i < scoreBlueTemp; i++) {
-		// 	let scoreFill = document.createElement('div');
-		// 	scoreFill.setAttribute('class','scoreFill');
-		// 	scoreBlue.appendChild(scoreFill);		
-		// }
-		// for(var i = 0; i < bestOfTemp-scoreBlueTemp; i++) {
-		// 	let scoreNone = document.createElement('div');
-		// 	scoreNone.setAttribute('class','scoreNone');	
-		// 	scoreBlue.appendChild(scoreNone);			
-		// }
-		
-		
-		// for(var i = 0; i < bestOfTemp-scoreRedTemp; i++) {
-		// 	let scoreNone = document.createElement('div');
-		// 	scoreNone.setAttribute('class','scoreNone');	
-		// 	scoreRed.appendChild(scoreNone);			
-		// }
-		// for(var i = 0; i < scoreRedTemp; i++) {
-		// 	let scoreFill = document.createElement('div');
-		// 	scoreFill.setAttribute('class','scoreFill');	
-		// 	scoreRed.appendChild(scoreFill);		
-		// }
-
-		// if (scoreRedTemp == bestOfTemp) {
-		// 	let tree = document.createElement('div');
-		// 	tree.setAttribute('class','redWin');
-		// 	tree.appendChild(treeRed);
-		// } else if (scoreBlueTemp == bestOfTemp) {
-		// 	let tree = document.createElement('div');
-		// 	tree.setAttribute('class','blueWin');
-		// 	tree.appendChild(treeRed);
-		// }
+		if (scoreBlueTemp !== bestOfTemp && scoreRedTemp !== bestOfTemp) {
+			let noTree = document.createElement('img');
+			noTree.src = './static/no-win.png';
+			var oTree = document.getElementById('scoreTree');
+			noTree.setAttribute("id", "scoreTree");
+			document.getElementById('tree').replaceChild(noTree, oTree);
+		} else if (scoreBlueTemp == bestOfTemp) {
+			let blueTree = document.createElement('img');
+			blueTree.src = './static/blue-win.png';
+			var oTree = document.getElementById('scoreTree');
+			blueTree.setAttribute("id", "scoreTree");
+			document.getElementById('tree').replaceChild(blueTree, oTree);
+		} else if (scoreRedTemp == bestOfTemp) {
+			let redTree = document.createElement('img');
+			redTree.src = './static/red-win.png';
+			var oTree = document.getElementById('scoreTree');
+			redTree.setAttribute("id", "scoreTree");
+			document.getElementById('tree').replaceChild(redTree, oTree);
+		}
 	}
 	if(teamNameBlueTemp !== data.tourney.manager.teamName.left) {
 		teamNameBlueTemp = data.tourney.manager.teamName.left;
