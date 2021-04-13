@@ -106,58 +106,90 @@ socket.onmessage = event => {
         tempMapDiff = '[' + data.menu.bm.metadata.difficulty + ']';
         mapDifficulty.innerHTML = tempMapDiff;
     }
-	if(bestOfTemp !== Math.ceil(data.tourney.manager.bestOF / 2) || scoreBlueTemp !== data.tourney.manager.stars.left || scoreRedTemp !== data.tourney.manager.stars.right) {
-		bestOfTemp = Math.ceil(data.tourney.manager.bestOF / 2);
-		
-		scoreBlueTemp = data.tourney.manager.stars.left;
-		scoreBlue.innerHTML = '';
+	if (bestOfTemp !== Math.ceil(data.tourney.manager.bestOF / 2) || scoreBlueTemp !== data.tourney.manager.stars.left || scoreRedTemp !== data.tourney.manager.stars.right) {
+		// Courtesy of Victim-Crasher
+		// To know where to blow or pop score
+		if (scoreBlueTemp < data.tourney.manager.stars.left) {
+			scoreEvent = "blue-add";
+		} else if (scoreBlueTemp > data.tourney.manager.stars.left) {
+			scoreEvent = "blue-remove";
+		} else if (scoreRedTemp < data.tourney.manager.stars.right) {
+			scoreEvent = "red-add";
+		} else if (scoreRedTemp > data.tourney.manager.stars.right) {
+			scoreEvent = "red-remove";
+		}
 
-		for (var i = 0; i < bestOfTemp; i++) {
-			if (i == scoreBlueTemp-1 && scoreBlueTemp > preScoreBlue) {
-				let scoreFill = document.createElement('div');
-				scoreFill.setAttribute('class','scoreFillFade');
-				scoreBlue.appendChild(scoreFill);
-			} else if (i == scoreBlueTemp && scoreBlueTemp < preScoreBlue) {
-				let scoreNone = document.createElement('div');
-				scoreNone.setAttribute('class','scoreNoneFade');
-				scoreBlue.appendChild(scoreNone);
-			} else if (i < scoreBlueTemp){
-				let scoreFill = document.createElement('div');
-				scoreFill.setAttribute('class','scoreFill');
+		scoreBlueTemp = data.tourney.manager.stars.left;
+		scoreBlue.innerHTML = "";
+		for (var i = 0; i < scoreBlueTemp; i++) {
+			if (scoreEvent === "blue-add" && i === scoreBlueTemp - 1) {
+				let scoreFill = document.createElement("div");
+				scoreFill.setAttribute("class", "score scoreFillAnimate");
 				scoreBlue.appendChild(scoreFill);
 			} else {
-				let scoreNone = document.createElement('div');
-				scoreNone.setAttribute('class','scoreNone');
+				let scoreFill = document.createElement("div");
+				scoreFill.setAttribute("class", "score scoreFill");
+				scoreBlue.appendChild(scoreFill);
+			}
+		}
+		for (var i = 0; i < bestOfTemp - scoreBlueTemp; i++) {
+			if (scoreEvent === "blue-remove" && i === 0) {
+				let scoreNone = document.createElement("div");
+				scoreNone.setAttribute("class", "score scoreNoneAnimate");
+				scoreBlue.appendChild(scoreNone);
+			} else {
+				let scoreNone = document.createElement("div");
+				scoreNone.setAttribute("class", "score");
 				scoreBlue.appendChild(scoreNone);
 			}
 		}
-		
-		preScoreBlue = scoreBlueTemp;
 
 		scoreRedTemp = data.tourney.manager.stars.right;
-		scoreRed.innerHTML = '';
-
-		for (var i = bestOfTemp; i > 0; i--) {
-			if (i == scoreRedTemp && scoreRedTemp > preScoreRed) {
-				let scoreFill = document.createElement('div');
-				scoreFill.setAttribute('class','scoreFillFade');
-				scoreRed.appendChild(scoreFill);
-			} else if (i == scoreRedTemp+1 && scoreRedTemp < preScoreRed) {
-				let scoreNone = document.createElement('div');
-				scoreNone.setAttribute('class','scoreNoneFade');
+		scoreRed.innerHTML = "";
+		for (var i = 0; i < bestOfTemp - scoreRedTemp; i++) {
+			if (scoreEvent === "red-remove" && i === bestOfTemp - scoreRedTemp - 1) {
+				let scoreNone = document.createElement("div");
+				scoreNone.setAttribute("class", "score scoreNoneAnimate");
 				scoreRed.appendChild(scoreNone);
-			} else if (i <= scoreRedTemp){
-				let scoreFill = document.createElement('div');
-				scoreFill.setAttribute('class','scoreFill');
-				scoreRed.appendChild(scoreFill);
 			} else {
-				let scoreNone = document.createElement('div');
-				scoreNone.setAttribute('class','scoreNone');
+				let scoreNone = document.createElement("div");
+				scoreNone.setAttribute("class", "score");
 				scoreRed.appendChild(scoreNone);
 			}
 		}
+		for (var i = 0; i < scoreRedTemp; i++) {
+			if (scoreEvent === "red-add" && i === 0) {
+				let scoreFill = document.createElement("div");
+				scoreFill.setAttribute("class", "score scoreFillAnimate");
+				scoreRed.appendChild(scoreFill);
+			} else {
+				let scoreFill = document.createElement("div");
+				scoreFill.setAttribute("class", "score scoreFill");
+				scoreRed.appendChild(scoreFill);
+			}
+		}
 
-		preScoreRed = scoreRedTemp;
+		// for (var i = bestOfTemp; i > 0; i--) {
+		// 	if (i == scoreRedTemp && scoreRedTemp > preScoreRed) {
+		// 		let scoreFill = document.createElement('div');
+		// 		scoreFill.setAttribute('class','scoreFillFade');
+		// 		scoreRed.appendChild(scoreFill);
+		// 	} else if (i == scoreRedTemp+1 && scoreRedTemp < preScoreRed) {
+		// 		let scoreNone = document.createElement('div');
+		// 		scoreNone.setAttribute('class','scoreNoneFade');
+		// 		scoreRed.appendChild(scoreNone);
+		// 	} else if (i <= scoreRedTemp){
+		// 		let scoreFill = document.createElement('div');
+		// 		scoreFill.setAttribute('class','scoreFill');
+		// 		scoreRed.appendChild(scoreFill);
+		// 	} else {
+		// 		let scoreNone = document.createElement('div');
+		// 		scoreNone.setAttribute('class','scoreNone');
+		// 		scoreRed.appendChild(scoreNone);
+		// 	}
+		// }
+
+		// preScoreRed = scoreRedTemp;
 		
 		// for(var i = 0; i < scoreBlueTemp; i++) {
 		// 	let scoreFill = document.createElement('div');
