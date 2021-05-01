@@ -1,5 +1,3 @@
-
-
 # Counters
 
 ### InGame1
@@ -20,6 +18,7 @@ By: [Dartandr][1]<br>
 <img  src="https://cdn.discordapp.com/attachments/562954897163812865/817866299274559498/unknown.png"  width="150">\
 By: [Dartandr][1]<br>
 
+
 ### reComfortaa
 
 > Size: 1152x245\
@@ -38,7 +37,7 @@ By: [Xynogen][6]<br>
 <img src="https://i.imgur.com/TAmHvFM.png" width="500">\
 >*Gameplay 2*\
 <img src="https://i.imgur.com/FpHkdLg.png" width="500">\
-By: [Xynogen][6]<br>
+By: Xynogen<br>
 
 ### WaveTournament
 
@@ -62,10 +61,10 @@ By: [Dartandr][1]<br>
 > Size: 550x300\
 <img  src="https://cdn.discordapp.com/attachments/530940222771560452/732545954468593664/unknown.png"  width="500">\
 By: [Dartandr][1]<br>
-
+  
 ### Simplistic
 
-> Size: 700x130\
+> Size: 750x150\
 > *Song Selection*\
 <img src="https://i.postimg.cc/zvN5nxTZ/download.png">\
 >*Gameplay 1*\
@@ -78,15 +77,11 @@ By: [jassper0][5]<br>
 <img  src="https://i.imgur.com/mBN375B.jpg"  width="500">\
 By: [cyperdark][2]<br>
 
-  
-
 ### Kerli1 & Kerli2
 
 > Size (1)(2): 794x124 | 353x190\
 <img  src="https://i.imgur.com/n2w260o.jpg"  width="500">\
 By: [Dartandr][1]<br>
-
-  
 
 ### Luscent
 
@@ -95,10 +90,9 @@ Open-Source Implementation of [Luscent's][3] overlay. No elements were stolen. T
 <img  src="https://media.discordapp.net/attachments/641255341245333514/731843129833160704/unknown.png"  width="500">\
 Remake by: [Dartandr][1]
 
-
 ### VictimCrasherCompact
 
-> Size: 550x132\
+> Size: 560x150\
 > *Song Selection*\
 <img  src="https://i.imgur.com/1F1GK3Z.png" width="500">\
 >
@@ -106,13 +100,17 @@ Remake by: [Dartandr][1]
 <img  src="https://i.imgur.com/epx6dij.png" width="500">\
 By: [VictimCrasher][4]<br>
   
-
 ### VictimCrasherOverlay
 
 > Size: 1920x1080\
 <img  src="https://i.imgur.com/Wo6wI1B.png"  width="500">\
 By: [VictimCrasher][4]<br>
 
+### UnstableRate
+
+> Size: 300x100\
+Just a plain number that shows current UnstableRate, could be useful if you want to put it above your UR Bar.\
+By: [Dartandr][1]
 
 ### MaximalLime
 
@@ -120,21 +118,17 @@ By: [VictimCrasher][4]<br>
 <img  src="https://cdn.discordapp.com/attachments/641255341245333514/731841741715669002/unknown.png"  width="500">\
 By: [cyperdark][2]<br>
 
-  
 ### MinimalLime
 
 > Size: 640x130\
 <img  src="https://cdn.discordapp.com/attachments/641255341245333514/731840161612300358/unknown.png"  width="500">\
 By: [cyperdark][2]<br>
-  
 
 ### TrafficLight
 
 > Size: 458x380\
 <img  src="https://cdn.discordapp.com/attachments/641255341245333514/731842011514011698/unknown.png">\
 By: [cyperdark][2]<br>
-  
-  
 
 [1]: https://github.com/Dartandr
 
