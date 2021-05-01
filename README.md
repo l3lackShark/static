@@ -4,20 +4,20 @@
 
 ### InGame1
 
-> Size: 270x133\
-<img  src="https://cdn.discordapp.com/attachments/573902204482879498/818450517184741406/unknown.png"  width="270">\
+> Size: 240x133\
+<img  src="https://user-images.githubusercontent.com/20248967/110195364-7337e280-7e5e-11eb-9bbb-8dadddf6e2bd.png"  width="250">\
 By: [Dartandr][1]<br>
 
 ### InGame2
 
-> Size: 380x97\
-<img  src="https://cdn.discordapp.com/attachments/573902204482879498/818450338356789268/unknown.png"  width="280">\
+> Size: 370x120\
+<img  src="https://cdn.discordapp.com/attachments/562954897163812865/817866179619192862/unknown.png"  width="280">\
 By: [Dartandr][1]<br>
 
 ### InGame3
 
-> Size: 170x90\
-<img  src="https://cdn.discordapp.com/attachments/573902204482879498/818450603410718730/unknown.png"  width="170">\
+> Size: 150x70\
+<img  src="https://cdn.discordapp.com/attachments/562954897163812865/817866299274559498/unknown.png"  width="150">\
 By: [Dartandr][1]<br>
 
 ### MonokaiPane
