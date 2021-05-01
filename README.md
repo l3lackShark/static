@@ -71,15 +71,6 @@ By: [Dartandr][1]<br>
 >*Gameplay 1*\
 <img src="https://i.postimg.cc/NMMhcLmV/Screenshot-1.png">\
 By: [jassper0][5]<br>
-  
-### reComfortaa
-
-> Size: 1152x245\
-> *Song Selection*\
-<img src="https://i.imgur.com/r4AWqbH.png" width="600">\
->*Gameplay*\
-<img src="https://i.imgur.com/7rEgtkH.png" width="600">\
-By: [Xynogen][6]<br>
 
 ### DarkAndWhite
 
