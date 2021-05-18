@@ -1,11 +1,11 @@
 @font-face {
     font-family: "text";
-    src: url(fonts/AvenirNextCyr-Regular.ttf);
+    src: url(fonts/Rubik-Light.ttf);
 }
 
 @font-face {
     font-family: "numbers";
-    src: url(fonts/HelveticaRoundedLTStd-Bd.otf);
+    src: url(fonts/Rubik-Medium.ttf);
 }
 
 #main {
