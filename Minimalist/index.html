@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Minimalist</title>
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+        <div id="main">
+            <div class="rank-container">
+                <div class="rank" id="rank1">
+                    <span class="rank-letter">S</span>
+                    <span class="rank-superscript">+</span>
+                </div>
+                <div class="rank" id="rank2">
+                    <span class="rank-letter">S</span>
+                    <span class="rank-superscript">+</span>
+                </div>
+            </div>
+
+            <div class="stats">
+                <div class="maxpp-container">
+                    <div class="maxpp-box">
+                        <span class="maxpp-text">max pp</span>
+                        <span class="maxpp" id="maxpp1">1000</span>
+                    </div>
+                </div>
+                <div class="song-container">
+                    <img src="" alt="" id="song-bg" />
+                </div>
+                <div class="pp-container">
+                    <div class="pp-text">pp</div>
+                    <div class="pp" id="pp1"></div>
+                </div>
+                <div class="hits-container">
+                    <div class="hit100-container">
+                        <div class="hit100" id="hit100_1">0</div>
+                        <div class="hit100-box"></div>
+                    </div>
+                    <div class="hit50-container">
+                        <div class="hit50" id="hit50_1">0</div>
+                        <div class="hit50-box"></div>
+                    </div>
+                    <div class="hit0-container">
+                        <div class="hit0" id="hit0_1">0</div>
+                        <div class="hit0-box"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="deps/reconnecting-websocket.min.js"></script>
+        <script src="deps/countUp.js"></script>
+        <script src="index.js"></script>
+    </body>
+</html>
