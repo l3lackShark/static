@@ -95,7 +95,7 @@ Remake by: [Dartandr][1]
 > Size: 560x150\
 > *Song Selection*\
 <img  src="https://i.imgur.com/1F1GK3Z.png" width="500">\
->
+>\
 > *Gameplay*\
 <img  src="https://i.imgur.com/epx6dij.png" width="500">\
 By: [VictimCrasher][4]<br>
