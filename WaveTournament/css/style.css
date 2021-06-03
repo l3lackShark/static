@@ -1,10 +1,10 @@
 @font-face {
-    font-family: "Nexa Bold";
-    src: url("../fonts/Nexa-Bold.otf");
+    font-family: "Rubik Bold";
+    src: url("../fonts/Rubik-SemiBold.ttf");
 }
 @font-face {
-    font-family: "Nexa Light";
-    src: url("../fonts/Nexa-Light.otf");
+    font-family: "Rubik Light";
+    src: url("../fonts/Rubik-Light.ttf");
 }
 @font-face {
     font-family: "Gothic-b";
@@ -17,7 +17,7 @@ body,html{
 }
 #main{
     font-size: 30px;
-    font-family: Nexa Bold, Helvetica, sans-serif;
+    font-family: Rubik Bold, Helvetica, sans-serif;
     font-weight: normal;
     color: white;
     width: 1920px;
@@ -27,7 +27,7 @@ body,html{
 }
 .odometer.odometer-auto-theme{
     font-size: 24px !important;
-    font-family: "Nexa Bold", Helvetica, sans-serif !important;
+    font-family: "Rubik Bold", Helvetica, sans-serif !important;
     font-weight: normal !important;	
 }
 .odometer.odometer-auto-theme .odometer-digit .odometer-digit-inner, .odometer.odometer-theme-default .odometer-digit .odometer-digit-inner {
@@ -164,7 +164,7 @@ body,html{
 	
 	background-color: #007E93;
 	color: white;
-    font-family: Nexa Bold;
+    font-family: Rubik Bold;
 	font-size: 40px;
 	line-height: 60px;
 	display: block;
@@ -185,7 +185,7 @@ body,html{
 
 	background-color: #8E0029;
 	color: white;
-    font-family: Nexa Bold;
+    font-family: Rubik Bold;
 	font-size: 40px;
 	line-height: 60px;
 	display: block;
