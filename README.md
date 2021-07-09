@@ -26,6 +26,34 @@ The upside of choosing the first way is, that the generated token will only be u
 - Click `Authorize` on the https://id.twitch.tv Website, that opened. This link will NOT work!
 - Copy the OAuth-Token. Keep it safe, because with that token, and your username, one could do pretty much anything, including: (sending chast messages, doing mod things, changing stream information, edit vods)
 
+## Config
+All of the config, for this fork is located in the twich.js file.
+This Section will go over what each config does.
+
+### Username and Token
+```js
+const username = "c0d3_m4513r";
+const token = "${{TWITCH_API_TOKEN}}";
+```
+Those variables control the login of the bot.
+It is essentially like a username/password combo, just for bots.
+
+How to get a token is described above.
+
+### Other
+```js
+const channel = "c0d3_m4513r"
+const enabled =  true
+const deleteAfterDone = true
+```
+* The variable `channel` is there, to specify, in which channel the bot should be active.
+This allows you to have a seperate bot account for your Stream.
+* `enabled` toggles, weather the bot is active at all.
+If this is false, the bot will do nothing.
+It won't login to your account.
+* `deleteAfterDone`: This will delete a message, which caused a response, if the bot successfully replied, to the command.
+
+
 # Counters
 
 ### InGame1
