@@ -1,11 +1,12 @@
 
 let olddata=undefined;
 //----------------------------------------
-const username = "c0d3_m4513r";
-const token = "${{TWITCH_API_TOKEN}}";
-const channel = "c0d3_m4513r"
+const username = "c0d3_m4513r"; //Your own username
+const token = "${{TWITCH_API_TOKEN}}"; //Your twitch token, for the username above
+const channel = "c0d3_m4513r" //The channel, the bot should reply to commands.
 const enabled =  true
-const deleteAfterDone = true
+const deleteAfterDone = false 
+//This can get messy in chat view. 
 
 const run = async ()=>{
     const chat = new window.TwitchJs.Chat(
