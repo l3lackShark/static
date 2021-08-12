@@ -54,11 +54,11 @@ By: [VictimCrasher][4]<br>
 
 > Size: 1810x160\
 > *Song Selection*\
-<img src="https://i.postimg.cc/1RDk0cHd/vlcsnap-2021-08-12-15h33m16s847.png" width="500">\
+<img src="https://i.postimg.cc/1RDk0cHd/vlcsnap-2021-08-12-15h33m16s847.png" width="750">\
 > *Gameplay 1*\
-<img src="https://i.postimg.cc/Fsm2TdCH/vlcsnap-2021-08-12-15h33m46s231.png" width="500">\
+<img src="https://i.postimg.cc/Fsm2TdCH/vlcsnap-2021-08-12-15h33m46s231.png" width="750">\
 > *Gameplay 2*\
-<img src="https://i.postimg.cc/02fhFkhd/vlcsnap-2021-08-12-15h33m52s818.png" width="500">\
+<img src="https://i.postimg.cc/02fhFkhd/vlcsnap-2021-08-12-15h33m52s818.png" width="750">\
 By : [chocomilku][7]<br>
 
 ### Classic
