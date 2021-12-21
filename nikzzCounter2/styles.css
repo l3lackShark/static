@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
+
+body, html {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 26px;
+    color: white;
+}
+
+.container {
+    top: 10px;
+    left: 10px;
+    position: absolute;
+    display: inline-flex;
+    /* background-color: brown; */
+    transition: 0.5s;
+}
+
+.main {
+    width: 300px;
+    height: 115px;
+    background-color: #3c3c3d;
+    padding: 10px 15px 15px 15px;
+    justify-content: center;
+    border-radius: 15px;
+    box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.5);
+    transition: 0.5s;
+    z-index: 4;
+}
+
+.line {
+    background-color: #2d2c2e;
+    height: 4px;
+    margin-bottom: 6px;
+    border-radius: 4px;
+}
+
+.pp {
+    display: flex;
+    font-size: 30px;
+    justify-content: space-around;
+    margin-bottom: 8px;
+    transition: 0.3s;
+}
+
+.currpp {
+    width: 160px;
+    display: flex;
+    justify-content: center;
+    background-color: #534e5cad;
+    border-radius: 10px;
+    padding-bottom: 2px;
+    transition: 0.3s;
+}
+
+.ppfc {
+    width: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    background-color: #534e5cad;
+    border-radius: 10px;
+    padding-bottom: 2px;
+    transition: 0.3s;
+}
+
+#fcpp {
+    font-size: 16px;
+}
+
+#line {
+    background-color: #534e5c;
+    height: 4px;
+    border-radius: 4px;
+    transition: 300ms;
+}
+
+.hits {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    transition: 0.5s;
+}
+
+.hits .rank {
+    min-width: 90px;
+    font-size: 56px;
+}
+
+#rank {
+    font-weight: 500;
+}
+
+.hits .x100 {
+    min-width: 90px;
+    color: #49aa46;
+    text-shadow: #49aa46 0 0 4px;
+    font-weight: 300;
+}
+
+.hits .x50 {
+    min-width: 90px;
+    color: #4173ac;
+    text-shadow: #4173ac 0 0 4px;
+    font-weight: 300;
+}
+
+.hits .xMiss {
+    min-width: 90px;
+    color: #974936;
+    text-shadow: #974936 0 0 4px;
+    font-weight: 300;
+}
+
+.hits span {
+    color: #dddddd;
+    text-shadow: none;
+    font-weight: 400;
+}
+
+.bmid {
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: 0.2s;
+}

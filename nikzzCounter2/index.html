@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="deps/reconnecting-websocket.min.js"></script>
+    <script src="deps/countUp.js"></script>
+    <title>nikzzCounter</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="main">
+            <div class="pp">
+            <div class="currpp">
+                <span id="pp">0</span>pp
+            </div>
+            <div class="ppfc">
+                <span id="fcpp">FC: </span><span id="ppfc">0</span>pp
+            </div>
+            </div>
+            <div class="line">
+                <div id="line"></div>
+            </div>
+            <div class="hits">
+                <div class="rank">
+                    <span id="rank">SS</span>
+                </div>
+                <div class="x100">
+                    x100<br>
+                    <span id="x100">0</span>
+                </div>
+                <div class="x50" id="x50c">
+                    x50<br>
+                    <span id="x50">0</span>
+                </div>
+                <div class="xMiss">
+                    xMiss<br>
+                    <span id="xMiss">0</span>
+                </div>
+            </div>
+            <div class="bmid">
+                /b/<span id="bmid">0</span>
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
