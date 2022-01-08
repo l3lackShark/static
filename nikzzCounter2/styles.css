@@ -5,24 +5,23 @@ body, html {
     margin: 0;
     overflow: hidden;
     font-family: 'Montserrat', sans-serif;
-    font-size: 26px;
+    font-size: 22px;
     color: white;
 }
 
 .container {
-    top: 10px;
-    left: 10px;
+    top: 5px;
+    left: 5px;
     position: absolute;
     display: inline-flex;
+    align-items: center;
     /* background-color: brown; */
     transition: 0.5s;
 }
 
 .main {
-    width: 300px;
-    height: 115px;
-    background-color: #3c3c3d;
-    padding: 10px 15px 15px 15px;
+    background-color: #3e3e42;
+    padding: 12px 14px 8px 14px;
     justify-content: center;
     border-radius: 15px;
     box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.5);
@@ -31,47 +30,14 @@ body, html {
 }
 
 .line {
-    background-color: #2d2c2e;
+    background-color: #303030;
     height: 4px;
     margin-bottom: 6px;
     border-radius: 4px;
 }
 
-.pp {
-    display: flex;
-    font-size: 30px;
-    justify-content: space-around;
-    margin-bottom: 8px;
-    transition: 0.3s;
-}
-
-.currpp {
-    width: 160px;
-    display: flex;
-    justify-content: center;
-    background-color: #534e5cad;
-    border-radius: 10px;
-    padding-bottom: 2px;
-    transition: 0.3s;
-}
-
-.ppfc {
-    width: 160px;
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
-    background-color: #534e5cad;
-    border-radius: 10px;
-    padding-bottom: 2px;
-    transition: 0.3s;
-}
-
-#fcpp {
-    font-size: 16px;
-}
-
 #line {
-    background-color: #534e5c;
+    background-color: #606060;
     height: 4px;
     border-radius: 4px;
     transition: 300ms;
@@ -85,47 +51,134 @@ body, html {
     transition: 0.5s;
 }
 
-.hits .rank {
-    min-width: 90px;
-    font-size: 56px;
+.rank {
+    width: 75px;
+    text-align: center;
+    padding-right: 5px;
+    font-size: 60px;
+    transition: 0.4s;
 }
 
 #rank {
     font-weight: 500;
 }
 
+.hits .pepes {
+    min-width: 120px;
+}
+
+.pp, #pp {
+    color: #fff;
+    text-shadow: #fff 0 0 2px;
+    font-size: 28px;
+    font-weight: 400;
+}
+
+.ppfc {
+    min-width: 70px;
+    text-align: center;
+    position: absolute;
+    top: 62px;
+    left: 112px;
+    background-color: #606060;
+    padding: 1px 4px;
+    border-radius: 8px;
+    z-index: 5;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    transition: 0.6s;
+}
+
+.ppfc, #ppfc {
+    color: #fff;
+    font-size: 10px;
+}
+
+.sb {
+    min-width: 40px;
+    text-align: center;
+    position: absolute;
+    top: 62px;
+    left: 365px;
+    background-color: #645151;
+    padding: 1px 4px;
+    border-radius: 8px;
+    z-index: 5;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    transition: 0.6s;
+}
+
+.sb, #sb {
+    color: #fff;
+    font-size: 10px;
+}
+
+.bmid {
+    width: 220px;
+    height: 38px;
+    position: absolute;
+    top: 25px;
+    left: 210px;
+    text-align: center;
+    z-index: 5;
+    transition: transform 0.4s, opacity 0.2s;
+}
+
+.bmid, #bmid {
+    color: #fff;
+    font-size: 32px;
+}
+
 .hits .x100 {
-    min-width: 90px;
+    min-width: 70px;
     color: #49aa46;
     text-shadow: #49aa46 0 0 4px;
     font-weight: 300;
+    transition: transform 0.4s, opacity 0.2s;
 }
 
 .hits .x50 {
-    min-width: 90px;
+    min-width: 70px;
     color: #4173ac;
     text-shadow: #4173ac 0 0 4px;
     font-weight: 300;
+    transition: transform 0.4s, opacity 0.2s;
 }
 
 .hits .xMiss {
-    min-width: 90px;
+    min-width: 70px;
     color: #974936;
     text-shadow: #974936 0 0 4px;
     font-weight: 300;
+    transition: transform 0.4s, opacity 0.2s;
 }
 
 .hits span {
     color: #dddddd;
     text-shadow: none;
     font-weight: 400;
+    transition: 0.4s;
 }
 
-.bmid {
-    font-size: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    transition: 0.2s;
+.x100indicator, .x50indicator, .xMissindicator {
+    display: block;
+    margin: auto;
+    width: 10%;
+    height: 6px;
+    border-radius: 20px;
+    transition: 0.1s;
+}
+
+.x100indicator {
+    background-color: #49aa46;
+    box-shadow: 0px 0px 3px 0px #49aa46;
+}
+
+.x50indicator {
+    background-color: #4173ac;
+    box-shadow: 0px 0px 3px 0px #4173ac;
+}
+
+.xMissindicator {
+    background-color: #974936;
+    box-shadow: 0px 0px 3px 0px #974936;
 }
