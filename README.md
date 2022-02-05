@@ -50,6 +50,17 @@ By: Xynogen<br>
 <img src="https://user-images.githubusercontent.com/23419562/97575572-81dd3b80-1a1f-11eb-8e92-e0fb67fadeac.png" width="500">\
 By: [VictimCrasher][4]<br>
 
+### chocoCounter
+
+> Size: 1810x160\
+> *Song Selection*\
+<img src="https://i.postimg.cc/1RDk0cHd/vlcsnap-2021-08-12-15h33m16s847.png" width="750">\
+> *Gameplay 1*\
+<img src="https://i.postimg.cc/Fsm2TdCH/vlcsnap-2021-08-12-15h33m46s231.png" width="750">\
+> *Gameplay 2*\
+<img src="https://i.postimg.cc/02fhFkhd/vlcsnap-2021-08-12-15h33m52s818.png" width="750">\
+By : [chocomilku][7]<br>
+
 ### Classic
 
 > Size: 550x300\
@@ -141,3 +152,5 @@ By: [cyperdark][2]<br>
 [5]: https://github.com/jassper0
 
 [6]: https://github.com/Xyn0gen
+
+[7]: https://github.com/chocomilku/
