@@ -15,6 +15,7 @@
   background: #456255 !important;
 }
 html, body {
+  overflow: hidden;
   font-size: 40px;
   font-family: 'Roboto', sans-serif;
   color: white;
