@@ -1,0 +1,83 @@
+@font-face {
+    font-family: Montserrat, sans-serif;
+    src: url("./static/Montserrat-Regular.ttf")
+}
+
+:root {
+    --keyColor: #796e99;
+    --keyOnTapColor: #CAB8FF;
+    --tileColor: #CAB8FF;
+    --fadeIn: linear-gradient(to left, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%);
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: Montserrat, sans-serif;
+}
+
+.keyContainer {
+    width: 400px;
+    height: 72px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-rows: 1fr;
+    justify-content: center;
+    align-content: center;
+    padding-bottom: 11px;
+}
+
+.keyTap {
+    border-radius: 5px;
+    background-color: var(--keyColor);
+    position: absolute;
+    right: 0;
+    width: 10px;
+    height: 100%;
+}
+
+.text {
+    min-width: 50px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1/1;
+    height: 100%;
+}
+
+.absolute {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.relative {
+    position: relative;
+    height: 100%;
+}
+
+.wrapper {
+    max-width: 100%;
+    height: 100%;
+}
+
+.tiles {
+    -webkit-mask: var(--fadeIn);
+}
+
+.tile {
+    background-color: var(--tileColor);
+    width: 0;
+    height: 100%;
+    max-width: 100%;
+    right: 0;
+    border-radius: 5px;
+}
+
+@keyframes moveOut {
+    100% {
+        transform: translateX(-100%);
+    }
+}
