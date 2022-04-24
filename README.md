@@ -131,8 +131,8 @@ By: [cyperdark][2]<br>
 By: [cyperdark][2]<br>
 
 ### KeyOverlay
-> Size: 400x321 (2K: 400x163)\
-<img src="https://i.imgur.com/X1S9fY1.png">\
+> Size: 400x321 (2 Keys: 400x163)\
+<img src="https://i.imgur.com/TEWotMF.gif">\
 By: [robloxxa][7]
 
 [1]: https://github.com/Dartandr
