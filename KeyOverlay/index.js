@@ -1,4 +1,4 @@
-const socket = new ReconnectingWebSocket("ws://" + "localhost:24050" + "/ws");
+const socket = new ReconnectingWebSocket("ws://" + location.host + "/ws");
 const keys = document.getElementById('keys')
 let k1 = new KeyOverlay('k1', 'k1Tiles', {speed: 0.4, keyTextId:"k1Text"}),
     k2 = new KeyOverlay('k2', 'k2Tiles', {speed: 0.4}),
