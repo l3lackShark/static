@@ -193,11 +193,11 @@ socket.onmessage = (event) => {
 
 			if (temp.state == 2 || temp.state == 7 || temp.state == 14) {
 				metadata.style.width = "310px";
-				metadata.style.alignItems = "end";
-				metadata.style.justifyContent = "start";
+				metadataMap.style.transform = "translate(-90px, 0px)";
 				setTimeout(() => {
 					hits.style.transform = "translateY(0px)";
 					metadata.style.height = "160px";
+					metadataMap.style.transform = "translate(-90px, 60px)";
 				}, 500);
 
 				if (metadataString.getBoundingClientRect().width >= 290) {
@@ -208,14 +208,12 @@ socket.onmessage = (event) => {
 			} else {
 				setTimeout(() => {
 					metadata.style.width = "150px";
-					setTimeout(() => {
-						metadata.style.justifyContent = "center";
-						metadata.style.alignItems = "center";
-					}, 500);
+					metadataMap.style.transform = "translate(0px, 0px)";
 				}, 500);
 				metadata.style.height = "40px";
 				metadataString.classList.remove("over");
 				hits.style.transform = "translateY(125px)";
+				metadataMap.style.transform = "translate(-90px, 0px)";
 			}
 
 			if (temp.state == 7 || temp.state == 14) {
