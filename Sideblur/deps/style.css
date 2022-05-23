@@ -1,0 +1,242 @@
+@font-face {
+	font-family: "Nunito-Bold";
+	src: url("./fonts/Nunito-Bold.ttf");
+}
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+:root {
+	--element-background: #333333;
+}
+
+body {
+	overflow: hidden;
+}
+
+#chin-ref {
+	width: 1920px;
+	height: 1080px;
+	z-index: -2;
+}
+
+#overlay {
+	position: absolute;
+	width: 400px;
+	height: 270px;
+	font-family: Nunito-Bold;
+	overflow: hidden;
+	color: white;
+	z-index: 1;
+	display: flex;
+	justify-content: center;
+}
+
+.bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	min-height: 100%;
+	filter: blur(5px) brightness(0.5);
+	transform: scale(1.2);
+	z-index: -1;
+}
+
+#metadata {
+	position: absolute;
+	top: 25px;
+	width: 310px;
+	height: 160px;
+	z-index: 0;
+	border-radius: 10px;
+	box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+	overflow: hidden;
+	background-color: var(--element-background);
+	transition: all 0.5s ease-in-out;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* Side variations */
+.right {
+	right: 0px !important;
+	border-top-right-radius: 0px !important;
+	border-bottom-right-radius: 0px !important;
+}
+.left {
+	left: 0px !important;
+	border-top-left-radius: 0px !important;
+	border-bottom-left-radius: 0px !important;
+}
+.top {
+	position: relative !important;
+	top: 0px !important;
+	border-top-left-radius: 0px !important;
+	border-top-right-radius: 0px !important;
+}
+.bottom {
+	position: relative !important;
+	bottom: 0px !important;
+	border-bottom-left-radius: 0px !important;
+	border-bottom-right-radius: 0px !important;
+	transform: translateY(-20px);
+}
+.ov-top {
+	align-items: start;
+}
+.ov-bottom {
+	align-items: end;
+}
+
+#metadata .string-container {
+	position: absolute;
+	bottom: calc(150px - 18px);
+	left: 10px;
+	width: 290px;
+	font-size: 18px;
+	overflow: hidden;
+	white-space: nowrap;
+	z-index: 3;
+}
+
+#metadata-string {
+	width: max-content;
+}
+
+#metadata-map {
+	font-size: 18px;
+	margin: 10px;
+	transition: all 0.5s ease-in-out;
+}
+
+#metadata-map-id {
+	transform: translate(-3px);
+	font-family: Nunito-Bold;
+}
+
+.metadata-stats {
+	position: absolute;
+	bottom: 42px;
+	left: 25px;
+	font-size: 16px;
+}
+
+.over {
+	transform: translate(300px);
+	animation: over 5s cubic-bezier(0.18, 0, 0.76, 0.97) infinite;
+}
+
+.UR-wrap {
+	position: absolute;
+	bottom: 195px;
+	left: 550px;
+	width: 495px;
+	height: 100px;
+	display: flex;
+	justify-content: center;
+	overflow: hidden;
+}
+
+#UR {
+	height: 50px;
+	padding: 5px;
+	display: flex;
+	border-radius: 10px;
+	justify-content: center;
+	align-items: center;
+	font-size: 24px;
+	transition: all 0.5s ease-in-out;
+}
+
+.hits-wrap {
+	position: absolute;
+	bottom: 195px;
+	left: 240px;
+	width: 300px;
+	height: 100px;
+	display: flex;
+	justify-content: center;
+	overflow: hidden;
+}
+
+#hits {
+	position: absolute;
+	bottom: -5px;
+	right: 0px;
+	width: 150px;
+	height: 65px;
+	display: flex;
+	overflow: hidden;
+	justify-content: space-evenly;
+	align-items: center;
+	transition: all 0.5s ease-in-out;
+}
+
+#hits0,
+#hits50,
+#hits100 {
+	min-width: 35px;
+	height: 35px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 18px;
+	overflow: visible;
+	text-shadow: 0 0 0 2px black;
+	font-family: Nunito-Bold;
+	white-space: nowrap;
+	border-radius: 10px;
+	background-color: var(--background-color);
+}
+
+#pp {
+	position: absolute;
+	bottom: 95px;
+	right: 10px;
+	padding-right: 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	font-size: 30px;
+	font-family: Nunito-Bold;
+	transition: all 0.5s ease-in-out;
+}
+#pp::after {
+	content: "pp";
+	transform: translate(2px, -3px);
+}
+
+#grade {
+	position: absolute;
+	bottom: 40px;
+	right: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	font-size: 48px;
+}
+
+#grade-text {
+	transition: color 300ms ease-in-out;
+}
+
+@keyframes over {
+	0% {
+		transform: translate(0px);
+	}
+	15% {
+		transform: translate(0px);
+	}
+	85% {
+		transform: translate(calc(-100% + 290px));
+	}
+	100% {
+		transform: translate(calc(-100% + 290px));
+	}
+}

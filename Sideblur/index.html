@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Sideblur</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="deps/style.css" />
+		<link rel="stylesheet" href="deps/odometr.css" />
+	</head>
+
+	<body>
+		<div id="overlay">
+			<div id="metadata">
+				<img class="bg" />
+				<div class="string-container">
+					<div id="metadata-string"></div>
+				</div>
+				<div class="metadata-stats">
+					<div id="metadata-stars"></div>
+					<div id="metadata-csar"></div>
+					<div id="metadata-odhp"></div>
+					<div id="metadata-bpm"></div>
+				</div>
+				<div id="grade"></div>
+				<div id="pp"></div>
+				<div id="metadata-map">
+					<span class="metadata-map-b">b/</span>
+					<span class="odometer" id="metadata-map-id"></span>
+				</div>
+				<div id="hits">
+					<div
+						class="odometer"
+						style="--background-color: #62c25b77"
+						id="hits100"
+					>
+						1
+					</div>
+					<div
+						class="odometer"
+						style="--background-color: #ded82877"
+						id="hits50"
+					>
+						2
+					</div>
+					<div
+						class="odometer"
+						style="--background-color: #c24f4f77"
+						id="hits0"
+					>
+						3
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="deps/reconnecting-websocket.min.js"></script>
+		<script src="deps/odometr.js"></script>
+		<script src="index.js"></script>
+	</body>
+</html>
