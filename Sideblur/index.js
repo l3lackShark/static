@@ -186,7 +186,7 @@ socket.onmessage = (event) => {
 		}
 
 		if (temp.state != data.menu.state) {
-			if (temp.state == 2) {
+			if (temp.state == 2 || temp.state == 7 || temp.state == 14) {
 				metadataMap.style.transform = "translate(-90px, 0px)";
 			}
 			if (temp.state == 5 && data.menu.state == 7) {
