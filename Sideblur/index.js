@@ -186,6 +186,9 @@ socket.onmessage = (event) => {
 		}
 
 		if (temp.state != data.menu.state) {
+			if (temp.state == 2) {
+				metadataMap.style.transform = "translate(-90px, 0px)";
+			}
 			if (temp.state == 5 && data.menu.state == 7) {
 				return;
 			}
@@ -213,7 +216,6 @@ socket.onmessage = (event) => {
 				metadata.style.height = "40px";
 				metadataString.classList.remove("over");
 				hits.style.transform = "translateY(125px)";
-				metadataMap.style.transform = "translate(-90px, 0px)";
 			}
 
 			if (temp.state == 7 || temp.state == 14) {
