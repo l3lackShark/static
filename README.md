@@ -134,9 +134,10 @@ By: [cyperdark][2]<br>
 
 > Size 400x270\
 *Song Selection*\
-<img src="https://user-images.githubusercontent.com/46410314/169722599-4910aadc-f3b9-4aec-bda5-8975ea7e93a4.png" width=500>\
+<img src="https://user-images.githubusercontent.com/46410314/169726271-174f86fc-634c-4164-ba96-98cebeee5d49.png" width=500>\
 *Gameplay*\
-<img src="https://user-images.githubusercontent.com/46410314/169722707-e038102b-e3d1-49c0-98a0-5280bcf2d8d1.png" width=500>\
+<img src="https://user-images.githubusercontent.com/46410314/169726322-a4a85e6c-522d-475a-835c-0e297da0204d.png" width=500>\
+
 If you pass the `side` argument to the URL, the overlay will snap to that side. e.g. `https://127.0.0.1:24050/Sideblur/?side=right`\
 Available arguments are `top`, `bottom`, `left`, `right`, and `none`.\
 By: [clxxiii][7]
