@@ -130,6 +130,18 @@ By: [cyperdark][2]<br>
 <img  src="https://cdn.discordapp.com/attachments/641255341245333514/731842011514011698/unknown.png">\
 By: [cyperdark][2]<br>
 
+### Sideblur
+
+> Size 400x270\
+*Song Selection*\
+<img src="https://user-images.githubusercontent.com/46410314/169722599-4910aadc-f3b9-4aec-bda5-8975ea7e93a4.png" width=500>\
+*Gameplay*\
+<img src="https://user-images.githubusercontent.com/46410314/169722707-e038102b-e3d1-49c0-98a0-5280bcf2d8d1.png" width=500>\
+If you pass the `side` argument to the URL, the overlay will snap to that side. e.g. `https://127.0.0.1:24050/Sideblur/?side=right`\
+Available arguments are `top`, `bottom`, `left`, `right`, and `none`.\
+By: [clxxiii][7]
+
+
 [1]: https://github.com/Dartandr
 
 [2]: https://github.com/cyperdark
@@ -141,3 +153,5 @@ By: [cyperdark][2]<br>
 [5]: https://github.com/jassper0
 
 [6]: https://github.com/Xyn0gen
+
+[7]: https://github.com/clxxiii
