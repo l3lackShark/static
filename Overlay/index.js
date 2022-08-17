@@ -42,10 +42,6 @@ socket.onmessage = event => {
         let step = widthBase/200;
         scoreColor.style.width = step * data.gameplay.hp.smooth +'px'
     }
-    if(data.gameplay.hp.smooth != "" || data.gameplay.hp.smooth != null || data.gameplay.hp.smooth != undefined){
-        let step = widthBase/200;
-        scoreColor.style.width = step * data.gameplay.hp.smooth +'px'
-    }
     if(data.gameplay.score != ""){
         let text = data.gameplay.score.toString().padStart(8,"0");
         score.innerHTML = text;

@@ -1,24 +1,32 @@
-
-
 # Counters
 
 ### InGame1
 
-> Size: 270x133\
-<img  src="https://cdn.discordapp.com/attachments/573902204482879498/818450517184741406/unknown.png"  width="270">\
+> Size: 240x133\
+<img  src="https://user-images.githubusercontent.com/20248967/110195364-7337e280-7e5e-11eb-9bbb-8dadddf6e2bd.png"  width="250">\
 By: [Dartandr][1]<br>
 
 ### InGame2
 
-> Size: 380x97\
-<img  src="https://cdn.discordapp.com/attachments/573902204482879498/818450338356789268/unknown.png"  width="280">\
+> Size: 370x120\
+<img  src="https://cdn.discordapp.com/attachments/562954897163812865/817866179619192862/unknown.png"  width="280">\
 By: [Dartandr][1]<br>
 
 ### InGame3
 
-> Size: 170x90\
-<img  src="https://cdn.discordapp.com/attachments/573902204482879498/818450603410718730/unknown.png"  width="170">\
+> Size: 150x70\
+<img  src="https://cdn.discordapp.com/attachments/562954897163812865/817866299274559498/unknown.png"  width="150">\
 By: [Dartandr][1]<br>
+
+
+### reComfortaa
+
+> Size: 1152x245\
+> *Song Selection*\
+<img src="https://i.imgur.com/r4AWqbH.png" width="500">\
+>*Gameplay*\
+<img src="https://i.imgur.com/7rEgtkH.png" width="500">\
+By: [Xynogen][6]<br>
 
 ### MonokaiPane
 
@@ -29,7 +37,7 @@ By: [Dartandr][1]<br>
 <img src="https://i.imgur.com/TAmHvFM.png" width="500">\
 >*Gameplay 2*\
 <img src="https://i.imgur.com/FpHkdLg.png" width="500">\
-By: [Xynogen][6]<br>
+By: Xynogen<br>
 
 ### WaveTournament
 
@@ -53,24 +61,15 @@ By: [Dartandr][1]<br>
 > Size: 550x300\
 <img  src="https://cdn.discordapp.com/attachments/530940222771560452/732545954468593664/unknown.png"  width="500">\
 By: [Dartandr][1]<br>
-
+  
 ### Simplistic
 
-> Size: 700x130\
+> Size: 750x150\
 > *Song Selection*\
 <img src="https://i.postimg.cc/zvN5nxTZ/download.png">\
 >*Gameplay 1*\
 <img src="https://i.postimg.cc/NMMhcLmV/Screenshot-1.png">\
 By: [jassper0][5]<br>
-  
-### reComfortaa
-
-> Size: 1152x245\
-> *Song Selection*\
-<img src="https://i.imgur.com/r4AWqbH.png" width="600">\
->*Gameplay*\
-<img src="https://i.imgur.com/7rEgtkH.png" width="600">\
-By: [Xynogen][6]<br>
 
 ### DarkAndWhite
 
@@ -78,27 +77,22 @@ By: [Xynogen][6]<br>
 <img  src="https://i.imgur.com/mBN375B.jpg"  width="500">\
 By: [cyperdark][2]<br>
 
-  
-
 ### Kerli1 & Kerli2
 
 > Size (1)(2): 794x124 | 353x190\
 <img  src="https://i.imgur.com/n2w260o.jpg"  width="500">\
 By: [Dartandr][1]<br>
 
-  
-
 ### Luscent
 
 > Size: 1920x1080\
-Open-Source Implementation of [Luscent's][3] overlay. No elements were stolen. This is a remake. Please [consider buying](https://gumroad.com/l/Luscent) his version!\
+Open-Source Implementation of [Siae's Luscent][3] overlay. No elements were stolen. This is a remake. Please [consider buying](https://gumroad.com/l/Luscent) her version!\
 <img  src="https://media.discordapp.net/attachments/641255341245333514/731843129833160704/unknown.png"  width="500">\
 Remake by: [Dartandr][1]
 
-
 ### VictimCrasherCompact
 
-> Size: 550x132\
+> Size: 560x150\
 > *Song Selection*\
 <img  src="https://i.imgur.com/1F1GK3Z.png" width="500">\
 >
@@ -106,13 +100,17 @@ Remake by: [Dartandr][1]
 <img  src="https://i.imgur.com/epx6dij.png" width="500">\
 By: [VictimCrasher][4]<br>
   
-
 ### VictimCrasherOverlay
 
 > Size: 1920x1080\
 <img  src="https://i.imgur.com/Wo6wI1B.png"  width="500">\
 By: [VictimCrasher][4]<br>
 
+### UnstableRate
+
+> Size: 300x100\
+Just a plain number that shows current UnstableRate, could be useful if you want to put it above your UR Bar.\
+By: [Dartandr][1]
 
 ### MaximalLime
 
@@ -120,13 +118,11 @@ By: [VictimCrasher][4]<br>
 <img  src="https://cdn.discordapp.com/attachments/641255341245333514/731841741715669002/unknown.png"  width="500">\
 By: [cyperdark][2]<br>
 
-  
 ### MinimalLime
 
 > Size: 640x130\
 <img  src="https://cdn.discordapp.com/attachments/641255341245333514/731840161612300358/unknown.png"  width="500">\
 By: [cyperdark][2]<br>
-  
 
 ### TrafficLight
 
@@ -139,13 +135,13 @@ By: [cyperdark][2]<br>
 > Size: 270x450\
 > Note: Only works for Mania.
 <img src="https://cdn.discordapp.com/attachments/608070341461540864/819006720768606209/unknown.png">\
-By: [Ripball][7]<br>  
+By: [Ripball][7]<br>
 
 [1]: https://github.com/Dartandr
 
 [2]: https://github.com/cyperdark
 
-[3]: https://github.com/inix1257
+[3]: https://twitter.com/mk_cou/status/1464208290158501894
 
 [4]: https://github.com/VictimCrasher
 
