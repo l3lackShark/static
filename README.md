@@ -130,6 +130,12 @@ By: [cyperdark][2]<br>
 <img  src="https://cdn.discordapp.com/attachments/641255341245333514/731842011514011698/unknown.png">\
 By: [cyperdark][2]<br>
 
+### Gradiental
+
+> Size: 480x100\
+<img src="https://media.discordapp.net/attachments/829357606224134174/1017455955576897608/unknown.png">\
+By: [nikzz][7]<br>
+
 [1]: https://github.com/Dartandr
 
 [2]: https://github.com/cyperdark
@@ -141,3 +147,5 @@ By: [cyperdark][2]<br>
 [5]: https://github.com/jassper0
 
 [6]: https://github.com/Xyn0gen
+
+[7]: https://github.com/nikzz-tea
