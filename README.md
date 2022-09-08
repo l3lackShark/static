@@ -86,7 +86,7 @@ By: [Dartandr][1]<br>
 ### Luscent
 
 > Size: 1920x1080\
-Open-Source Implementation of [Luscent's][3] overlay. No elements were stolen. This is a remake. Please [consider buying](https://gumroad.com/l/Luscent) his version!\
+Open-Source Implementation of [Siae's Luscent][3] overlay. No elements were stolen. This is a remake. Please [consider buying](https://gumroad.com/l/Luscent) her version!\
 <img  src="https://media.discordapp.net/attachments/641255341245333514/731843129833160704/unknown.png"  width="500">\
 Remake by: [Dartandr][1]
 
@@ -134,7 +134,7 @@ By: [cyperdark][2]<br>
 
 [2]: https://github.com/cyperdark
 
-[3]: https://github.com/inix1257
+[3]: https://twitter.com/mk_cou/status/1464208290158501894
 
 [4]: https://github.com/VictimCrasher
 
