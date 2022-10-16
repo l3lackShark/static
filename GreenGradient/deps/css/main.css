@@ -1,0 +1,182 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: white;
+  font-size: 50px;
+  background-color: transparent;
+}
+
+.main {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  top: 20px;
+  left: 30px;
+  padding: 20px 40px;
+  border-radius: 6px;
+  -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5), 0 4px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5), 0 4px 20px rgba(0, 0, 0, 0.5);
+  z-index: 0;
+  background-image: linear-gradient(45deg, #135967, #0D3C45, #0B343C, #061E22, #135967, #0D3C45, #0B343C, #061E22);
+  background-size: 300% 300%;
+  animation: animateBg 5s infinite linear;
+}
+
+@keyframes animateBg {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+.main .line {
+  position: absolute;
+  top: 5px;
+  left: 15px;
+  width: calc(100% - 30px);
+  height: 4px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.main .line::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--progress);
+  height: 100%;
+  background: white;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.main .hits {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: baseline;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: black;
+  width: 420px;
+  background: white;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 6px 0 #ccc;
+  box-shadow: 0 6px 0 #ccc;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.main .hits .h100,
+.main .hits .h50,
+.main .hits .h0 {
+  font-size: 45px;
+  padding: 0 15px;
+}
+
+.main .hits .h100::after,
+.main .hits .h50::after,
+.main .hits .h0::after {
+  font-size: 30px;
+  opacity: 0.5;
+}
+
+.main .hits .h100::after {
+  content: "x100";
+}
+
+.main .hits .h50::after {
+  content: "x50";
+}
+
+.main .hits .h0::after {
+  content: "x0";
+}
+
+.main .pp {
+  position: relative;
+  text-align: center;
+  width: 180px;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.main .pp span {
+  white-space: nowrap;
+}
+
+.main .pp span::after {
+  content: "PP";
+}
+
+.songSelect .main .hits {
+  width: 320px;
+}
+
+.songSelect .main .pp {
+  width: 340px;
+}
+
+.songSelect .main .pp span::after {
+  content: "";
+}
+
+.songSelect .main .pp span::before {
+  content: "/b/";
+}
+
+.mod {
+  font-family: 'Rubik Mono One', sans-serif;
+  font-size: 1.7rem;
+  color: #FFF;
+  animation: animatedGlow 6s linear infinite;
+}
+
+@keyframes animatedGlow {
+  0% {
+	  text-shadow: unset;
+  }
+
+  50% {
+	  text-shadow: 0 0 7px #b3b3b3, 0 0 10px #b3b3b3, 0 0 21px #b3b3b3;
+  }
+
+  100% {
+	  text-shadow: unset;
+  }
+}
+
+#mods-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 130px;
+  height: 62px;
+}
+
+/*# sourceMappingURL=main.css.map */
