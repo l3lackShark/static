@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap");
 
 * {
   padding: 0;
@@ -82,14 +82,13 @@ body {
   display: -ms-flexbox;
   display: flex;
   color: black;
-  width: 480px;
+  width: 420px;
   background: white;
   border-radius: 10px;
   -webkit-box-shadow: 0 6px 0 #ccc;
   box-shadow: 0 6px 0 #ccc;
   -webkit-transition: all 1s ease;
   transition: all 1s ease;
-  gap: 2px;
 }
 
 .main .hits .h100,
@@ -121,7 +120,6 @@ body {
 .main .pp {
   position: relative;
   text-align: center;
-  margin-right: 40px;
   width: 180px;
   -webkit-transition: all 1s ease;
   transition: all 1s ease;
@@ -152,10 +150,24 @@ body {
 }
 
 .mod {
-  font-family: 'Major Mono Display', sans-serif;
-  font-size: 32px;
-  text-shadow: 0px 0px 6px #b3b3b3;
-  color:#1b282b;
+  font-family: 'Rubik Mono One', sans-serif;
+  font-size: 1.7rem;
+  color: #FFF;
+  animation: animatedGlow 6s linear infinite;
+}
+
+@keyframes animatedGlow {
+  0% {
+	  text-shadow: unset;
+  }
+
+  50% {
+	  text-shadow: 0 0 7px #b3b3b3, 0 0 10px #b3b3b3, 0 0 21px #b3b3b3;
+  }
+
+  100% {
+	  text-shadow: unset;
+  }
 }
 
 #mods-container {
@@ -163,7 +175,8 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
-  gap: 2px;
+  width: 130px;
+  height: 62px;
 }
 
 /*# sourceMappingURL=main.css.map */
