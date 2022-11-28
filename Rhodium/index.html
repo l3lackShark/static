@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>rhodium</title>
+</head>
+
+<body>
+    <div class="container">
+        <div id="overlay">
+            <div class="topleft">
+                <div id="hp">
+                    <img src="deps/scorebar-colour.png"/>
+                </div>
+                <div id="title"></div>
+                <div id="artist"></div>
+            </div>
+            <div class="topcenter">
+                <div id="beatmap-id"></div>
+            </div>
+            <div class="topright">
+                <div id="score">000000000</div>
+                <div id="acc">100.00%</div>
+                <div id="mods"></div>
+            </div>
+            <div class="bottomleft">
+                <div id="combo"></div>
+            </div>
+            <div class="bottomright">
+                <div id="pp"></div>
+                <div id="ppifFC"></div>
+            </div>
+        </div>
+    </div>
+    <script src="deps/countUp.js"></script>
+    <script src="deps/reconnecting-websocket.min.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

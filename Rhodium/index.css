@@ -1,0 +1,96 @@
+@font-face {
+    font-family: "CustomFont";
+    src: url("deps/Comfortaa-Regular.ttf");
+}
+
+.container {
+    font-family: 'CustomFont', Arial, sans-serif;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    width: 1900px;
+    height: 1060px;
+    color: white ;
+}
+
+#overlay {
+    opacity: 0;
+    transition: 300ms ease-in;
+}
+
+.topleft {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    text-align: left;
+}
+
+#hp {
+    transition: 300ms;
+    overflow: hidden;
+    width: 645px;
+}
+
+#title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#artist {
+    font-size: 22px;
+}
+
+.topcenter {
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    font-size: 24px;
+}
+
+#beatmap-id {
+    text-align: center;
+    transform: translate(-50%, 0);
+}
+
+.topright {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    text-align: right;
+}
+
+#score {
+    font-size: 48px;
+}
+
+#acc {
+    font-size: 34px;
+}
+
+#mods {
+    font-size: 26px;
+}
+
+.bottomleft {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    text-align: left;
+    font-size: 48px;
+}
+
+.bottomright {
+    position: absolute;
+    bottom: 30px;
+    right: 0px;
+    text-align: right;
+}
+
+#pp {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+#ppifFC {
+    font-size: 24px;
+}
