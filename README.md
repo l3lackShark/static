@@ -133,7 +133,7 @@ By: [cyperdark][2]<br>
 ### RhodiumOverlay
 
 > Size: 1920x1080\
-<img src="https://i.imgur.com/XANWyO0.jpg">\
+<img src="https://i.imgur.com/XANWyO0.jpg" width="500">\
 By [Rhodium][7]<br>
 
 [1]: https://github.com/Dartandr
