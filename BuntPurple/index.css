@@ -60,7 +60,7 @@ body,html{
 }
 #progress{
     height: 100%;
-    border-radius: 17px;
+    border-radius: 17px 0px 0px 17px;
     background-color: white;
     transition: 300ms;
 }
