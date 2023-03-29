@@ -30,9 +30,24 @@ body,html{
     height: 50px;
     width: 340px;
     border-radius: 25px;
-    background: rgb(54, 5, 104);
+    background-color: rgb(54, 5, 104);
+    background-image: linear-gradient(45deg, #6c37a1, #4a1d77, #3b1067, #2a094c, #6c37a1, #4a1d77, #3b1067, #2a094c, #1f003b);
+    background-size: 400% 400%;
+    animation: animation 6s ease-in-out infinite;
     top: 25px;
 }
+
+@keyframes animation {
+    0% {
+    background-position: 0% 0%;
+    }
+    50% {
+    background-position: 100% 0%;
+    }
+    100% {
+    background-position: 0% 0%;
+    }
+    }
 
 .pp{
     position: absolute;

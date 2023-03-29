@@ -131,8 +131,8 @@
 
 ### Purple
 
-> Size: 600x117\
-> <img  src="https://cdn.discordapp.com/attachments/571722610501615635/1090628176906039416/counterv2_1.png">\
+> Size: 600x125\
+> <img  src="https://cdn.discordapp.com/attachments/571722610501615635/1090724618651844628/counterv3_1.png">\
 > By: [Bunt][2]<br>
 
 [1]: https://github.com/Dartandr
