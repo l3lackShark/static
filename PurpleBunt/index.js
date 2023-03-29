@@ -66,7 +66,7 @@ socket.onmessage = event => {
     }
     if(fullTime !== data.menu.bm.time.mp3){
         fullTime = data.menu.bm.time.mp3
-        onepart = 178/fullTime
+        onepart = 182/fullTime
     }
     if(seek !== data.menu.bm.time.current && fullTime !== undefined && fullTime != 0){
         seek = data.menu.bm.time.current;
