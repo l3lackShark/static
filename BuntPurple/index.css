@@ -27,9 +27,9 @@ body,html{
 
 .base{
     position: absolute;
-    height: 49px;
+    height: 50px;
     width: 340px;
-    border-radius: 100px;
+    border-radius: 25px;
     background: rgb(54, 5, 104);
     top: 25px;
 }
@@ -39,11 +39,11 @@ body,html{
     color: rgba(255, 255, 255, 0.4);
     display: flex;
     justify-content: center;
-    padding-top: 2px;
+    padding-top: 5px;
     font-size: 30px;
-    right: 10%;
-    top: 45%;
-    transform: translateY(-50%);
+    right: 30px;
+    height: 90%;
+    font-size: 30px;
 }
 #pp{
     color: white;
@@ -51,17 +51,16 @@ body,html{
 .progress{
     position: absolute;
     width: 183px;
-    height: 34px;
-    top: 7px;
-    left: 15px;
+    height: 70%;
+    top: 15%;
+    left: 8px;
     background-color: rgba(255, 255, 255, 0.4);
-    border-radius: 100px;
+    border-radius: 17px;
     overflow: hidden;
 }
 #progress{
-    height: 34px;
-    width: 50%;
-    border-radius: 100px 0px 0px 100px;
+    height: 100%;
+    border-radius: 17px;
     background-color: white;
     transition: 300ms;
 }
@@ -71,11 +70,11 @@ body,html{
     justify-content: space-around;
     color: white;
     font-size: 20px;
-    width: 178px;
-    margin-left: 5%;
-    bottom: 10px;
+    width: 177px;
+    left: 11px;
+    top: 20%;
     background-color: rgb(54, 5, 104);
-    border-radius: 100px;
+    border-radius: 15px;
     height: 30px;
 
 }
