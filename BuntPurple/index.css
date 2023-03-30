@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+body,html{
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    font-family: "Ubuntu", sans-serif;
+}
+
+.ifFcpp{
+    position: absolute;
+    background: rgb(148, 42, 255);
+    box-shadow: 0px 0px 8px rgb(148, 42, 255);
+    border-radius: 100px;
+    color: rgba(255, 255, 255, 0.45);
+    font-size: 18px;
+    padding: 5px;
+    top:10px;
+    left: 330px;
+    transform: translateX(-50%);
+    transition: 300ms ease-in-out;
+    opacity: 1;
+}
+#ifFcpp{
+    color: white;
+}
+
+.base{
+    position: absolute;
+    height: 50px;
+    width: 340px;
+    border-radius: 25px;
+    background-color: rgb(54, 5, 104);
+    background-image: linear-gradient(45deg, #6c37a1, #4a1d77, #3b1067, #2a094c, #6c37a1, #4a1d77, #3b1067, #2a094c, #1f003b);
+    background-size: 400% 400%;
+    animation: animation 6s ease-in-out infinite;
+    top: 25px;
+}
+
+@keyframes animation {
+    0% {
+    background-position: 0% 0%;
+    }
+    50% {
+    background-position: 100% 0%;
+    }
+    100% {
+    background-position: 0% 0%;
+    }
+    }
+
+.pp{
+    position: absolute;
+    color: rgba(255, 255, 255, 0.4);
+    display: flex;
+    justify-content: center;
+    padding-top: 5px;
+    font-size: 30px;
+    right: 30px;
+    height: 90%;
+    font-size: 30px;
+}
+#pp{
+    color: white;
+}
+.progress{
+    position: absolute;
+    width: 183px;
+    height: 36px;
+    top: 7px;
+    left: 8px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 17px;
+    overflow: hidden;
+}
+#progress{
+    height: 100%;
+    border-radius: 17px 0px 0px 17px;
+    background-color: white;
+    transition: 300ms;
+}
+.hitsLine{
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    font-size: 20px;
+    width: 177px;
+    left: 11px;
+    top: 10px;
+    background-color: rgb(68, 19, 117);
+    border-radius: 15px;
+    height: 30px;
+
+}
+.hits{
+    width: 60px;
+    text-align: center;
+}
+
+.hitsUnderline{
+    height: 4px;
+    width: 8px;
+    border-radius: 4px;
+    margin: 0 auto 0 auto;
+}
+
+#hunUnderline{
+    background-color: rgb(148, 42, 255);
+    box-shadow: 0 0 10px rgb(148, 42, 255);
+}
+
+#fivUnderline{
+    background-color: rgb(109, 40, 179);
+    box-shadow: 0 0 10px rgb(110, 44, 177);
+}
+
+#missUnderline{
+    background-color: rgb(37, 8, 66);
+    box-shadow: 0 0 10px rgb(93, 21, 165);
+
+}
