@@ -88,7 +88,7 @@ body,html{
     width: 177px;
     left: 11px;
     top: 10px;
-    background-color: rgb(54, 5, 104);
+    background-color: rgb(68, 19, 117);
     border-radius: 15px;
     height: 30px;
 
@@ -111,8 +111,8 @@ body,html{
 }
 
 #fivUnderline{
-    background-color: rgb(93, 21, 165);
-    box-shadow: 0 0 10px rgb(93, 21, 165);
+    background-color: rgb(109, 40, 179);
+    box-shadow: 0 0 10px rgb(110, 44, 177);
 }
 
 #missUnderline{
